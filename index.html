@@ -396,6 +396,39 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   /* WhatsApp label hide on small screens */
   .wa-label{display:none}
 }
+@media(max-width:768px){
+  .hero{display:flex;flex-direction:column;height:auto;min-height:unset;align-items:stretch;justify-content:flex-start}
+  .hero video{position:relative;width:100%;height:56vw;object-fit:contain;background:#000;z-index:0}
+  .hero-overlay{display:none}
+  .hero-content{position:relative;background:#fff;padding:20px 24px;text-align:center;width:100%;z-index:1;display:flex;flex-direction:column;gap:16px}
+  .trust{display:none}
+  .cslb-bar{display:none}
+  .hero-stars{order:1;color:#f0b400;margin:0}
+  .hero h1{order:2;font-size:clamp(22px,6vw,30px);text-shadow:none;color:#1a1a1a;margin:0}
+  .hero-sub{order:3;font-size:14px;text-shadow:none;color:#555;line-height:1.6;margin:0}
+  .hero-btns{order:4;flex-direction:column;align-items:stretch;gap:12px;width:100%;max-width:100%;margin:0}
+  .btn-green{width:100%;justify-content:center;padding:14px 20px;font-size:13px;background:var(--green);border:none;backdrop-filter:none;color:#fff}
+  .btn-wht{width:100%;justify-content:center;padding:14px 20px;font-size:13px;background:#fff;border:2px solid var(--green);color:var(--green);backdrop-filter:none}
+  /* Promo video section */
+  .promo-vid-wrap{display:flex;flex-direction:column;overflow:visible}
+  .promo-vid{height:56vw!important;object-fit:contain!important;background:#ffffff}
+  .promo-vid-overlay{position:relative!important;inset:auto!important;background:#ffffff!important;padding:24px 20px!important;align-items:center;justify-content:center;text-align:center}
+  .promo-vid-overlay p,.promo-vid-overlay h2{color:#333333!important;text-shadow:none!important}
+  .promo-vid-overlay em{color:#2ecc71!important;text-shadow:none!important}
+  /* Footer */
+  footer{padding:16px 16px 12px}
+  .foot-top{gap:10px;margin-bottom:12px;padding-bottom:12px}
+  .foot-brand h3{font-size:14px;margin-bottom:2px}
+  .foot-brand small{font-size:9px;margin-bottom:4px}
+  .foot-brand p{font-size:10px;line-height:1.5}
+  .foot-col h4{font-size:9px;margin-bottom:6px}
+  .foot-col a{font-size:10px;margin-bottom:4px}
+  .foot-bot{gap:4px;font-size:9px}
+  .foot-col-contact{display:none}
+  /* Services section */
+  .services{padding:24px 16px}
+  .svc-grid{gap:10px}
+}
 
 /* Floating WhatsApp */
 .wa-float {
@@ -693,7 +726,7 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 </div>
 
 <!-- CSLB Badge -->
-<div style="background:#f0f7f1;border-bottom:1px solid #d4e8d8;padding:10px 0;text-align:center;">
+<div class="cslb-bar" style="background:#f0f7f1;border-bottom:1px solid #d4e8d8;padding:10px 0;text-align:center;">
   <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1008892"
      target="_blank" rel="noopener"
      style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--green-dk);font-size:13px;font-weight:600;transition:opacity .2s;"
@@ -1596,14 +1629,14 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <!-- Full-width video banner -->
-  <div style="width:100%;position:relative;overflow:hidden;margin-bottom:0;">
-    <video autoplay muted loop playsinline style="width:100%;height:520px;object-fit:cover;display:block;">
+  <div class="promo-vid-wrap" style="width:100%;position:relative;overflow:hidden;margin-bottom:0;">
+    <video class="promo-vid" autoplay muted loop playsinline style="width:100%;height:520px;object-fit:cover;display:block;">
       <source src="promo.mp4" type="video/mp4">
     </video>
-    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+    <div class="promo-vid-overlay" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
       <p style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;font-weight:600;">Free In-Home Consultation</p>
       <h2 style="font-family:'Merriweather',serif;font-size:clamp(32px,4vw,56px);font-weight:700;color:white;line-height:1.2;margin-bottom:16px;text-shadow:0 3px 20px rgba(0,0,0,.5);">Let's Build Something <em style="font-style:italic;color:#7dd98a;">Beautiful</em></h2>
-      <p style="font-size:17px;color:rgba(255,255,255,.88);max-width:520px;line-height:1.7;font-weight:300;text-shadow:0 1px 8px rgba(0,0,0,.4);">No pressure — just honest expertise and a clear plan to bring your vision to life.</p>
+      <p style="font-size:17px;color:rgba(255,255,255,.88);max-width:520px;line-height:1.7;font-weight:300;text-shadow:0 1px 8px rgba(0,0,0,.4);">No pressure - just honest expertise and a clear plan to bring your vision to life.</p>
     </div>
   </div>
 
@@ -1710,10 +1743,10 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
       <a href="adu.html">ADU / Garage Conversion</a>
       <a href="home-remodel.html">Home Remodel</a>
     </div>
-    <div class="foot-col">
+    <div class="foot-col foot-col-contact">
       <h4>Contact</h4>
-      <a href="tel:8002161005">(800) 216-1005</a>
-      <a href="/cdn-cgi/l/email-protection#1f567179705f517a685c7e73765c70716c6b6d6a7c6b767071317c7072"><span class="__cf_email__" data-cfemail="7b32151d143b351e0c381a1712381415080f090e180f12141555181416">[email&#160;protected]</span></a>
+      <a class="foot-phone" href="tel:8002161005">(800) 216-1005</a>
+      <a class="foot-email" href="/cdn-cgi/l/email-protection#1f567179705f517a685c7e73765c70716c6b6d6a7c6b767071317c7072"><span class="__cf_email__" data-cfemail="7b32151d143b351e0c381a1712381415080f090e180f12141555181416">[email&#160;protected]</span></a>
       <a href="portfolio.html">Recent Transformations</a>
       <a href="https://www.newcaliconstruction.com/about-1" target="_blank">About Us</a>
     </div>

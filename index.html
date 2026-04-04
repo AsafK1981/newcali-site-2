@@ -437,8 +437,9 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .ba-section{padding:20px 16px 0}
   /* 2. Drag to Compare hint — simpler on mobile */
   .ba-drag-hint{padding:6px 14px;font-size:13px}
-  /* 3. Hide social proof ticker */
-  .proof-ticker{display:none}
+  /* 3. Social proof ticker — faster on mobile */
+  .proof-ticker{display:block}
+  .proof-ticker-inner{animation-duration:14s}
   /* 4. Hide testimonial screenshots */
   .testi-screenshot{display:none}
   /* 5. Smaller stat numbers */
@@ -460,6 +461,9 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .wa-label-box span:first-child{font-size:8px}
   .wa-label-box span:last-child{font-size:9px}
   .wa-label-box span:last-child{font-size:14px}
+  /* Crew gallery — remove dark overlays on mobile */
+  .cc-card::after{display:none}
+  #crew-carousel > div[style*="linear-gradient"]{display:none}
 }
 
 /* Floating WhatsApp */
@@ -1597,6 +1601,7 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
   var row2=allImgs.slice(10);
   buildRow('ccI1',row1);
   buildRow('ccI2',row2);
+  window.ccImgs = allImgs; /* expose for mobile Swiper */
 
   // Lightbox
   window.openLB=function(){
@@ -2041,6 +2046,194 @@ async function submitExit(e) {
     await fetch('https://api.web3forms.com/submit', {method:'POST', body: new FormData(e.target)});
   } catch(err) {}
   document.getElementById('exitPopup').innerHTML = '<div style="padding:48px;text-align:center;"><div style="font-size:44px;margin-bottom:12px">🎉</div><h3 style="font-family:Merriweather,serif;color:var(--green-dk);font-size:22px;margin-bottom:8px;">Thanks! We\'ll be in touch soon.</h3><p style="color:var(--muted);">Or call us now at <a href="tel:8002161005" style="color:var(--green);font-weight:600;">(800) 216-1005</a></p><button onclick="closeExit()" style="margin-top:20px;background:var(--green);color:white;border:none;padding:10px 24px;border-radius:4px;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;">Close</button></div>';
+}
+</script>
+<script>
+/* Testimonial carousel — Swiper on mobile, CSS animation on desktop */
+(function() {
+  if (window.innerWidth > 768) return;
+
+  /* Load Swiper CSS */
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+  document.head.appendChild(link);
+
+  /* Load Swiper JS then init */
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+  script.onload = function() {
+    var wrap     = document.querySelector('.testi-carousel-wrap');
+    var carousel = document.querySelector('.testi-carousel');
+    if (!wrap || !carousel) return;
+
+    /* Cards are duplicated for the CSS infinite loop — keep only the first half */
+    var allCards = Array.from(carousel.querySelectorAll('.testi-card'));
+    var unique   = allCards.slice(0, Math.floor(allCards.length / 2) || allCards.length);
+
+    /* Build Swiper DOM */
+    var swiperEl  = document.createElement('div');
+    swiperEl.className = 'swiper testi-swiper';
+    var swiperWrap = document.createElement('div');
+    swiperWrap.className = 'swiper-wrapper';
+
+    unique.forEach(function(card) {
+      var slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      var cloned = card.cloneNode(true);
+      cloned.style.width = '100%';          /* fill the slide */
+      cloned.style.flexShrink = '0';
+      slide.appendChild(cloned);
+      swiperWrap.appendChild(slide);
+    });
+
+    swiperEl.appendChild(swiperWrap);
+
+    /* Swap in the Swiper element */
+    wrap.innerHTML = '';
+    wrap.appendChild(swiperEl);
+    wrap.style.maskImage = 'none';
+    wrap.style.webkitMaskImage = 'none';
+    wrap.style.overflow = 'hidden';
+    wrap.style.padding  = '20px 0 28px';
+
+    /* Mobile-only Swiper styles */
+    var style = document.createElement('style');
+    style.textContent = [
+      '.testi-swiper{overflow:visible!important;padding:0 16px!important;}',
+      '.testi-swiper .swiper-slide{width:82vw!important;max-width:300px!important;height:auto!important;display:flex!important;}',
+      '.testi-swiper .testi-card{width:100%!important;flex-shrink:0!important;}'
+    ].join('');
+    document.head.appendChild(style);
+
+    new Swiper('.testi-swiper', {
+      slidesPerView : 'auto',
+      spaceBetween  : 16,
+      centeredSlides: true,
+      loop          : true,
+      grabCursor    : true,
+      speed         : 900,
+      cssEase       : 'ease-in-out',
+      autoplay      : {
+        delay               : 3500,
+        disableOnInteraction: false,
+      },
+    });
+  };
+  document.body.appendChild(script);
+})();
+</script>
+<script>
+/* Crew gallery — Swiper on mobile, CSS animation on desktop */
+(function() {
+  if (window.innerWidth > 768) return;
+
+  /* Load Swiper CSS */
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+  document.head.appendChild(link);
+
+  function initCrewSwiper() {
+    var section = document.getElementById('crew-carousel');
+    if (!section || !window.ccImgs || !window.ccImgs.length) return;
+
+    /* Hide the two auto-scroll rows */
+    var rows = section.querySelectorAll('.cc-row');
+    rows.forEach(function(r){ r.style.display = 'none'; });
+
+    /* Build Swiper container */
+    var swiperEl = document.createElement('div');
+    swiperEl.className = 'swiper crew-swiper';
+
+    var swiperWrap = document.createElement('div');
+    swiperWrap.className = 'swiper-wrapper';
+
+    window.ccImgs.forEach(function(src, i) {
+      var slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = 'New Cali Construction crew ' + (i + 1);
+      img.loading = 'lazy';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;border-radius:10px;';
+
+      slide.appendChild(img);
+      swiperWrap.appendChild(slide);
+    });
+
+    swiperEl.appendChild(swiperWrap);
+
+    /* Insert below the header, before fade edges */
+    var fadeLeft = section.querySelector('div[style*="linear-gradient(to right"]');
+    section.insertBefore(swiperEl, fadeLeft || null);
+
+    /* Mobile-only Swiper styles */
+    var style = document.createElement('style');
+    style.textContent = [
+      '.crew-swiper{overflow:visible!important;padding:0 20px 24px!important;position:relative;z-index:2;}',
+      '.crew-swiper .swiper-slide{width:72vw!important;max-width:260px!important;height:200px!important;}'
+    ].join('');
+    document.head.appendChild(style);
+
+    new Swiper('.crew-swiper', {
+      slidesPerView : 'auto',
+      spaceBetween  : 14,
+      centeredSlides: true,
+      loop          : true,
+      grabCursor    : true,
+      speed         : 900,
+      cssEase       : 'ease-in-out',
+      autoplay      : {
+        delay               : 2500,
+        disableOnInteraction: false,
+      },
+    });
+  }
+
+  /* If Swiper already loaded (testimonials loaded it first), use it; otherwise load it */
+  if (window.Swiper) {
+    initCrewSwiper();
+  } else {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+    script.onload = initCrewSwiper;
+    document.body.appendChild(script);
+  }
+})();
+</script>
+<script>
+/* Ticker touch/swipe — mobile only */
+if ('ontouchstart' in window) {
+  var ticker = document.querySelector('.proof-ticker');
+  var inner  = document.querySelector('.proof-ticker-inner');
+  if (ticker && inner) {
+    var startX = 0, startOffset = 0, isDragging = false, resumeTimer = null;
+    function getCurrentOffset() {
+      var mat = new WebKitCSSMatrix(getComputedStyle(inner).transform);
+      return mat.m41;
+    }
+    ticker.addEventListener('touchstart', function(e) {
+      clearTimeout(resumeTimer);
+      inner.style.animationPlayState = 'paused';
+      startX = e.touches[0].clientX;
+      startOffset = getCurrentOffset();
+      isDragging = true;
+    }, {passive: true});
+    ticker.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      var delta = e.touches[0].clientX - startX;
+      inner.style.transform = 'translateX(' + (startOffset + delta) + 'px)';
+    }, {passive: true});
+    ticker.addEventListener('touchend', function() {
+      isDragging = false;
+      resumeTimer = setTimeout(function() {
+        inner.style.transform = '';
+        inner.style.animationPlayState = 'running';
+      }, 1200);
+    });
+  }
 }
 </script>
 </body>

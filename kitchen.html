@@ -586,14 +586,47 @@ document.addEventListener('click', function(e){
     </div>
   </div>
 
-  <div class="svc-cta">
-    <h2>Ready to Get Started?</h2>
-    <p>Free in-home consultation. No pressure. Just honest expertise and a clear plan.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="index.html#contact" class="btn-green">Get Your Free Estimate</a>
-      <a href="tel:8002161005" class="btn-wht">Call (800) 216-1005</a>
+  <!-- Contact Form -->
+<div id="contact" style="background:var(--off);padding:70px 60px;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:36px;">
+      <p class="eyebrow">Get in Touch</p>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--text);margin-bottom:12px;">Let's Build Something <em style="color:var(--green);font-style:italic;">Beautiful</em></h2>
+      <p style="font-size:15px;color:var(--muted);font-weight:300;">Free in-home consultation. No pressure - just honest expertise and a clear plan.</p>
+    </div>
+    <div class="cform-box" id="cform" style="background:white;">
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <input type="hidden" name="access_key" value="3f2d97e0-cedd-4b40-9bfc-72cab8332e94">
+        <input type="hidden" name="to" value="Info@NewCaliConstruction.com">
+        <input type="hidden" name="subject" value="New Lead - New Cali Construction Website">
+        <div class="form-row">
+          <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+          <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@email.com" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(310) 555-0000"></div>
+        <div class="fg">
+          <label>What project are you interested in?</label>
+          <select name="project">
+            <option value="">Choose an option</option>
+            <option>Kitchen Remodeling</option>
+            <option>Bathroom Remodeling</option>
+            <option>ADU / Garage Conversion</option>
+            <option>Complete Home Remodel</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your project..."></textarea></div>
+        <button type="submit" class="form-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="form-ok" id="formOk" style="display:none;text-align:center;padding:44px 20px;">
+      <div style="font-size:44px;margin-bottom:12px">🎉</div>
+      <h4 style="font-family:Merriweather,serif;font-size:20px;color:var(--green-dk);margin-bottom:6px;">Thanks! We'll be in touch shortly.</h4>
+      <p style="color:var(--muted);font-size:14px;">Or call us directly at <a href="tel:8002161005" style="color:var(--green);font-weight:600;">(800) 216-1005</a></p>
     </div>
   </div>
+</div>
 
 </div>
 

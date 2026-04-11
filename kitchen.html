@@ -45,6 +45,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .nav-phone:hover{color:var(--green)}
 .btn-nav{background:var(--green);color:white;padding:9px 20px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;white-space:nowrap}
 .btn-nav:hover{background:var(--green-dk)}
+.mobile-menu{display:none;flex-direction:column;background:var(--white);border-bottom:1px solid var(--border);padding:12px 24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:10px 0;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:540px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:72px}

@@ -783,8 +783,20 @@ Built By Experts</h1>
   </a>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-async function submitForm(e
-
+async function submitForm(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(e.target) });
+    var json = await res.json();
+    if (json.success) {
+      document.getElementById('cform').style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+    } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
+  } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
+}
+</script>
 <!-- Accessibility Widget -->
 <style>
 #a11y-btn{position:fixed;bottom:18px;left:18px;z-index:9990;width:28px;height:28px;border-radius:50%;background:rgba(80,80,80,0.35);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background .2s;}
@@ -860,3 +872,5 @@ async function submitForm(e
   };
 })();
 </script>
+</body>
+</html>

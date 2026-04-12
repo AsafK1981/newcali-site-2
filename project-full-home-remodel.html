@@ -625,7 +625,14 @@ async function submitForm(e) {
 </script>
 <script>
 function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
-
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', function(e) { if(e.key==='Escape') closeLightbox(); });
+</script>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Project photo">
+</div>
 <!-- Accessibility Widget -->
 <style>
 #a11y-btn{position:fixed;bottom:18px;left:18px;z-index:9990;width:28px;height:28px;border-radius:50%;background:rgba(80,80,80,0.35);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background .2s;}
@@ -701,3 +708,5 @@ function openLightbox(src) { document.getElementById('lightbox-img').src=src; do
   };
 })();
 </script>
+</body>
+</html>

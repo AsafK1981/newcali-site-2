@@ -290,27 +290,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:stretch}
 .pricing-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-radius:8px;padding:36px 30px;position:relative;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s}
 .pricing-card:hover{box-shadow:0 22px 44px rgba(44,95,51,.22);transform:translateY(-5px)}
-.pricing-card-featured{background:var(--green-dk);color:white;border:1px solid var(--green-dk);transform:translateY(-8px);box-shadow:0 12px 30px rgba(44,95,51,.25);z-index:2}
-.pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.38)}
-.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#ffd700;color:#222;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15);white-space:nowrap}
+.pricing-card-featured{background:var(--green-pale);border:2px solid var(--green);transform:translateY(-8px);box-shadow:0 14px 32px rgba(44,95,51,.22);z-index:2}
+.pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.32)}
+.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:white;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(44,95,51,.28);white-space:nowrap}
 .pricing-tier{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:12px}
-.pricing-card-featured .pricing-tier{color:#ffd700}
+.pricing-card-featured .pricing-tier{color:var(--green-dk)}
 .pricing-range{font-family:'Merriweather',serif;font-size:30px;font-weight:700;color:var(--green-dk);line-height:1.1;margin-bottom:6px}
-.pricing-card-featured .pricing-range{color:white}
 .pricing-note{font-size:12px;color:var(--muted);margin-bottom:22px;font-weight:400}
-.pricing-card-featured .pricing-note{color:rgba(255,255,255,.7)}
 .pricing-desc{font-size:14px;color:#444;line-height:1.7;margin-bottom:22px;font-weight:400}
-.pricing-card-featured .pricing-desc{color:rgba(255,255,255,.85)}
 .pricing-list{list-style:none;padding:0;margin:0 0 28px;flex:1}
 .pricing-list li{font-size:13.5px;color:#333;padding:9px 0 9px 24px;line-height:1.6;position:relative;border-bottom:1px solid rgba(44,95,51,.08)}
 .pricing-list li:last-child{border-bottom:none}
 .pricing-list li::before{content:'';position:absolute;left:0;top:14px;width:11px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
-.pricing-card-featured .pricing-list li{color:rgba(255,255,255,.88);border-bottom-color:rgba(255,255,255,.12)}
-.pricing-card-featured .pricing-list li::before{border-left-color:#ffd700;border-bottom-color:#ffd700}
+.pricing-card-featured .pricing-list li{border-bottom-color:rgba(44,95,51,.14)}
 .pricing-cta{display:block;text-align:center;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:13px 20px;border-radius:4px;transition:background .2s,transform .2s;margin-top:auto}
 .pricing-cta:hover{background:var(--green-dk);transform:translateY(-1px)}
-.pricing-card-featured .pricing-cta{background:#ffd700;color:#222}
-.pricing-card-featured .pricing-cta:hover{background:#fff;color:var(--green-dk)}
+.pricing-card-featured .pricing-cta{background:var(--green-dk)}
+.pricing-card-featured .pricing-cta:hover{background:var(--green)}
 .pricing-foot{text-align:center;margin-top:44px;font-size:13px;color:var(--muted)}
 .pricing-foot strong{color:var(--green-dk);font-weight:600}
 

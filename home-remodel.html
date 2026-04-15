@@ -402,27 +402,23 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 .svc-pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:stretch}
 .svc-pricing-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-radius:8px;padding:34px 28px;position:relative;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s}
 .svc-pricing-card:hover{box-shadow:0 22px 44px rgba(44,95,51,.22);transform:translateY(-5px)}
-.svc-pricing-card-featured{background:var(--green-dk);color:white;border:1px solid var(--green-dk);transform:translateY(-8px);box-shadow:0 12px 30px rgba(44,95,51,.25);z-index:2}
-.svc-pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.38)}
-.svc-pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#ffd700;color:#222;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15);white-space:nowrap}
+.svc-pricing-card-featured{background:var(--green-pale);border:2px solid var(--green);transform:translateY(-8px);box-shadow:0 14px 32px rgba(44,95,51,.22);z-index:2}
+.svc-pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.32)}
+.svc-pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:white;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(44,95,51,.28);white-space:nowrap}
 .svc-pricing-tier{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:12px}
-.svc-pricing-card-featured .svc-pricing-tier{color:#ffd700}
+.svc-pricing-card-featured .svc-pricing-tier{color:var(--green-dk)}
 .svc-pricing-range{font-family:'Merriweather',serif;font-size:28px;font-weight:700;color:var(--green-dk);line-height:1.1;margin-bottom:6px}
-.svc-pricing-card-featured .svc-pricing-range{color:white}
 .svc-pricing-note{font-size:12px;color:var(--muted);margin-bottom:20px;font-weight:400}
-.svc-pricing-card-featured .svc-pricing-note{color:rgba(255,255,255,.7)}
 .svc-pricing-desc{font-size:13.5px;color:#444;line-height:1.7;margin-bottom:20px;font-weight:400}
-.svc-pricing-card-featured .svc-pricing-desc{color:rgba(255,255,255,.85)}
 .svc-pricing-list{list-style:none;padding:0;margin:0 0 26px;flex:1}
 .svc-pricing-list li{font-size:13px;color:#333;padding:8px 0 8px 22px;line-height:1.6;position:relative;border-bottom:1px solid rgba(44,95,51,.08)}
 .svc-pricing-list li:last-child{border-bottom:none}
 .svc-pricing-list li::before{content:'';position:absolute;left:0;top:13px;width:11px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
-.svc-pricing-card-featured .svc-pricing-list li{color:rgba(255,255,255,.88);border-bottom-color:rgba(255,255,255,.12)}
-.svc-pricing-card-featured .svc-pricing-list li::before{border-left-color:#ffd700;border-bottom-color:#ffd700}
+.svc-pricing-card-featured .svc-pricing-list li{border-bottom-color:rgba(44,95,51,.14)}
 .svc-pricing-cta{display:block;text-align:center;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px;border-radius:4px;transition:background .2s,transform .2s;margin-top:auto}
 .svc-pricing-cta:hover{background:var(--green-dk);transform:translateY(-1px)}
-.svc-pricing-card-featured .svc-pricing-cta{background:#ffd700;color:#222}
-.svc-pricing-card-featured .svc-pricing-cta:hover{background:#fff;color:var(--green-dk)}
+.svc-pricing-card-featured .svc-pricing-cta{background:var(--green-dk)}
+.svc-pricing-card-featured .svc-pricing-cta:hover{background:var(--green)}
 .svc-pricing-foot{text-align:center;margin-top:40px;font-size:13px;color:var(--muted)}
 .svc-pricing-foot strong{color:var(--green-dk);font-weight:600}
 @media(max-width:768px){

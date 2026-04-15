@@ -136,6 +136,30 @@
         "@type": "Answer",
         "text": "New Cali Construction serves Culver City, Los Angeles, Playa Vista, Mar Vista, West LA, Beverly Hills, Marina Del Rey, Inglewood, Malibu, Bel Air, Hawthorne, El Segundo, Westchester, Pacific Palisades, and Mid City."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my contractor disappears after I pay the deposit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New Cali Construction uses weekly photo updates and milestone-based payments to keep both sides accountable. Clients are only invoiced as work is delivered, with clear proof-of-progress at every stage - so there is no risk of a contractor walking off with a deposit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does New Cali Construction prevent surprise charges and price increases?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project starts with a detailed, written, line-item scope of work signed by both parties before work begins. The price is locked in writing. Any scope change requires the client's signed approval, and if we go over on a locked item, it is on us - not the client."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the New Cali Construction crew licensed, insured, and background-checked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. New Cali Construction holds California Contractor License #1008892, is fully bonded and insured, and all crew members are background-checked. Most of our team has been with the company for years and is trained to treat every client home with the same respect as their own."
+      }
     }
   ]
 }
@@ -278,6 +302,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .guarantee-footer{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:48px}
 .guarantee-footer-line{display:block;height:1px;flex:1;max-width:90px;background:rgba(44,95,51,.25)}
 .guarantee-footer-txt{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--green-dk);letter-spacing:.15em;text-transform:uppercase;font-weight:600}
+
+/* TRUST BLOCK */
+.trust-block{background:var(--white);padding:90px 60px;position:relative}
+.trust-block::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(44,95,51,.05) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.trust-block-in{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.trust-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-radius:8px;padding:38px 32px;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s,border-color .3s;position:relative;display:flex;flex-direction:column;gap:18px}
+.trust-card:hover{box-shadow:0 22px 44px rgba(44,95,51,.22);transform:translateY(-6px);border-color:rgba(44,95,51,.3)}
+.trust-icon-wrap{width:56px;height:56px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(44,95,51,.15)}
+.trust-fear{font-family:'Merriweather',serif;font-size:19px;font-weight:400;font-style:italic;color:var(--text);line-height:1.45}
+.trust-fear::before{content:'"';color:var(--green);font-size:26px;font-weight:700;margin-right:2px}
+.trust-fear::after{content:'"';color:var(--green);font-size:26px;font-weight:700;margin-left:2px}
+.trust-divider{width:44px;height:2px;background:var(--green);margin:2px 0}
+.trust-answer-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--green-dk);font-weight:700;margin-bottom:-8px}
+.trust-answer{font-size:15px;color:#2a2a2a;line-height:1.7;font-weight:400}
+.trust-answer strong{color:var(--green-dk);font-weight:700}
 
 /* PRICING */
 .pricing-section{background:var(--off);padding:90px 60px;position:relative}
@@ -434,6 +474,10 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .pricing-card-featured{transform:translateY(0)}
   .pricing-card-featured:hover{transform:translateY(-5px)}
   .pricing-range{font-size:26px}
+  .trust-block{padding:56px 16px}
+  .trust-grid{grid-template-columns:1fr;gap:16px}
+  .trust-card{padding:28px 24px}
+  .trust-fear{font-size:17px}
   .testi-section{padding:48px 16px}
   .testi-grid{grid-template-columns:1fr;gap:16px}
   .testi-desc{font-size:13px}
@@ -1732,6 +1776,46 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
       <div class="svc-card">
         <a href="home-remodel.html"><img referrerpolicy="no-referrer" src="https://static.wixstatic.com/media/fff5b9_88a06fc5511e4f54b89062ff5136b3d1~mv2.jpg" alt="Complete Home Remodel" style="display:block;"></a>
         <div class="svc-body"><h3>Complete Home Remodel</h3><p>Achieve your dream home with our complete home remodel and addition services, offering comprehensive solutions for every space.</p><a href="home-remodel.html" class="svc-lnk">Read More →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BLOCK -->
+<section class="trust-block" id="why-us">
+  <div class="trust-block-in">
+    <div class="hdr-c">
+      <p class="eyebrow">Why Homeowners Choose Us</p>
+      <h2 class="sec-title">Built to Answer Your <em>Biggest Fears</em></h2>
+      <p class="sec-sub">Most homeowners who call us have been burned before. Here's how we fix the three things that scared you most.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M4 10h24a4 4 0 014 4v10a4 4 0 01-4 4H14l-8 6v-6a4 4 0 01-4-4V14a4 4 0 014-4h2" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 17l4 4 8-8" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="trust-fear">Will they disappear after I pay?</p>
+        <div class="trust-divider"></div>
+        <p class="trust-answer-label">Our Answer</p>
+        <p class="trust-answer"><strong>Weekly photo updates and milestone-based payments</strong> keep us both accountable through every phase. You'll always know exactly what's happening, and we only get paid as we deliver.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M8 4h17l9 9v23H8V4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M25 4v9h9" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 22h12M14 28h8" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/><path d="M18 17h6" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <p class="trust-fear">Will the price blow up on me?</p>
+        <div class="trust-divider"></div>
+        <p class="trust-answer-label">Our Answer</p>
+        <p class="trust-answer"><strong>A written, line-item scope of work with a locked price</strong> before we touch anything. No surprise invoices, no scope creep without your signed approval. If we go over, that's on us - not you.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 4L6 10v11c0 8 6 14 14 16 8-2 14-8 14-16V10L20 4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><circle cx="20" cy="18" r="3.5" stroke="#2c5f33" stroke-width="1.8"/><path d="M13 28c.8-3 3.5-5 7-5s6.2 2 7 5" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <p class="trust-fear">Can I trust this crew in my home?</p>
+        <div class="trust-divider"></div>
+        <p class="trust-answer-label">Our Answer</p>
+        <p class="trust-answer"><strong>Licensed, bonded, insured, and background-checked.</strong> California Contractor License #1008892. Our crew has been with us for years, and they treat your home the way they'd treat their own.</p>
       </div>
     </div>
   </div>

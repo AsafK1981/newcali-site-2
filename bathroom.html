@@ -531,6 +531,50 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .svc-guarantee-body{padding-right:0}
 }
 
+/* PRICING */
+.svc-pricing{background:var(--off);padding:80px 60px;position:relative}
+.svc-pricing-inner{max-width:1180px;margin:0 auto}
+.svc-pricing-hdr{text-align:center;max-width:640px;margin:0 auto 52px}
+.svc-pricing-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:10px}
+.svc-pricing-title{font-family:'Merriweather',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--text);line-height:1.25;margin-bottom:14px}
+.svc-pricing-title em{font-style:italic;color:var(--green);font-weight:400}
+.svc-pricing-sub{font-size:15px;color:var(--muted);line-height:1.75;font-weight:300}
+.svc-pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:stretch}
+.svc-pricing-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-radius:8px;padding:34px 28px;position:relative;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s}
+.svc-pricing-card:hover{box-shadow:0 22px 44px rgba(44,95,51,.22);transform:translateY(-5px)}
+.svc-pricing-card-featured{background:var(--green-dk);color:white;border:1px solid var(--green-dk);transform:translateY(-8px);box-shadow:0 12px 30px rgba(44,95,51,.25);z-index:2}
+.svc-pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.38)}
+.svc-pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#ffd700;color:#222;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15);white-space:nowrap}
+.svc-pricing-tier{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:12px}
+.svc-pricing-card-featured .svc-pricing-tier{color:#ffd700}
+.svc-pricing-range{font-family:'Merriweather',serif;font-size:28px;font-weight:700;color:var(--green-dk);line-height:1.1;margin-bottom:6px}
+.svc-pricing-card-featured .svc-pricing-range{color:white}
+.svc-pricing-note{font-size:12px;color:var(--muted);margin-bottom:20px;font-weight:400}
+.svc-pricing-card-featured .svc-pricing-note{color:rgba(255,255,255,.7)}
+.svc-pricing-desc{font-size:13.5px;color:#444;line-height:1.7;margin-bottom:20px;font-weight:400}
+.svc-pricing-card-featured .svc-pricing-desc{color:rgba(255,255,255,.85)}
+.svc-pricing-list{list-style:none;padding:0;margin:0 0 26px;flex:1}
+.svc-pricing-list li{font-size:13px;color:#333;padding:8px 0 8px 22px;line-height:1.6;position:relative;border-bottom:1px solid rgba(44,95,51,.08)}
+.svc-pricing-list li:last-child{border-bottom:none}
+.svc-pricing-list li::before{content:'';position:absolute;left:0;top:13px;width:11px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.svc-pricing-card-featured .svc-pricing-list li{color:rgba(255,255,255,.88);border-bottom-color:rgba(255,255,255,.12)}
+.svc-pricing-card-featured .svc-pricing-list li::before{border-left-color:#ffd700;border-bottom-color:#ffd700}
+.svc-pricing-cta{display:block;text-align:center;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:12px 20px;border-radius:4px;transition:background .2s,transform .2s;margin-top:auto}
+.svc-pricing-cta:hover{background:var(--green-dk);transform:translateY(-1px)}
+.svc-pricing-card-featured .svc-pricing-cta{background:#ffd700;color:#222}
+.svc-pricing-card-featured .svc-pricing-cta:hover{background:#fff;color:var(--green-dk)}
+.svc-pricing-foot{text-align:center;margin-top:40px;font-size:13px;color:var(--muted)}
+.svc-pricing-foot strong{color:var(--green-dk);font-weight:600}
+@media(max-width:768px){
+  .svc-pricing{padding:52px 16px}
+  .svc-pricing-hdr{margin-bottom:36px}
+  .svc-pricing-grid{grid-template-columns:1fr;gap:28px}
+  .svc-pricing-card{padding:26px 22px}
+  .svc-pricing-card-featured{transform:translateY(0)}
+  .svc-pricing-card-featured:hover{transform:translateY(-5px)}
+  .svc-pricing-range{font-size:24px}
+}
+
 
 /* FAQ */
 .svc-faq { margin-bottom: 70px; }
@@ -730,6 +774,84 @@ Built By Experts</h1>
 <div class="faq-item"><h3 class="faq-q">Does New Cali Construction do waterproofing?</h3><p class="faq-a">Absolutely. Every bathroom we build starts with a professional waterproofing system to ensure your renovation lasts for decades.</p></div>
     </div>
   </div>
+
+  <!-- Pricing -->
+  <section class="svc-pricing" id="pricing">
+    <div class="svc-pricing-inner">
+      <div class="svc-pricing-hdr">
+        <p class="svc-pricing-eyebrow">Transparent Pricing</p>
+        <h2 class="svc-pricing-title">Investment <em>Ranges</em></h2>
+        <p class="svc-pricing-sub">Every project gets a detailed, written quote. These ranges help you plan - the exact number depends on your scope, materials, and finishes.</p>
+      </div>
+      <div class="svc-pricing-grid">
+        <div class="svc-pricing-card">
+          <p class="svc-pricing-tier">Entry</p>
+          <p class="svc-pricing-range">$15K - $40K</p>
+          <p class="svc-pricing-note">Starting investment range</p>
+          <p class="svc-pricing-desc">Refreshes and targeted upgrades that transform a single space without going to the studs.</p>
+          <ul class="svc-pricing-list">
+            <li>Bathroom refreshes</li>
+            <li>Kitchen cabinet &amp; countertop upgrades</li>
+            <li>Flooring replacement</li>
+            <li>Paint, finish &amp; fixture work</li>
+            <li>Typical timeline: 2-4 weeks</li>
+          </ul>
+          <a href="#contact" class="svc-pricing-cta">Get a Free Estimate</a>
+        </div>
+        <div class="svc-pricing-card svc-pricing-card-featured">
+          <span class="svc-pricing-badge">Most Popular</span>
+          <p class="svc-pricing-tier">Signature</p>
+          <p class="svc-pricing-range">$40K - $120K</p>
+          <p class="svc-pricing-note">Most common project range</p>
+          <p class="svc-pricing-desc">Full remodels of a high-impact space, with layout changes, structural updates, and premium finishes.</p>
+          <ul class="svc-pricing-list">
+            <li>Full kitchen remodels</li>
+            <li>Master bath &amp; suite renovations</li>
+            <li>Room additions &amp; conversions</li>
+            <li>Structural &amp; layout changes</li>
+            <li>Typical timeline: 4-10 weeks</li>
+          </ul>
+          <a href="#contact" class="svc-pricing-cta">Get a Free Estimate</a>
+        </div>
+        <div class="svc-pricing-card">
+          <p class="svc-pricing-tier">Premium</p>
+          <p class="svc-pricing-range">$120K - $500K+</p>
+          <p class="svc-pricing-note">Full-scale transformation</p>
+          <p class="svc-pricing-desc">Complete home transformations, ADUs, and multi-room renovations built as design-build projects.</p>
+          <ul class="svc-pricing-list">
+            <li>Full home remodels</li>
+            <li>ADU &amp; garage conversions</li>
+            <li>Multi-room renovations</li>
+            <li>Design-build from concept to completion</li>
+            <li>Typical timeline: 3-6 months</li>
+          </ul>
+          <a href="#contact" class="svc-pricing-cta">Get a Free Estimate</a>
+        </div>
+      </div>
+      <p class="svc-pricing-foot"><strong>Free estimates always.</strong> Every quote is line-item and locked in writing before work begins.</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Remodeling & Construction Services",
+    "serviceType": "Home Remodeling",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "New Cali Construction Inc.",
+      "telephone": "+18002161005",
+      "email": "Info@NewCaliConstruction.com",
+      "areaServed": "Culver City, Los Angeles, CA"
+    },
+    "offers": [
+      {"@type": "Offer", "name": "Entry Projects", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "15000", "maxPrice": "40000", "priceCurrency": "USD"}, "description": "Bathroom refreshes, kitchen cabinet and countertop upgrades, flooring replacement, paint and finish work. Typical timeline 2-4 weeks."},
+      {"@type": "Offer", "name": "Signature Projects", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "40000", "maxPrice": "120000", "priceCurrency": "USD"}, "description": "Full kitchen remodels, master bath and suite renovations, room additions and conversions. Typical timeline 4-10 weeks."},
+      {"@type": "Offer", "name": "Premium Projects", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "120000", "maxPrice": "500000", "priceCurrency": "USD"}, "description": "Full home remodels, ADU and garage conversions, multi-room design-build renovations. Typical timeline 3-6 months."}
+    ]
+  }
+  </script>
 
   <!-- Guarantee -->
   <section class="svc-guarantee">

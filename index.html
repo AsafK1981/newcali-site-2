@@ -279,6 +279,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .guarantee-footer-line{display:block;height:1px;flex:1;max-width:90px;background:rgba(44,95,51,.25)}
 .guarantee-footer-txt{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--green-dk);letter-spacing:.15em;text-transform:uppercase;font-weight:600}
 
+/* PRICING */
+.pricing-section{background:var(--off);padding:90px 60px;position:relative}
+.pricing-inner{max-width:1180px;margin:0 auto;position:relative}
+.pricing-hdr{text-align:center;max-width:640px;margin:0 auto 56px}
+.pricing-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:10px}
+.pricing-title{font-family:'Merriweather',serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--text);line-height:1.25;margin-bottom:14px}
+.pricing-title em{font-style:italic;color:var(--green);font-weight:400}
+.pricing-sub{font-size:15px;color:var(--muted);line-height:1.75;font-weight:300}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:stretch}
+.pricing-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-radius:8px;padding:36px 30px;position:relative;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s}
+.pricing-card:hover{box-shadow:0 22px 44px rgba(44,95,51,.22);transform:translateY(-5px)}
+.pricing-card-featured{background:var(--green-dk);color:white;border:1px solid var(--green-dk);transform:translateY(-8px);box-shadow:0 12px 30px rgba(44,95,51,.25);z-index:2}
+.pricing-card-featured:hover{transform:translateY(-13px);box-shadow:0 28px 54px rgba(44,95,51,.38)}
+.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#ffd700;color:#222;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:7px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15);white-space:nowrap}
+.pricing-tier{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:12px}
+.pricing-card-featured .pricing-tier{color:#ffd700}
+.pricing-range{font-family:'Merriweather',serif;font-size:30px;font-weight:700;color:var(--green-dk);line-height:1.1;margin-bottom:6px}
+.pricing-card-featured .pricing-range{color:white}
+.pricing-note{font-size:12px;color:var(--muted);margin-bottom:22px;font-weight:400}
+.pricing-card-featured .pricing-note{color:rgba(255,255,255,.7)}
+.pricing-desc{font-size:14px;color:#444;line-height:1.7;margin-bottom:22px;font-weight:400}
+.pricing-card-featured .pricing-desc{color:rgba(255,255,255,.85)}
+.pricing-list{list-style:none;padding:0;margin:0 0 28px;flex:1}
+.pricing-list li{font-size:13.5px;color:#333;padding:9px 0 9px 24px;line-height:1.6;position:relative;border-bottom:1px solid rgba(44,95,51,.08)}
+.pricing-list li:last-child{border-bottom:none}
+.pricing-list li::before{content:'';position:absolute;left:0;top:14px;width:11px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.pricing-card-featured .pricing-list li{color:rgba(255,255,255,.88);border-bottom-color:rgba(255,255,255,.12)}
+.pricing-card-featured .pricing-list li::before{border-left-color:#ffd700;border-bottom-color:#ffd700}
+.pricing-cta{display:block;text-align:center;background:var(--green);color:white;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:13px 20px;border-radius:4px;transition:background .2s,transform .2s;margin-top:auto}
+.pricing-cta:hover{background:var(--green-dk);transform:translateY(-1px)}
+.pricing-card-featured .pricing-cta{background:#ffd700;color:#222}
+.pricing-card-featured .pricing-cta:hover{background:#fff;color:var(--green-dk)}
+.pricing-foot{text-align:center;margin-top:44px;font-size:13px;color:var(--muted)}
+.pricing-foot strong{color:var(--green-dk);font-weight:600}
+
 /* TESTIMONIALS */
 .testi-section{background:#ffffff;padding:100px 0;position:relative;overflow:hidden}
 .testi-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 60%,rgba(58,125,68,.07) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(78,154,90,.06) 0%,transparent 50%);pointer-events:none}
@@ -396,6 +431,13 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .guarantee-card{padding:24px 22px;gap:16px}
   .guarantee-icon-wrap{width:46px;height:46px}
   .guarantee-card-body{padding-right:0}
+  .pricing-section{padding:56px 16px}
+  .pricing-hdr{margin-bottom:40px}
+  .pricing-grid{grid-template-columns:1fr;gap:32px}
+  .pricing-card{padding:28px 24px}
+  .pricing-card-featured{transform:translateY(0)}
+  .pricing-card-featured:hover{transform:translateY(-5px)}
+  .pricing-range{font-size:26px}
   .testi-section{padding:48px 16px}
   .testi-grid{grid-template-columns:1fr;gap:16px}
   .testi-desc{font-size:13px}
@@ -1698,6 +1740,102 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
     </div>
   </div>
 </section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-hdr">
+      <p class="pricing-eyebrow">Transparent Pricing</p>
+      <h2 class="pricing-title">Investment <em>Ranges</em></h2>
+      <p class="pricing-sub">Every project gets a detailed, written quote. These ranges help you plan - the exact number depends on your scope, materials, and finishes.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Entry</p>
+        <p class="pricing-range">$15K - $40K</p>
+        <p class="pricing-note">Starting investment range</p>
+        <p class="pricing-desc">Refreshes and targeted upgrades that transform a single space without going to the studs.</p>
+        <ul class="pricing-list">
+          <li>Bathroom refreshes</li>
+          <li>Kitchen cabinet &amp; countertop upgrades</li>
+          <li>Flooring replacement</li>
+          <li>Paint, finish &amp; fixture work</li>
+          <li>Typical timeline: 2-4 weeks</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
+      <div class="pricing-card pricing-card-featured">
+        <span class="pricing-badge">Most Popular</span>
+        <p class="pricing-tier">Signature</p>
+        <p class="pricing-range">$40K - $120K</p>
+        <p class="pricing-note">Most common project range</p>
+        <p class="pricing-desc">Full remodels of a high-impact space, with layout changes, structural updates, and premium finishes.</p>
+        <ul class="pricing-list">
+          <li>Full kitchen remodels</li>
+          <li>Master bath &amp; suite renovations</li>
+          <li>Room additions &amp; conversions</li>
+          <li>Structural &amp; layout changes</li>
+          <li>Typical timeline: 4-10 weeks</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Premium</p>
+        <p class="pricing-range">$120K - $500K+</p>
+        <p class="pricing-note">Full-scale transformation</p>
+        <p class="pricing-desc">Complete home transformations, ADUs, and multi-room renovations built as design-build projects.</p>
+        <ul class="pricing-list">
+          <li>Full home remodels</li>
+          <li>ADU &amp; garage conversions</li>
+          <li>Multi-room renovations</li>
+          <li>Design-build from concept to completion</li>
+          <li>Typical timeline: 3-6 months</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
+    </div>
+    <p class="pricing-foot"><strong>Free estimates always.</strong> Every quote is line-item and locked in writing before work begins.</p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Home Remodeling & Construction Services",
+  "serviceType": "Home Remodeling",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "New Cali Construction Inc.",
+    "telephone": "+18002161005",
+    "email": "Info@NewCaliConstruction.com",
+    "areaServed": "Culver City, Los Angeles, CA"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Entry Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "15000", "maxPrice": "40000", "priceCurrency": "USD"},
+      "description": "Bathroom refreshes, kitchen cabinet and countertop upgrades, flooring replacement, paint and finish work. Typical timeline 2-4 weeks."
+    },
+    {
+      "@type": "Offer",
+      "name": "Signature Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "40000", "maxPrice": "120000", "priceCurrency": "USD"},
+      "description": "Full kitchen remodels, master bath and suite renovations, room additions and conversions, structural and layout changes. Typical timeline 4-10 weeks."
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "120000", "maxPrice": "500000", "priceCurrency": "USD"},
+      "description": "Full home remodels, ADU and garage conversions, multi-room renovations, complete design-build projects. Typical timeline 3-6 months."
+    }
+  ]
+}
+</script>
 
 <!-- GUARANTEE -->
 <section class="guarantee-section" id="guarantee">

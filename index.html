@@ -83,6 +83,102 @@
 }
 </script>
 
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.newcaliconstruction.com/"
+    }
+  ]
+}
+</script>
+
+<!-- Schema: Person (Founder) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Asaf K.",
+  "jobTitle": "Owner & General Contractor",
+  "worksFor": {
+    "@type": "GeneralContractor",
+    "name": "New Cali Construction Inc.",
+    "url": "https://www.newcaliconstruction.com/"
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "license",
+    "name": "California Contractor License",
+    "identifier": "1008892"
+  },
+  "description": "Founder and owner of New Cali Construction Inc., a fully licensed, bonded, and insured remodeling contractor serving Culver City and the Westside of Los Angeles since 2017."
+}
+</script>
+
+<!-- Schema: ContactPoint -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "New Cali Construction Inc.",
+  "url": "https://www.newcaliconstruction.com/",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+18002161005",
+      "contactType": "customer service",
+      "areaServed": "US-CA",
+      "availableLanguage": ["English", "Spanish", "Hebrew"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "Info@NewCaliConstruction.com",
+      "contactType": "customer service",
+      "areaServed": "US-CA",
+      "availableLanguage": ["English", "Spanish", "Hebrew"]
+    }
+  ]
+}
+</script>
+
+<!-- Schema: Featured Reviews -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.newcaliconstruction.com/#business",
+  "name": "New Cali Construction Inc.",
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Tim Y."},
+      "reviewBody": "We hired New Cali Construction for our home renovation and were very happy with the end product. Asaf made the process seamless from start to finish. The team was respectful, responsive, and completed the project within the estimated timeframe. We would absolutely work with them again!",
+      "publisher": {"@type": "Organization", "name": "Yelp"}
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Kev E."},
+      "reviewBody": "New Cali Construction did a fantastic job on our Culver City remodel. Clear communication, on-time delivery, and quality craftsmanship throughout.",
+      "publisher": {"@type": "Organization", "name": "Yelp"}
+    }
+  ]
+}
+</script>
+
 <!-- Schema: FAQ -->
 <script type="application/ld+json">
 {

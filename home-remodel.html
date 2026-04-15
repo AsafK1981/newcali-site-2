@@ -430,6 +430,14 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
   .svc-pricing-card-featured:hover{transform:translateY(-5px)}
   .svc-pricing-range{font-size:24px}
 }
+/* FAQ */
+.svc-faq { margin-bottom: 70px; padding: 0 60px; }
+.faq-list { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { font-family:'Merriweather',serif; font-size:17px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.faq-a { font-size:14.5px; color:#2a2a2a; line-height:1.8; font-weight:400; }
+@media(max-width:768px){ .svc-faq{padding:0 16px} .faq-q{font-size:16px} }
 </style>
 <script type="application/ld+json">
 {
@@ -506,7 +514,23 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
       "name": "How long does a whole-home remodel take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A complete home renovation typically takes 3–12 months depending on scope. New Cali Construction provides a clear project timeline and daily updates throughout."
+        "text": "A complete home renovation typically takes 3-6 months depending on scope. Start-to-studs rebuilds average 5 months, while targeted multi-room remodels can finish in 3-4 months. New Cali Construction shares the full schedule before Day 1 and delivers weekly photo updates throughout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to move out during a full home remodel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most whole-home remodels require the home to be vacated because of demolition dust, loss of utilities, and active construction. For phased renovations where only part of the home is being worked on, staying on-site is sometimes possible. New Cali Construction helps every client plan for temporary housing before the project starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle design, permits, and construction for home remodels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. New Cali Construction is a full design-build contractor and handles architectural design, structural engineering, city permits and inspections, and all construction trades (electrical, plumbing, HVAC, framing, finishes) under one roof. Homeowners do not need to hire separate architects or coordinate subcontractors."
       }
     }
   ]
@@ -615,6 +639,20 @@ document.addEventListener('click', function(e){
 <img src="https://static.wixstatic.com/media/fff5b9_3c4539c8e6714d97a5b62b535ae22fea~mv2.jpg" alt="Full Scale Culver City Home Transformation - Framing" onclick="openLightbox(this.src)">
 <img src="https://static.wixstatic.com/media/fff5b9_ec602bb81f7e4d1996f3a30880114315~mv2.jpg" alt="Full Scale Culver City Home Transformation - Demolition" onclick="openLightbox(this.src)">
     </div>
+  <!-- FAQ -->
+  <div class="svc-faq">
+    <div style="text-align:center;margin-bottom:40px;">
+      <p class="eyebrow">Common Questions</p>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.25;">Frequently Asked <em style="color:var(--green);font-style:italic;font-weight:400;">Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3 class="faq-q">How much does a whole home remodel cost in Los Angeles?</h3><p class="faq-a">Whole home renovations in Culver City and across Los Angeles typically range from $80,000 to $400,000+ depending on scope, square footage, and finish level. New Cali Construction provides free in-home consultations and a detailed, line-item written estimate with a locked price before any work begins.</p></div>
+      <div class="faq-item"><h3 class="faq-q">How long does a full home remodel take?</h3><p class="faq-a">A complete home renovation typically takes 3-6 months depending on scope. Start-to-studs rebuilds average 5 months, while targeted multi-room remodels can finish in 3-4 months. We share the full schedule before Day 1 and deliver weekly photo updates throughout.</p></div>
+      <div class="faq-item"><h3 class="faq-q">Do I need to move out during a full home remodel?</h3><p class="faq-a">Most whole-home remodels require the home to be vacated because of demolition dust, loss of utilities, and active construction. For phased renovations where only part of the home is being worked on, staying on-site is sometimes possible. We help every client plan for temporary housing before the project starts so there are no surprises.</p></div>
+      <div class="faq-item"><h3 class="faq-q">Do you handle design, permits, and construction, or do I need to hire others?</h3><p class="faq-a">New Cali Construction is a full design-build contractor. We handle architectural design, structural engineering, city permits and inspections, and all construction trades - electrical, plumbing, HVAC, framing, finishes - under one roof. No separate architects or subcontractors to coordinate on your end.</p></div>
+    </div>
+  </div>
+
   <!-- Pricing -->
   <section class="svc-pricing" id="pricing">
     <div class="svc-pricing-inner">

@@ -450,6 +450,14 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .svc-pricing-card-featured:hover{transform:translateY(-5px)}
   .svc-pricing-range{font-size:24px}
 }
+/* FAQ */
+.svc-faq { margin-bottom: 70px; padding: 0 60px; }
+.faq-list { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { font-family:'Merriweather',serif; font-size:17px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.faq-a { font-size:14.5px; color:#2a2a2a; line-height:1.8; font-weight:400; }
+@media(max-width:768px){ .svc-faq{padding:0 16px} .faq-q{font-size:16px} }
 
 </style>
 <script type="application/ld+json">
@@ -535,7 +543,15 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
       "name": "Do you handle kitchen remodel permits in Culver City?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. New Cali Construction handles all permitting for kitchen remodels in Culver City and across Los Angeles County."
+        "text": "Yes. New Cali Construction handles all permitting for kitchen remodels across Culver City, West LA, Santa Monica, Beverly Hills, and the entire Westside. California Contractor License #1008892."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep my kitchen usable during the remodel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most layout-preserving kitchen remodels New Cali Construction can phase the work so the homeowner retains limited access to the kitchen. Full gut remodels require the kitchen to be out of commission, and we help plan a temporary kitchen setup and share the full site schedule before Day 1."
       }
     }
   ]
@@ -651,6 +667,20 @@ document.addEventListener('click', function(e){
 <div class="svc-why-card"><h4>Stress-Free Management</h4><p>From 3D design to final city inspection — we handle everything.</p></div>
 <div class="svc-why-card"><h4>Premium Materials</h4><p>We help you select durable, high-quality countertops, backsplashes, and flooring.</p></div>
 <div class="svc-why-card"><h4>Warranty & Support</h4><p>Every project comes with a warranty and our commitment long after the dust settles.</p></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="svc-faq">
+    <div style="text-align:center;margin-bottom:40px;">
+      <p class="eyebrow">Common Questions</p>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.25;">Frequently Asked <em style="color:var(--green);font-style:italic;font-weight:400;">Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3 class="faq-q">How much does a kitchen remodel cost in Culver City?</h3><p class="faq-a">Kitchen remodels in Culver City typically range from $25,000 to $100,000+ depending on scope, materials, and layout changes. New Cali Construction offers free in-home consultations and a written, line-item estimate with a locked price before any work begins.</p></div>
+      <div class="faq-item"><h3 class="faq-q">How long does a kitchen remodel take?</h3><p class="faq-a">A typical kitchen remodel takes 3-6 weeks depending on the scope. Cabinet-and-countertop refreshes can finish in 2-3 weeks, while full gut renovations with layout changes take 4-8 weeks. We provide a clear timeline upfront and keep the project on schedule.</p></div>
+      <div class="faq-item"><h3 class="faq-q">Do you handle permits for kitchen remodels in Culver City?</h3><p class="faq-a">Yes. New Cali Construction handles all permitting for kitchen remodels across Culver City, West LA, Santa Monica, Beverly Hills, and the entire Westside. California Contractor License #1008892.</p></div>
+      <div class="faq-item"><h3 class="faq-q">Can I keep my kitchen usable during the remodel?</h3><p class="faq-a">For most layout-preserving remodels we can phase the work so you keep limited access - but full gut remodels require the kitchen to be out of commission. We help you plan a temporary kitchen setup and share the full site schedule before Day 1 so there are no surprises.</p></div>
     </div>
   </div>
 

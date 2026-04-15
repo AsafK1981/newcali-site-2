@@ -261,12 +261,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .owner-txt p{font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;max-width:640px;font-style:italic}
 
 /* STATS */
-.stats{background:var(--green-dk);padding:56px 60px}
-.stats-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{text-align:center;padding:18px;border-right:1px solid rgba(255,255,255,.12)}
+.stats{background:var(--green-dk);padding:64px 60px;position:relative;overflow:hidden}
+.stats::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.stats-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.stat{text-align:center;padding:22px 18px;border-right:1px solid rgba(255,255,255,.12);border-radius:10px;transition:transform .45s cubic-bezier(.34,1.56,.64,1),background .35s;cursor:default}
 .stat:last-child{border-right:none}
-.stat-n{font-family:'Merriweather',serif;font-size:50px;font-weight:700;color:#ffd700;line-height:1;margin-bottom:8px}
-.stat-l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.stat:hover{transform:translateY(-10px) scale(1.05);background:rgba(255,255,255,.04)}
+.stat-n{font-family:'Merriweather',serif;font-size:50px;font-weight:700;color:#ffd700;line-height:1;margin-bottom:10px;transition:transform .45s cubic-bezier(.34,1.56,.64,1),text-shadow .35s}
+.stat:hover .stat-n{transform:scale(1.08);text-shadow:0 0 24px rgba(255,215,0,.45)}
+.stat-l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78);line-height:1.5;font-weight:500;transition:color .35s}
+.stat:hover .stat-l{color:rgba(255,255,255,.95)}
 
 /* SERVICES */
 .services{background:var(--white);padding:90px 60px}
@@ -470,6 +474,8 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .stats{padding:36px 16px}
   .stats-in{grid-template-columns:1fr 1fr}
   .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:16px}
+  .stat:hover{transform:none;background:transparent}
+  .stat:hover .stat-n{transform:none;text-shadow:none}
   .stat-n{font-size:38px}
   .services{padding:48px 16px}
   .svc-grid{grid-template-columns:1fr 1fr;gap:12px}
@@ -1014,6 +1020,28 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 </div>
 
 
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat">
+      <div class="stat-n">500+</div>
+      <div class="stat-l">Projects Delivered On Time</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">50+</div>
+      <div class="stat-l">Five-Star Yelp Reviews</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">$0</div>
+      <div class="stat-l">Surprise Charges, Ever</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">Day 1</div>
+      <div class="stat-l">Show-Up Guarantee</div>
+    </div>
+  </div>
+</div>
 
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how-it-works">

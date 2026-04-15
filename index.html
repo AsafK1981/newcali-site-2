@@ -259,29 +259,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .svc-lnk:hover{gap:8px}
 
 /* GUARANTEE */
-.guarantee-section{background:#0d1b2a;padding:110px 0;position:relative;overflow:hidden}
-.guarantee-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.guarantee-inner{max-width:1100px;margin:0 auto;padding:0 32px}
-.guarantee-hdr{text-align:center;margin-bottom:72px}
-.guarantee-hdr-rule{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px}
-.guarantee-hdr-rule span{display:block;height:1px;width:48px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.5))}
-.guarantee-hdr-rule span:last-child{background:linear-gradient(270deg,transparent,rgba(255,215,0,.5))}
-.guarantee-eyebrow{font-size:11px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#ffd700}
-.guarantee-title{font-family:'Merriweather',serif;font-size:clamp(30px,4vw,46px);color:#fff;font-weight:700;line-height:1.22;margin-bottom:16px}
-.guarantee-title em{font-style:italic;color:rgba(255,255,255,.45);font-weight:400}
-.guarantee-sub{font-size:16px;color:rgba(255,255,255,.48);max-width:510px;margin:0 auto;line-height:1.75;font-weight:300}
-.guarantee-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05);margin-bottom:0}
-.guarantee-card{background:#0d1b2a;padding:52px 44px;position:relative;overflow:hidden;transition:background .3s}
-.guarantee-card:hover{background:#10223a}
-.guarantee-card-ghost{position:absolute;bottom:-10px;right:16px;font-family:'Merriweather',serif;font-size:120px;font-weight:700;color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none}
-.guarantee-card-accent{position:absolute;top:0;left:0;width:3px;height:0;background:#ffd700;transition:height .45s ease}
-.guarantee-card:hover .guarantee-card-accent{height:100%}
-.guarantee-card-icon{margin-bottom:28px;display:block}
-.guarantee-card h3{font-family:'Merriweather',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.35}
-.guarantee-card p{font-size:14px;color:rgba(255,255,255,.48);line-height:1.85;font-weight:300;max-width:310px}
-.guarantee-footer{display:flex;align-items:center;justify-content:center;gap:20px;padding-top:48px}
-.guarantee-footer-line{display:block;height:1px;flex:1;max-width:120px;background:rgba(255,255,255,.1)}
-.guarantee-footer span{font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.18em;text-transform:uppercase}
+.guarantee-section{background:var(--green-pale);padding:90px 60px;border-top:3px solid var(--green);border-bottom:3px solid var(--green);position:relative;overflow:hidden}
+.guarantee-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(44,95,51,.06) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.guarantee-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.guarantee-hdr{text-align:center;max-width:620px;margin:0 auto 56px}
+.guarantee-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dk);font-weight:600;margin-bottom:10px}
+.guarantee-title{font-family:'Merriweather',serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--text);line-height:1.25;margin-bottom:14px}
+.guarantee-title em{font-style:italic;color:var(--green-dk);font-weight:400}
+.guarantee-sub{font-size:15px;color:var(--muted);line-height:1.75;font-weight:300}
+.guarantee-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.guarantee-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-top:3px solid var(--green-dk);border-radius:6px;padding:32px 30px;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s,border-top-color .3s;position:relative;display:flex;gap:20px;align-items:flex-start}
+.guarantee-card:hover{box-shadow:0 16px 36px rgba(44,95,51,.18);transform:translateY(-3px);border-top-color:#ffd700}
+.guarantee-card-num{position:absolute;top:14px;right:18px;font-family:'Merriweather',serif;font-size:13px;font-weight:700;color:var(--green-dk);opacity:.35;letter-spacing:.08em}
+.guarantee-icon-wrap{width:54px;height:54px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(44,95,51,.15)}
+.guarantee-card-body{flex:1;padding-right:18px}
+.guarantee-card h3{font-family:'Merriweather',serif;font-size:16px;font-weight:700;color:var(--green-dk);margin-bottom:10px;line-height:1.35}
+.guarantee-card p{font-size:13.5px;color:var(--muted);line-height:1.75;font-weight:300}
+.guarantee-footer{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:48px}
+.guarantee-footer-line{display:block;height:1px;flex:1;max-width:90px;background:rgba(44,95,51,.25)}
+.guarantee-footer-txt{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--green-dk);letter-spacing:.15em;text-transform:uppercase;font-weight:600}
 
 /* TESTIMONIALS */
 .testi-section{background:#ffffff;padding:100px 0;position:relative;overflow:hidden}
@@ -394,12 +390,12 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .svc-grid{grid-template-columns:1fr 1fr;gap:12px}
   .svc-body h3{font-size:13px}
   .svc-body p{font-size:12px}
-  .guarantee-section{padding:64px 0}
-  .guarantee-inner{padding:0 16px}
-  .guarantee-hdr{margin-bottom:48px}
-  .guarantee-cards{grid-template-columns:1fr;gap:1px}
-  .guarantee-card{padding:36px 28px}
-  .guarantee-card-ghost{font-size:80px}
+  .guarantee-section{padding:56px 16px}
+  .guarantee-hdr{margin-bottom:40px}
+  .guarantee-cards{grid-template-columns:1fr;gap:14px}
+  .guarantee-card{padding:24px 22px;gap:16px}
+  .guarantee-icon-wrap{width:46px;height:46px}
+  .guarantee-card-body{padding-right:0}
   .testi-section{padding:48px 16px}
   .testi-grid{grid-template-columns:1fr;gap:16px}
   .testi-desc{font-size:13px}
@@ -1707,64 +1703,58 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 <section class="guarantee-section" id="guarantee">
   <div class="guarantee-inner">
     <div class="guarantee-hdr">
-      <div class="guarantee-hdr-rule">
-        <span></span>
-        <p class="guarantee-eyebrow">The New Cali Promise</p>
-        <span></span>
-      </div>
+      <p class="guarantee-eyebrow">The New Cali Promise</p>
       <h2 class="guarantee-title">Our Guarantee <em>to You</em></h2>
       <p class="guarantee-sub">We built this company for homeowners who've been burned before. Every promise below is in writing.</p>
     </div>
     <div class="guarantee-cards">
       <div class="guarantee-card">
-        <div class="guarantee-card-accent"></div>
-        <div class="guarantee-card-ghost">01</div>
-        <svg class="guarantee-card-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="7" width="32" height="29" rx="3" stroke="#ffd700" stroke-width="1.8"/>
-          <path d="M4 15h32" stroke="#ffd700" stroke-width="1.8"/>
-          <path d="M13 4v6M27 4v6" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M13 25l5 5 9-9" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>We Show Up Day 1</h3>
-        <p>If we don't show up on the agreed start date, you owe us nothing. No deposit held, no questions asked.</p>
+        <span class="guarantee-card-num">01</span>
+        <div class="guarantee-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><rect x="4" y="7" width="32" height="29" rx="3" stroke="#2c5f33" stroke-width="1.8"/><path d="M4 15h32" stroke="#2c5f33" stroke-width="1.8"/><path d="M13 4v6M27 4v6" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/><path d="M13 25l5 5 9-9" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="guarantee-card-body">
+          <h3>We Show Up Day 1</h3>
+          <p>If we don't show up on the agreed start date, you owe us nothing. No deposit held, no questions asked.</p>
+        </div>
       </div>
       <div class="guarantee-card">
-        <div class="guarantee-card-accent"></div>
-        <div class="guarantee-card-ghost">02</div>
-        <svg class="guarantee-card-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 4h17l9 9v23H8V4z" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M25 4v9h9" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M13 19h14M13 25h10M13 31h7" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <h3>Written Scope Before We Touch Anything</h3>
-        <p>Every project starts with a detailed, line-item scope of work - signed by both parties before a single nail is driven.</p>
+        <span class="guarantee-card-num">02</span>
+        <div class="guarantee-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><path d="M8 4h17l9 9v23H8V4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M25 4v9h9" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 19h14M13 25h10M13 31h7" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="guarantee-card-body">
+          <h3>Written Scope Before We Touch Anything</h3>
+          <p>Every project starts with a detailed, line-item scope of work - signed by both parties before a single nail is driven.</p>
+        </div>
       </div>
       <div class="guarantee-card">
-        <div class="guarantee-card-accent"></div>
-        <div class="guarantee-card-ghost">03</div>
-        <svg class="guarantee-card-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="11" width="34" height="24" rx="3" stroke="#ffd700" stroke-width="1.8"/>
-          <circle cx="20" cy="23" r="6.5" stroke="#ffd700" stroke-width="1.8"/>
-          <path d="M14 11l3-5h6l3 5" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/>
-          <circle cx="30" cy="17" r="2" fill="#ffd700"/>
-        </svg>
-        <h3>Weekly Photo Updates</h3>
-        <p>You'll never be left wondering what's happening. We send progress photos every week - so you're always in the loop.</p>
+        <span class="guarantee-card-num">03</span>
+        <div class="guarantee-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><rect x="3" y="11" width="34" height="24" rx="3" stroke="#2c5f33" stroke-width="1.8"/><circle cx="20" cy="23" r="6.5" stroke="#2c5f33" stroke-width="1.8"/><path d="M14 11l3-5h6l3 5" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><circle cx="30" cy="17" r="2" fill="#2c5f33"/></svg>
+        </div>
+        <div class="guarantee-card-body">
+          <h3>Weekly Photo Updates</h3>
+          <p>You'll never be left wondering what's happening. We send progress photos every week - so you're always in the loop.</p>
+        </div>
       </div>
       <div class="guarantee-card">
-        <div class="guarantee-card-accent"></div>
-        <div class="guarantee-card-ghost">04</div>
-        <svg class="guarantee-card-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4L6 10v13c0 9 6.3 15 14 16.5C27.7 38 34 32 34 23V10L20 4z" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M13 21l5 5 9-9" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>On-Time, On-Budget - Or We Make It Right</h3>
-        <p>No surprise invoices. No scope creep without your approval. If we go over, that's on us - not you.</p>
+        <span class="guarantee-card-num">04</span>
+        <div class="guarantee-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"><path d="M20 4L6 10v13c0 9 6.3 15 14 16.5C27.7 38 34 32 34 23V10L20 4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 21l5 5 9-9" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="guarantee-card-body">
+          <h3>On-Time, On-Budget - Or We Make It Right</h3>
+          <p>No surprise invoices. No scope creep without your approval. If we go over, that's on us - not you.</p>
+        </div>
       </div>
     </div>
     <div class="guarantee-footer">
       <span class="guarantee-footer-line"></span>
-      <span>Every promise is in writing - no exceptions</span>
+      <span class="guarantee-footer-txt">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2c5f33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Every promise is in writing
+      </span>
       <span class="guarantee-footer-line"></span>
     </div>
   </div>

@@ -493,36 +493,32 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .svc-why-grid { grid-template-columns:1fr; }
 }
 /* GUARANTEE */
-.svc-guarantee{background:#0d1b2a;padding:90px 0;position:relative;overflow:hidden}
-.svc-guarantee::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.svc-guarantee-inner{max-width:1100px;margin:0 auto;padding:0 32px}
-.svc-guarantee-hdr{text-align:center;margin-bottom:64px}
-.svc-guarantee-rule{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px}
-.svc-guarantee-rule span{display:block;height:1px;width:48px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.5))}
-.svc-guarantee-rule span:last-child{background:linear-gradient(270deg,transparent,rgba(255,215,0,.5))}
-.svc-guarantee-eyebrow{font-size:11px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#ffd700}
-.svc-guarantee-title{font-family:'Merriweather',serif;font-size:clamp(26px,3vw,40px);color:#fff;font-weight:700;line-height:1.22;margin-bottom:14px}
-.svc-guarantee-title em{font-style:italic;color:rgba(255,255,255,.45);font-weight:400}
-.svc-guarantee-sub{font-size:15px;color:rgba(255,255,255,.48);max-width:500px;margin:0 auto;line-height:1.75;font-weight:300}
-.svc-guarantee-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05)}
-.svc-guarantee-card{background:#0d1b2a;padding:48px 40px;position:relative;overflow:hidden;transition:background .3s}
-.svc-guarantee-card:hover{background:#10223a}
-.svc-guarantee-ghost{position:absolute;bottom:-10px;right:16px;font-family:'Merriweather',serif;font-size:110px;font-weight:700;color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none}
-.svc-guarantee-accent{position:absolute;top:0;left:0;width:3px;height:0;background:#ffd700;transition:height .45s ease}
-.svc-guarantee-card:hover .svc-guarantee-accent{height:100%}
-.svc-guarantee-icon{margin-bottom:26px;display:block}
-.svc-guarantee-card h3{font-family:'Merriweather',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:11px;line-height:1.35}
-.svc-guarantee-card p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.85;font-weight:300;max-width:310px}
-.svc-guarantee-footer{display:flex;align-items:center;justify-content:center;gap:20px;padding-top:44px}
-.svc-guarantee-footer-line{display:block;height:1px;flex:1;max-width:100px;background:rgba(255,255,255,.1)}
-.svc-guarantee-footer span{font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.18em;text-transform:uppercase}
+.svc-guarantee{background:var(--green-pale);padding:80px 60px;border-top:3px solid var(--green);border-bottom:3px solid var(--green);position:relative;overflow:hidden}
+.svc-guarantee::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(44,95,51,.06) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.svc-guarantee-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.svc-guarantee-hdr{text-align:center;max-width:620px;margin:0 auto 52px}
+.svc-guarantee-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-dk);font-weight:600;margin-bottom:10px}
+.svc-guarantee-title{font-family:'Merriweather',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--text);line-height:1.25;margin-bottom:14px}
+.svc-guarantee-title em{font-style:italic;color:var(--green-dk);font-weight:400}
+.svc-guarantee-sub{font-size:15px;color:var(--muted);line-height:1.75;font-weight:300}
+.svc-guarantee-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.svc-guarantee-card{background:var(--white);border:1px solid rgba(44,95,51,.12);border-top:3px solid var(--green-dk);border-radius:6px;padding:30px 28px;box-shadow:0 2px 12px rgba(44,95,51,.08);transition:box-shadow .3s,transform .3s,border-top-color .3s;position:relative;display:flex;gap:20px;align-items:flex-start}
+.svc-guarantee-card:hover{box-shadow:0 14px 32px rgba(44,95,51,.18);transform:translateY(-3px);border-top-color:#ffd700}
+.svc-guarantee-num{position:absolute;top:14px;right:18px;font-family:'Merriweather',serif;font-size:13px;font-weight:700;color:var(--green-dk);opacity:.35;letter-spacing:.08em}
+.svc-guarantee-icon-wrap{width:50px;height:50px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(44,95,51,.15)}
+.svc-guarantee-body{flex:1;padding-right:18px}
+.svc-guarantee-card h3{font-family:'Merriweather',serif;font-size:15px;font-weight:700;color:var(--green-dk);margin-bottom:9px;line-height:1.35}
+.svc-guarantee-card p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
+.svc-guarantee-footer{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:44px}
+.svc-guarantee-footer-line{display:block;height:1px;flex:1;max-width:90px;background:rgba(44,95,51,.25)}
+.svc-guarantee-footer-txt{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--green-dk);letter-spacing:.15em;text-transform:uppercase;font-weight:600}
 @media(max-width:768px){
-  .svc-guarantee{padding:60px 0}
-  .svc-guarantee-inner{padding:0 16px}
-  .svc-guarantee-hdr{margin-bottom:44px}
-  .svc-guarantee-cards{grid-template-columns:1fr;gap:1px}
-  .svc-guarantee-card{padding:36px 24px}
-  .svc-guarantee-ghost{font-size:75px}
+  .svc-guarantee{padding:52px 16px}
+  .svc-guarantee-hdr{margin-bottom:36px}
+  .svc-guarantee-cards{grid-template-columns:1fr;gap:14px}
+  .svc-guarantee-card{padding:22px 20px;gap:14px}
+  .svc-guarantee-icon-wrap{width:44px;height:44px}
+  .svc-guarantee-body{padding-right:0}
 }
 
 </style>
@@ -775,43 +771,50 @@ a Profitable Asset</h1>
   <section class="svc-guarantee">
     <div class="svc-guarantee-inner">
       <div class="svc-guarantee-hdr">
-        <div class="svc-guarantee-rule"><span></span><p class="svc-guarantee-eyebrow">The New Cali Promise</p><span></span></div>
+        <p class="svc-guarantee-eyebrow">The New Cali Promise</p>
         <h2 class="svc-guarantee-title">Our Guarantee <em>to You</em></h2>
         <p class="svc-guarantee-sub">We built this company for homeowners who've been burned before. Every promise below is in writing.</p>
       </div>
       <div class="svc-guarantee-cards">
         <div class="svc-guarantee-card">
-          <div class="svc-guarantee-accent"></div>
-          <div class="svc-guarantee-ghost">01</div>
-          <svg class="svc-guarantee-icon" width="38" height="38" viewBox="0 0 40 40" fill="none"><rect x="4" y="7" width="32" height="29" rx="3" stroke="#ffd700" stroke-width="1.8"/><path d="M4 15h32" stroke="#ffd700" stroke-width="1.8"/><path d="M13 4v6M27 4v6" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round"/><path d="M13 25l5 5 9-9" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>We Show Up Day 1</h3>
-          <p>If we don't show up on the agreed start date, you owe us nothing. No deposit held, no questions asked.</p>
+          <span class="svc-guarantee-num">01</span>
+          <div class="svc-guarantee-icon-wrap"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect x="4" y="7" width="32" height="29" rx="3" stroke="#2c5f33" stroke-width="1.8"/><path d="M4 15h32" stroke="#2c5f33" stroke-width="1.8"/><path d="M13 4v6M27 4v6" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/><path d="M13 25l5 5 9-9" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="svc-guarantee-body">
+            <h3>We Show Up Day 1</h3>
+            <p>If we don't show up on the agreed start date, you owe us nothing. No deposit held, no questions asked.</p>
+          </div>
         </div>
         <div class="svc-guarantee-card">
-          <div class="svc-guarantee-accent"></div>
-          <div class="svc-guarantee-ghost">02</div>
-          <svg class="svc-guarantee-icon" width="38" height="38" viewBox="0 0 40 40" fill="none"><path d="M8 4h17l9 9v23H8V4z" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/><path d="M25 4v9h9" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 19h14M13 25h10M13 31h7" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <h3>Written Scope Before We Touch Anything</h3>
-          <p>Every project starts with a detailed, line-item scope of work - signed by both parties before a single nail is driven.</p>
+          <span class="svc-guarantee-num">02</span>
+          <div class="svc-guarantee-icon-wrap"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><path d="M8 4h17l9 9v23H8V4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M25 4v9h9" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 19h14M13 25h10M13 31h7" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div class="svc-guarantee-body">
+            <h3>Written Scope Before We Touch Anything</h3>
+            <p>Every project starts with a detailed, line-item scope of work - signed by both parties before a single nail is driven.</p>
+          </div>
         </div>
         <div class="svc-guarantee-card">
-          <div class="svc-guarantee-accent"></div>
-          <div class="svc-guarantee-ghost">03</div>
-          <svg class="svc-guarantee-icon" width="38" height="38" viewBox="0 0 40 40" fill="none"><rect x="3" y="11" width="34" height="24" rx="3" stroke="#ffd700" stroke-width="1.8"/><circle cx="20" cy="23" r="6.5" stroke="#ffd700" stroke-width="1.8"/><path d="M14 11l3-5h6l3 5" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/><circle cx="30" cy="17" r="2" fill="#ffd700"/></svg>
-          <h3>Weekly Photo Updates</h3>
-          <p>You'll never be left wondering what's happening. We send progress photos every week - so you're always in the loop.</p>
+          <span class="svc-guarantee-num">03</span>
+          <div class="svc-guarantee-icon-wrap"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><rect x="3" y="11" width="34" height="24" rx="3" stroke="#2c5f33" stroke-width="1.8"/><circle cx="20" cy="23" r="6.5" stroke="#2c5f33" stroke-width="1.8"/><path d="M14 11l3-5h6l3 5" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><circle cx="30" cy="17" r="2" fill="#2c5f33"/></svg></div>
+          <div class="svc-guarantee-body">
+            <h3>Weekly Photo Updates</h3>
+            <p>You'll never be left wondering what's happening. We send progress photos every week - so you're always in the loop.</p>
+          </div>
         </div>
         <div class="svc-guarantee-card">
-          <div class="svc-guarantee-accent"></div>
-          <div class="svc-guarantee-ghost">04</div>
-          <svg class="svc-guarantee-icon" width="38" height="38" viewBox="0 0 40 40" fill="none"><path d="M20 4L6 10v13c0 9 6.3 15 14 16.5C27.7 38 34 32 34 23V10L20 4z" stroke="#ffd700" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 21l5 5 9-9" stroke="#ffd700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>On-Time, On-Budget - Or We Make It Right</h3>
-          <p>No surprise invoices. No scope creep without your approval. If we go over, that's on us - not you.</p>
+          <span class="svc-guarantee-num">04</span>
+          <div class="svc-guarantee-icon-wrap"><svg width="24" height="24" viewBox="0 0 40 40" fill="none"><path d="M20 4L6 10v13c0 9 6.3 15 14 16.5C27.7 38 34 32 34 23V10L20 4z" stroke="#2c5f33" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 21l5 5 9-9" stroke="#2c5f33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="svc-guarantee-body">
+            <h3>On-Time, On-Budget - Or We Make It Right</h3>
+            <p>No surprise invoices. No scope creep without your approval. If we go over, that's on us - not you.</p>
+          </div>
         </div>
       </div>
       <div class="svc-guarantee-footer">
         <span class="svc-guarantee-footer-line"></span>
-        <span>Every promise is in writing - no exceptions</span>
+        <span class="svc-guarantee-footer-txt">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2c5f33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Every promise is in writing
+        </span>
         <span class="svc-guarantee-footer-line"></span>
       </div>
     </div>

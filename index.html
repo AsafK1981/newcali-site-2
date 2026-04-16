@@ -711,14 +711,13 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .areas{display:none}
   /* 9. Hide eyebrow labels */
   .eyebrow{display:none}
-  /* 10. Smaller WhatsApp button + label */
-  .wa-wrapper{bottom:16px;right:16px;gap:6px}
-  .wa-float{width:44px;height:44px}
-  .wa-float svg{width:28px;height:28px}
-  .wa-label-box{padding:2px 6px;border-radius:4px;gap:2px;background:rgba(255,255,255,.7)!important;box-shadow:none!important}
-  .wa-label-box span:first-child{font-size:8px}
-  .wa-label-box span:last-child{font-size:9px}
-  .wa-label-box span:last-child{font-size:14px}
+  /* 10. WhatsApp on mobile - keep readable and tappable */
+  .wa-wrapper{bottom:20px;right:20px;gap:8px}
+  .wa-float{width:56px;height:56px}
+  .wa-float svg{width:30px;height:30px}
+  .wa-label-box{padding:7px 12px;border-radius:6px;gap:6px}
+  .wa-label-box span:first-child{font-size:11px}
+  .wa-label-box span:last-child{font-size:16px}
   /* Crew gallery — remove dark overlays on mobile */
   .cc-card::after{display:none}
   #crew-carousel > div[style*="linear-gradient"]{display:none}
@@ -726,17 +725,30 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
 
 /* Floating WhatsApp */
 .wa-float {
-  width: 58px; height: 58px; border-radius: 50%;
+  width: 64px; height: 64px; border-radius: 50%;
   background: #25D366;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 4px 20px rgba(37,211,102,.5);
   text-decoration: none;
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .45s cubic-bezier(.34,1.56,.64,1), box-shadow .4s;
   animation: waPulse 2.5s infinite;
-  flex-shrink: 0;
+  position: relative;
 }
-.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.7); animation: none; }
+.wa-float::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(37,211,102,.55);
+  animation: waRing 2.2s ease-out infinite;
+  pointer-events: none;
+}
+.wa-float:hover { transform: scale(1.14); box-shadow: 0 10px 36px rgba(37,211,102,.8); animation: none; }
+.wa-float:hover::before { animation: none; opacity: 0; }
+@keyframes waRing {
+  0%   { transform: scale(1); opacity: .7; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
 .wa-tooltip {
   position: absolute; right: 68px;
   background: #111; color: white;

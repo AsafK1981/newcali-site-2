@@ -1231,101 +1231,39 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="pricing-inner">
-    <div class="pricing-hdr">
-      <p class="pricing-eyebrow">Transparent Pricing</p>
-      <h2 class="pricing-title">Investment <em>Ranges</em></h2>
-      <p class="pricing-sub">Every project gets a detailed, written quote. These ranges help you plan - the exact number depends on your scope, materials, and finishes.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <p class="pricing-tier">Entry</p>
-        <p class="pricing-range">$15K - $40K</p>
-        <p class="pricing-note">Starting investment range</p>
-        <p class="pricing-desc">Refreshes and targeted upgrades that transform a single space without going to the studs.</p>
-        <ul class="pricing-list">
-          <li>Bathroom refreshes</li>
-          <li>Kitchen cabinet &amp; countertop upgrades</li>
-          <li>Flooring replacement</li>
-          <li>Paint, finish &amp; fixture work</li>
-          <li>Typical timeline: 2-4 weeks</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
-      </div>
-      <div class="pricing-card pricing-card-featured">
-        <span class="pricing-badge">Most Popular</span>
-        <p class="pricing-tier">Signature</p>
-        <p class="pricing-range">$40K - $120K</p>
-        <p class="pricing-note">Most common project range</p>
-        <p class="pricing-desc">Full remodels of a high-impact space, with layout changes, structural updates, and premium finishes.</p>
-        <ul class="pricing-list">
-          <li>Full kitchen remodels</li>
-          <li>Master bath &amp; suite renovations</li>
-          <li>Room additions &amp; conversions</li>
-          <li>Structural &amp; layout changes</li>
-          <li>Typical timeline: 4-10 weeks</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
-      </div>
-      <div class="pricing-card">
-        <p class="pricing-tier">Premium</p>
-        <p class="pricing-range">$120K - $500K+</p>
-        <p class="pricing-note">Full-scale transformation</p>
-        <p class="pricing-desc">Complete home transformations, ADUs, and multi-room renovations built as design-build projects.</p>
-        <ul class="pricing-list">
-          <li>Full home remodels</li>
-          <li>ADU &amp; garage conversions</li>
-          <li>Multi-room renovations</li>
-          <li>Design-build from concept to completion</li>
-          <li>Typical timeline: 3-6 months</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
-      </div>
-    </div>
-    <p class="pricing-foot"><strong>Free estimates always.</strong> Every quote is line-item and locked in writing before work begins.</p>
-  </div>
-</section>
+<!-- CREW CAROUSEL -->
+<section id="crew-carousel" style="background:#0f1a10;padding:80px 0 70px;overflow:hidden;position:relative;">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Home Remodeling & Construction Services",
-  "serviceType": "Home Remodeling",
-  "provider": {
-    "@type": "GeneralContractor",
-    "name": "New Cali Construction Inc.",
-    "telephone": "+18002161005",
-    "email": "Info@NewCaliConstruction.com",
-    "areaServed": "Culver City, Los Angeles, CA"
-  },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Entry Projects",
-      "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "15000", "maxPrice": "40000", "priceCurrency": "USD"},
-      "description": "Bathroom refreshes, kitchen cabinet and countertop upgrades, flooring replacement, paint and finish work. Typical timeline 2-4 weeks."
-    },
-    {
-      "@type": "Offer",
-      "name": "Signature Projects",
-      "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "40000", "maxPrice": "120000", "priceCurrency": "USD"},
-      "description": "Full kitchen remodels, master bath and suite renovations, room additions and conversions, structural and layout changes. Typical timeline 4-10 weeks."
-    },
-    {
-      "@type": "Offer",
-      "name": "Premium Projects",
-      "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "120000", "maxPrice": "500000", "priceCurrency": "USD"},
-      "description": "Full home remodels, ADU and garage conversions, multi-room renovations, complete design-build projects. Typical timeline 3-6 months."
-    }
-  ]
-}
-</script>
+  <!-- Grain overlay -->
+  <div style="position:absolute;inset:0;opacity:.04;pointer-events:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/></filter><rect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>');background-size:200px;"></div>
+
+  <!-- Header -->
+  <div style="text-align:center;padding:0 20px 52px;position:relative;z-index:2;">
+    <div style="display:inline-block;position:relative;">
+      <span style="font-family:Georgia,serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#2ecc71;font-weight:600;display:block;margin-bottom:14px;">Every Project. Every Day.</span>
+      <h2 style="font-family:'Merriweather',Georgia,serif;font-size:clamp(32px,5vw,52px);color:#fff;margin:0;line-height:1.1;font-weight:900;">Our Crew <em style="font-style:italic;color:#2ecc71;">In Action</em></h2>
+      <div style="width:48px;height:3px;background:#2ecc71;margin:20px auto 0;border-radius:2px;"></div>
+    </div>
+  </div>
+
+  <!-- Row 1 — left to right -->
+  <div class="cc-row" style="position:relative;z-index:2;margin-bottom:18px;">
+    <div class="cc-track cc-track-r1" id="ccR1">
+      <div class="cc-inner" id="ccI1"></div>
+    </div>
+  </div>
+
+  <!-- Row 2 — right to left -->
+  <div class="cc-row" style="position:relative;z-index:2;">
+    <div class="cc-track cc-track-r2" id="ccR2">
+      <div class="cc-inner" id="ccI2"></div>
+    </div>
+  </div>
+
+  <!-- Fade edges -->
+  <div style="position:absolute;top:0;left:0;width:120px;height:100%;background:linear-gradient(to right,#0f1a10,transparent);z-index:3;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(to left,#0f1a10,transparent);z-index:3;pointer-events:none;"></div>
+</section>
 
 <!-- ABOUT -->
 <section class="about">
@@ -2128,39 +2066,101 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 
-<!-- CREW CAROUSEL -->
-<section id="crew-carousel" style="background:#0f1a10;padding:80px 0 70px;overflow:hidden;position:relative;">
-
-  <!-- Grain overlay -->
-  <div style="position:absolute;inset:0;opacity:.04;pointer-events:none;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/></filter><rect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>');background-size:200px;"></div>
-
-  <!-- Header -->
-  <div style="text-align:center;padding:0 20px 52px;position:relative;z-index:2;">
-    <div style="display:inline-block;position:relative;">
-      <span style="font-family:Georgia,serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#2ecc71;font-weight:600;display:block;margin-bottom:14px;">Every Project. Every Day.</span>
-      <h2 style="font-family:'Merriweather',Georgia,serif;font-size:clamp(32px,5vw,52px);color:#fff;margin:0;line-height:1.1;font-weight:900;">Our Crew <em style="font-style:italic;color:#2ecc71;">In Action</em></h2>
-      <div style="width:48px;height:3px;background:#2ecc71;margin:20px auto 0;border-radius:2px;"></div>
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-hdr">
+      <p class="pricing-eyebrow">Transparent Pricing</p>
+      <h2 class="pricing-title">Investment <em>Ranges</em></h2>
+      <p class="pricing-sub">Every project gets a detailed, written quote. These ranges help you plan - the exact number depends on your scope, materials, and finishes.</p>
     </div>
-  </div>
-
-  <!-- Row 1 — left to right -->
-  <div class="cc-row" style="position:relative;z-index:2;margin-bottom:18px;">
-    <div class="cc-track cc-track-r1" id="ccR1">
-      <div class="cc-inner" id="ccI1"></div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Entry</p>
+        <p class="pricing-range">$15K - $40K</p>
+        <p class="pricing-note">Starting investment range</p>
+        <p class="pricing-desc">Refreshes and targeted upgrades that transform a single space without going to the studs.</p>
+        <ul class="pricing-list">
+          <li>Bathroom refreshes</li>
+          <li>Kitchen cabinet &amp; countertop upgrades</li>
+          <li>Flooring replacement</li>
+          <li>Paint, finish &amp; fixture work</li>
+          <li>Typical timeline: 2-4 weeks</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
+      <div class="pricing-card pricing-card-featured">
+        <span class="pricing-badge">Most Popular</span>
+        <p class="pricing-tier">Signature</p>
+        <p class="pricing-range">$40K - $120K</p>
+        <p class="pricing-note">Most common project range</p>
+        <p class="pricing-desc">Full remodels of a high-impact space, with layout changes, structural updates, and premium finishes.</p>
+        <ul class="pricing-list">
+          <li>Full kitchen remodels</li>
+          <li>Master bath &amp; suite renovations</li>
+          <li>Room additions &amp; conversions</li>
+          <li>Structural &amp; layout changes</li>
+          <li>Typical timeline: 4-10 weeks</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Premium</p>
+        <p class="pricing-range">$120K - $500K+</p>
+        <p class="pricing-note">Full-scale transformation</p>
+        <p class="pricing-desc">Complete home transformations, ADUs, and multi-room renovations built as design-build projects.</p>
+        <ul class="pricing-list">
+          <li>Full home remodels</li>
+          <li>ADU &amp; garage conversions</li>
+          <li>Multi-room renovations</li>
+          <li>Design-build from concept to completion</li>
+          <li>Typical timeline: 3-6 months</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get a Free Estimate</a>
+      </div>
     </div>
+    <p class="pricing-foot"><strong>Free estimates always.</strong> Every quote is line-item and locked in writing before work begins.</p>
   </div>
-
-  <!-- Row 2 — right to left -->
-  <div class="cc-row" style="position:relative;z-index:2;">
-    <div class="cc-track cc-track-r2" id="ccR2">
-      <div class="cc-inner" id="ccI2"></div>
-    </div>
-  </div>
-
-  <!-- Fade edges -->
-  <div style="position:absolute;top:0;left:0;width:120px;height:100%;background:linear-gradient(to right,#0f1a10,transparent);z-index:3;pointer-events:none;"></div>
-  <div style="position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(to left,#0f1a10,transparent);z-index:3;pointer-events:none;"></div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Home Remodeling & Construction Services",
+  "serviceType": "Home Remodeling",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "New Cali Construction Inc.",
+    "telephone": "+18002161005",
+    "email": "Info@NewCaliConstruction.com",
+    "areaServed": "Culver City, Los Angeles, CA"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Entry Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "15000", "maxPrice": "40000", "priceCurrency": "USD"},
+      "description": "Bathroom refreshes, kitchen cabinet and countertop upgrades, flooring replacement, paint and finish work. Typical timeline 2-4 weeks."
+    },
+    {
+      "@type": "Offer",
+      "name": "Signature Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "40000", "maxPrice": "120000", "priceCurrency": "USD"},
+      "description": "Full kitchen remodels, master bath and suite renovations, room additions and conversions, structural and layout changes. Typical timeline 4-10 weeks."
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Projects",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "120000", "maxPrice": "500000", "priceCurrency": "USD"},
+      "description": "Full home remodels, ADU and garage conversions, multi-room renovations, complete design-build projects. Typical timeline 3-6 months."
+    }
+  ]
+}
+</script>
 
 <!-- LIGHTBOX -->
 <div id="ccLightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(8px);">

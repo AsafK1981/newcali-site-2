@@ -471,6 +471,26 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
   gtag('js', new Date());
   gtag('config', 'G-CTDZK0PE64');
 </script>
+<!-- GA conversion event tracking (phone, WhatsApp, mid-CTA clicks) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function send(evt, label) {
+    if (typeof gtag === 'function') {
+      gtag('event', evt, {'event_category':'engagement','event_label':label});
+    }
+  }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click', function(){ send('phone_click', (a.textContent.trim() || a.href)); });
+  });
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
+    a.addEventListener('click', function(){ send('whatsapp_click', 'floating_whatsapp'); });
+  });
+  var midcta = document.querySelector('.midcta-btn');
+  if (midcta) {
+    midcta.addEventListener('click', function(){ send('midcta_click', 'mid_page_cta'); });
+  }
+});
+</script>
 </head>
 <body>
 <nav>

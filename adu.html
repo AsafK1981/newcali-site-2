@@ -688,6 +688,26 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   gtag('js', new Date());
   gtag('config', 'G-CTDZK0PE64');
 </script>
+<!-- GA conversion event tracking (phone, WhatsApp, mid-CTA clicks) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function send(evt, label) {
+    if (typeof gtag === 'function') {
+      gtag('event', evt, {'event_category':'engagement','event_label':label});
+    }
+  }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click', function(){ send('phone_click', (a.textContent.trim() || a.href)); });
+  });
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
+    a.addEventListener('click', function(){ send('whatsapp_click', 'floating_whatsapp'); });
+  });
+  var midcta = document.querySelector('.midcta-btn');
+  if (midcta) {
+    midcta.addEventListener('click', function(){ send('midcta_click', 'mid_page_cta'); });
+  }
+});
+</script>
 </head>
 <body>
 
@@ -1080,6 +1100,9 @@ async function submitForm(e) {
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form'});
+      }
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
 }

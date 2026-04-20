@@ -621,6 +621,9 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   gtag('js', new Date());
   gtag('config', 'G-CTDZK0PE64');
 </script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('XaRbQXuY4F5pEz0aE');</script>
 <!-- GA conversion event tracking (phone, WhatsApp, mid-CTA clicks) -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -1041,6 +1044,13 @@ async function submitForm(e) {
       document.getElementById('formOk').style.display = 'block';
       if (typeof gtag === 'function') {
         gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form'});
+      }
+      if (typeof emailjs !== 'undefined') {
+        emailjs.send('service_eql2h4h', 'template_blfuq5c', {
+          first_name: document.getElementById('fn').value || 'there',
+          email: document.getElementById('em').value,
+          project: document.getElementById('proj') ? document.getElementById('proj').value : ''
+        }).catch(function(){});
       }
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }

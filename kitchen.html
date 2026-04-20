@@ -626,8 +626,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="portfolio.html">Recent Transformations</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="index.html#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="tel:8002161005">(800) 216-1005</a>
   <a href="#contact" onclick="closeMenu()">Get Free Estimate</a>
@@ -687,10 +687,10 @@ document.addEventListener('click', function(e){
   <div class="svc-gallery">
     <h2>Our Work</h2>
     <div class="svc-gallery-grid">
-      <img src="https://static.wixstatic.com/media/fff5b9_cf77f7e3b97443888b6f171ee013e7c8~mv2.jpg" alt="Kitchen Remodeling">
-<img src="https://static.wixstatic.com/media/fff5b9_d0a776ec47df439ca160a318218a2771~mv2.png" alt="Kitchen Remodeling">
-<img src="https://static.wixstatic.com/media/fff5b9_0277ca9793a74cb6aee6bac0a0715ca7~mv2.jpg" alt="Kitchen Remodeling">
-<img src="https://static.wixstatic.com/media/fff5b9_2bb477b1be92415a95e3fda52fcbc47d~mv2.png" alt="Kitchen Remodeling">
+      <img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_cf77f7e3b97443888b6f171ee013e7c8~mv2.jpg" alt="Kitchen Remodeling">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_d0a776ec47df439ca160a318218a2771~mv2.png" alt="Kitchen Remodeling">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_0277ca9793a74cb6aee6bac0a0715ca7~mv2.jpg" alt="Kitchen Remodeling">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_2bb477b1be92415a95e3fda52fcbc47d~mv2.png" alt="Kitchen Remodeling">
     </div>
   </div>
 
@@ -874,14 +874,14 @@ document.addEventListener('click', function(e){
         <input type="hidden" name="to" value="Info@NewCaliConstruction.com">
         <input type="hidden" name="subject" value="New Lead - New Cali Construction Website">
         <div class="form-row">
-          <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+          <div class="fg"><label>First Name</label><input type="text" name="first_name" id="fn" placeholder="John" required></div>
           <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
         </div>
-        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@email.com" required></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" id="em" placeholder="john@email.com" required></div>
         <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(310) 555-0000"></div>
         <div class="fg">
           <label>What project are you interested in?</label>
-          <select name="project">
+          <select name="project" id="proj">
             <option value="">Choose an option</option>
             <option>Kitchen Remodeling</option>
             <option>Bathroom Remodeling</option>

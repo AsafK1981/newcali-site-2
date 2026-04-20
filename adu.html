@@ -738,8 +738,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="portfolio.html">Recent Transformations</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="index.html#services" onclick="closeMenu()">Services</a>
+  <a href="index.html#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="tel:8002161005">(800) 216-1005</a>
   <a href="#contact" onclick="closeMenu()">Get Free Estimate</a>
@@ -813,7 +813,7 @@ a Profitable Asset</h1>
       <a href="#contact" class="btn-green" style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;">Get a Free Estimate <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="svc-intro-img">
-      <img src="https://static.wixstatic.com/media/fff5b9_384065bebc54423a895bdf85198ac11b~mv2.png" alt="ADU / Garage Conversion">
+      <img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_384065bebc54423a895bdf85198ac11b~mv2.png" alt="ADU / Garage Conversion">
     </div>
   </div>
 
@@ -835,10 +835,10 @@ a Profitable Asset</h1>
       <h2>Recent ADU / Garage Conversion Projects</h2>
     </div>
     <div class="svc-gallery-grid">
-      <img src="https://static.wixstatic.com/media/fff5b9_384065bebc54423a895bdf85198ac11b~mv2.png" alt="ADU / Garage Conversion">
-<img src="https://static.wixstatic.com/media/fff5b9_49849e7c970b426c9399554d9a9e6af2~mv2.png" alt="ADU / Garage Conversion">
-<img src="https://static.wixstatic.com/media/fff5b9_e45c6338385b4e028fda459c29660a42~mv2.jpg" alt="ADU / Garage Conversion">
-<img src="https://static.wixstatic.com/media/fff5b9_655d15147a824e42b62723523b0a9d0e~mv2.jpg" alt="ADU / Garage Conversion">
+      <img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_384065bebc54423a895bdf85198ac11b~mv2.png" alt="ADU / Garage Conversion">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_49849e7c970b426c9399554d9a9e6af2~mv2.png" alt="ADU / Garage Conversion">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_e45c6338385b4e028fda459c29660a42~mv2.jpg" alt="ADU / Garage Conversion">
+<img loading="lazy" src="https://static.wixstatic.com/media/fff5b9_655d15147a824e42b62723523b0a9d0e~mv2.jpg" alt="ADU / Garage Conversion">
     </div>
   </div>
 
@@ -1027,14 +1027,14 @@ a Profitable Asset</h1>
         <input type="hidden" name="to" value="Info@NewCaliConstruction.com">
         <input type="hidden" name="subject" value="New Lead - New Cali Construction Website">
         <div class="form-row">
-          <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+          <div class="fg"><label>First Name</label><input type="text" name="first_name" id="fn" placeholder="John" required></div>
           <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
         </div>
-        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@email.com" required></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" id="em" placeholder="john@email.com" required></div>
         <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(310) 555-0000"></div>
         <div class="fg">
           <label>What project are you interested in?</label>
-          <select name="project">
+          <select name="project" id="proj">
             <option value="">Choose an option</option>
             <option>Kitchen Remodeling</option>
             <option>Bathroom Remodeling</option>

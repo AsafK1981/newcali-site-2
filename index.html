@@ -2103,8 +2103,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="pricing-card">
         <p class="pricing-tier">Entry</p>
         <p class="pricing-range">$15K - $40K</p>
-        <p class="pricing-note">Starting investment range</p>
-        <p class="pricing-desc">Refreshes and targeted upgrades that transform a single space without going to the studs.</p>
+        <p class="pricing-note">Single Room Refresh</p>
+        <p class="pricing-desc">Targeted upgrades that transform one space - perfect for a bathroom refresh, kitchen facelift, or new flooring throughout.</p>
         <ul class="pricing-list">
           <li>Bathroom refreshes</li>
           <li>Kitchen cabinet &amp; countertop upgrades</li>
@@ -2118,8 +2118,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class="pricing-badge">Most Popular</span>
         <p class="pricing-tier">Signature</p>
         <p class="pricing-range">$40K - $120K</p>
-        <p class="pricing-note">Most common project range</p>
-        <p class="pricing-desc">Full remodels of a high-impact space, with layout changes, structural updates, and premium finishes.</p>
+        <p class="pricing-note">Full Kitchen or Multi-Room</p>
+        <p class="pricing-desc">Complete remodel of a high-impact space - gut the kitchen, renovate the master suite, or combine multiple rooms in one project.</p>
         <ul class="pricing-list">
           <li>Full kitchen remodels</li>
           <li>Master bath &amp; suite renovations</li>
@@ -2132,8 +2132,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="pricing-card">
         <p class="pricing-tier">Premium</p>
         <p class="pricing-range">$120K - $500K+</p>
-        <p class="pricing-note">Full-scale transformation</p>
-        <p class="pricing-desc">Complete home transformations, ADUs, and multi-room renovations built as design-build projects.</p>
+        <p class="pricing-note">ADU Build or Whole-Home Remodel</p>
+        <p class="pricing-desc">Large-scale design-build projects - full home renovation, ADU or garage conversion, or multi-room transformation from concept to completion.</p>
         <ul class="pricing-list">
           <li>Full home remodels</li>
           <li>ADU &amp; garage conversions</li>
@@ -2545,8 +2545,8 @@ async function submitForm(e) {
           first_name: document.getElementById('fn').value || 'there',
           email: document.getElementById('em').value,
           project: document.getElementById('proj') ? document.getElementById('proj').value : ''
-        }).then(function(r){ console.log('EmailJS OK:', r); }, function(err){ console.error('EmailJS FAIL:', err); alert('Auto-reply error: ' + JSON.stringify(err)); });
-      } else { console.error('EmailJS not loaded'); }
+        }).catch(function(){});
+      }
     } else {
       btn.textContent = 'Send';
       btn.disabled = false;

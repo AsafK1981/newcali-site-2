@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Copy Signature</title></head>
+<body style="margin:0;padding:40px;font-family:Arial,sans-serif;background:#f5f5f5;">
+
+<h2 style="margin-bottom:20px;">Click the green button, then paste into Outlook</h2>
+
+<button onclick="copySignature()" style="background:#2ecc71;color:white;border:none;padding:16px 40px;font-size:18px;font-weight:bold;border-radius:8px;cursor:pointer;margin-bottom:30px;">
+  📋 CLICK HERE TO COPY SIGNATURE
+</button>
+
+<p id="status" style="font-size:16px;color:#666;"></p>
+
+<hr style="margin:30px 0;">
+
+<h3>Preview:</h3>
+
+<div id="sig" style="padding:20px;background:white;border:1px solid #ddd;border-radius:8px;margin-top:10px;">
+<img src="https://static.wixstatic.com/media/fff5b9_46935cd4f0094b52ab0f24feb318dbe1~mv2.jpg" width="60" height="60" alt="Asaf Kotler" style="border:2px solid #2ecc71;border-radius:50%;vertical-align:middle;margin-right:12px;"><b style="font-size:18px;color:#1a1a1a;">Asaf Kotler</b><br><br><span style="font-size:13px;color:#555;">OWNER, NEW CALI CONSTRUCTION INC. · <small style="color:#888;">Lic #1008892</small></span><br><b style="font-size:12px;color:#2c5f33;">Trusted by 500+ Homeowners in Culver City &amp; the Westside</b><br><b style="font-size:13px;color:#1a1a1a;">Detailed scope. Locked price. Constant updates. No BS.</b><br><br><a href="https://wa.me/17149289011" style="color:#25D366;text-decoration:none;font-weight:bold;">💬 WhatsApp</a> &nbsp;&nbsp;&nbsp; <a href="https://www.yelp.com/biz/new-cali-construction-culver-city" style="color:#d32323;text-decoration:none;font-weight:bold;">⭐ 5.0 on Yelp</a> &nbsp;&nbsp;&nbsp; <a href="https://www.newcaliconstruction.com" style="color:#1a73e8;text-decoration:none;font-weight:bold;">🌐 Website</a> &nbsp;&nbsp;&nbsp; <a href="tel:7149289011" style="color:#e67e22;text-decoration:none;font-weight:bold;">📞 (714) 928-9011</a>
+</div>
+
+<script>
+function copySignature() {
+  var sig = document.getElementById('sig');
+  var range = document.createRange();
+  range.selectNodeContents(sig);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+  document.getElementById('status').innerHTML = '✅ <b style="color:#2c5f33;">Copied! Now go to Outlook and paste (Ctrl+V) into the signature editor.</b>';
+}
+</script>
+
+</body>
+</html>

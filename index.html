@@ -2545,8 +2545,8 @@ async function submitForm(e) {
           first_name: document.getElementById('fn').value || 'there',
           email: document.getElementById('em').value,
           project: document.getElementById('proj') ? document.getElementById('proj').value : ''
-        }).catch(function(){});
-      }
+        }).then(function(r){ console.log('EmailJS OK:', r); }, function(err){ console.error('EmailJS FAIL:', err); alert('Auto-reply error: ' + JSON.stringify(err)); });
+      } else { console.error('EmailJS not loaded'); }
     } else {
       btn.textContent = 'Send';
       btn.disabled = false;

@@ -435,13 +435,15 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 .svc-pricing-foot{text-align:center;margin-top:40px;font-size:13px;color:var(--muted)}
 .svc-pricing-foot strong{color:var(--green-dk);font-weight:600}
 @media(max-width:768px){
-  .svc-pricing{padding:52px 16px}
-  .svc-pricing-hdr{margin-bottom:36px}
-  .svc-pricing-grid{grid-template-columns:1fr;gap:28px}
-  .svc-pricing-card{padding:26px 22px}
+  .svc-pricing{padding:52px 0 52px}
+  .svc-pricing-hdr{margin-bottom:32px;padding:0 16px}
+  .svc-pricing-grid{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 16px 18px;margin:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .svc-pricing-grid::-webkit-scrollbar{display:none}
+  .svc-pricing-card{flex:0 0 82%;scroll-snap-align:center;padding:26px 22px}
   .svc-pricing-card-featured{transform:translateY(0)}
   .svc-pricing-card-featured:hover{transform:translateY(-5px)}
   .svc-pricing-range{font-size:24px}
+  .svc-pricing-foot{padding:0 16px;margin-top:18px}
 }
 /* FAQ */
 .svc-faq { margin-bottom: 70px; padding: 0 60px; }

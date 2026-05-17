@@ -646,13 +646,15 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .guarantee-card{padding:24px 22px;gap:16px}
   .guarantee-icon-wrap{width:46px;height:46px}
   .guarantee-card-body{padding-right:0}
-  .pricing-section{padding:56px 16px}
-  .pricing-hdr{margin-bottom:40px}
-  .pricing-grid{grid-template-columns:1fr;gap:32px}
-  .pricing-card{padding:28px 24px}
+  .pricing-section{padding:56px 0 56px}
+  .pricing-hdr{margin-bottom:32px;padding:0 16px}
+  .pricing-grid{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 16px 18px;margin:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pricing-grid::-webkit-scrollbar{display:none}
+  .pricing-card{flex:0 0 82%;scroll-snap-align:center;padding:28px 24px}
   .pricing-card-featured{transform:translateY(0)}
   .pricing-card-featured:hover{transform:translateY(-5px)}
   .pricing-range{font-size:26px}
+  .pricing-foot{padding:0 16px;margin-top:18px}
   .trust-block{padding:56px 16px}
   .trust-grid{grid-template-columns:1fr;gap:16px}
   .trust-card{padding:28px 24px}

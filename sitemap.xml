@@ -38,6 +38,36 @@
   </url>
 
   <url>
+    <loc>https://www.newcaliconstruction.com/blog/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.newcaliconstruction.com/blog/kitchen-remodel-culver-city/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.newcaliconstruction.com/blog/bathroom-remodel-culver-city/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.newcaliconstruction.com/blog/adu-garage-conversion-los-angeles/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.newcaliconstruction.com/blog/licensed-contractor-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.newcaliconstruction.com/project-townhouse-kitchen.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

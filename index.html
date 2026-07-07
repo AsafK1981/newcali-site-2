@@ -518,7 +518,7 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
 
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:960px){
+@media(max-width:1080px){
   nav{padding:0 16px;height:64px}
   .nav-links{display:none}
   .nav-right{display:none}
@@ -976,9 +976,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="nav-logo-sub">Culver City, CA<br>Lic #1008892</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="portfolio.html">Recent Transformations</a></li>
+    <ul class="nav-links">
+    <li><a href="/">Home</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="/portfolio.html">Portfolio</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -992,8 +993,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="portfolio.html" onclick="closeMenu()">Recent Transformations</a>
+  <a href="/" onclick="closeMenu()">Home</a>
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="/portfolio.html" onclick="closeMenu()">Portfolio</a>
   <a href="#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="/blog/" onclick="closeMenu()">Blog</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>

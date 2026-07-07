@@ -91,7 +91,7 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
 .foot-bot a{color:rgba(255,255,255,.42);text-decoration:none}
 .foot-bot a:hover{color:rgba(255,255,255,.72)}
 
-@media(max-width:960px){
+@media(max-width:1080px){
   nav{padding:0 16px;height:64px}
   .nav-links{display:none}
   .nav-right{display:none}
@@ -125,12 +125,13 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
       <span class="nav-logo-sub">Culver City, CA &nbsp;·&nbsp; Lic #1008892</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="portfolio.html">Recent Transformations</a></li>
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#testimonials">Reviews</a></li>
+    <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/index.html#services">Services</a></li>
+    <li><a href="/portfolio.html">Portfolio</a></li>
+    <li><a href="/index.html#testimonials">Reviews</a></li>
     <li><a href="/blog/">Blog</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="/index.html#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <a href="tel:8002161005" class="nav-phone">(800) 216-1005</a>
@@ -141,13 +142,14 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="portfolio.html" onclick="closeMenu()">Recent Transformations</a>
-  <a href="index.html#services" onclick="closeMenu()">Services</a>
-  <a href="index.html#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/index.html#services" onclick="closeMenu()">Services</a>
+  <a href="/portfolio.html" onclick="closeMenu()">Portfolio</a>
+  <a href="/index.html#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="/blog/" onclick="closeMenu()">Blog</a>
-  <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+  <a href="/index.html#contact" onclick="closeMenu()">Contact</a>
   <a href="tel:8002161005">(800) 216-1005</a>
-  <a href="index.html#contact" onclick="closeMenu()">Get Free Estimate</a>
+  <a href="/index.html#contact" onclick="closeMenu()">Get Free Estimate</a>
 </div>
 <script>
 function toggleMenu(){

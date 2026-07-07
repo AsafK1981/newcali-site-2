@@ -204,7 +204,7 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
 
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:960px){
+@media(max-width:1080px){
   nav{padding:0 16px;height:64px}
   .nav-links{display:none}
   .nav-logo-name{font-size:14px}
@@ -362,7 +362,7 @@ nav, section, footer, div.trust, .wa-float, .cursor-dot, .cursor-ring {
 .mobile-menu.open{display:flex}
 .mobile-menu a{padding:10px 0;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
 .mobile-menu a:last-child{border-bottom:none}
-@media(max-width:960px){.hamburger{display:flex}.nav-links{display:none}.nav-right{display:none}}
+@media(max-width:1080px){.hamburger{display:flex}.nav-links{display:none}.nav-right{display:none}}
 .port-hero-content { position:relative; z-index:1; }
 .port-hero h1 { font-family:'Merriweather',serif; font-size:clamp(36px,5vw,60px); font-weight:700; color:white; margin-bottom:16px; line-height:1.15; }
 .port-hero p { font-size:18px; color:rgba(255,255,255,.85); max-width:580px; margin:0 auto 32px; line-height:1.7; font-weight:300; }
@@ -503,12 +503,13 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="nav-logo-sub">Culver City, CA · Lic #1008892</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="index.html#services">Services</a></li>
+    <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/index.html#services">Services</a></li>
+    <li><a href="/portfolio.html">Portfolio</a></li>
+    <li><a href="/index.html#testimonials">Reviews</a></li>
     <li><a href="/blog/">Blog</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="/index.html#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <a href="tel:8002161005" class="nav-phone">(800) 216-1005</a>
@@ -519,13 +520,14 @@ document.addEventListener('DOMContentLoaded', function() {
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="portfolio.html">Recent Transformations</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/index.html#services" onclick="closeMenu()">Services</a>
+  <a href="/portfolio.html" onclick="closeMenu()">Portfolio</a>
+  <a href="/index.html#testimonials" onclick="closeMenu()">Reviews</a>
   <a href="/blog/" onclick="closeMenu()">Blog</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="/index.html#contact" onclick="closeMenu()">Contact</a>
   <a href="tel:8002161005">(800) 216-1005</a>
-  <a href="#contact" onclick="closeMenu()">Get Free Estimate</a>
+  <a href="/index.html#contact" onclick="closeMenu()">Get Free Estimate</a>
 </div>
 <script>
 function toggleMenu(){

@@ -44,6 +44,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .nav-phone:hover{color:var(--green)}
 .btn-nav{background:var(--green);color:white;padding:9px 20px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;white-space:nowrap}
 .btn-nav:hover{background:var(--green-dk)}
+.hamburger{display:none;flex-direction:column;justify-content:space-between;width:26px;height:18px;background:none;border:none;cursor:pointer;padding:0;margin-left:12px}
+.hamburger span{display:block;width:100%;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 .mobile-menu{display:none;flex-direction:column;background:var(--white);border-bottom:1px solid var(--border);padding:12px 24px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{padding:10px 0;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
@@ -210,6 +215,8 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
 @media(max-width:960px){
   nav{padding:0 16px;height:64px}
   .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-right{display:none}
   .nav-logo-name{font-size:14px}
   .nav-logo-sub{font-size:9px}
   .nav-logo-img{height:48px}

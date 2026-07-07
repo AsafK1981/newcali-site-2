@@ -4,7 +4,6 @@
 # Default: allow all well-behaved crawlers
 User-agent: *
 Allow: /
-Disallow: /Alex-Hormozi-Strategy.html
 
 # Explicit allows for AI search / answer engines
 User-agent: GPTBot

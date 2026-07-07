@@ -5,7 +5,7 @@
 ## Business summary
 
 - **Name:** New Cali Construction Inc.
-- **Address:** 10000 Washington Blvd. Suite #600, Culver City, CA 90232
+- **Address:** 10000 Washington Boulevard, Unit 600, Culver City, CA 90232
 - **Phone:** (800) 216-1005
 - **Email:** Info@NewCaliConstruction.com
 - **Website:** https://www.newcaliconstruction.com/

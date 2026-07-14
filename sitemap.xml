@@ -68,6 +68,18 @@
   </url>
 
   <url>
+    <loc>https://www.newcaliconstruction.com/blog/on-time-on-budget-la-contractor/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.newcaliconstruction.com/blog/investor-property-renovations-la/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.newcaliconstruction.com/project-townhouse-kitchen.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

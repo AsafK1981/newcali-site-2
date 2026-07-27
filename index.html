@@ -72,7 +72,8 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Remodeling"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Remodeling"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ADU Garage Conversion"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Complete Home Remodel"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Complete Home Remodel"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fire Rebuild & Smoke Damage Restoration"}}
     ]
   },
   "review": [
@@ -336,6 +337,16 @@ a.stat:hover .stat-l{color:var(--green-dk)}
 .svc-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
 .svc-lnk{font-size:12px;color:var(--green);text-decoration:none;font-weight:600;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
 .svc-lnk:hover{gap:8px}
+/* Featured service band (Fire Rebuild) */
+.svc-feature{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:0;background:var(--green-pale);border:1px solid rgba(58,125,68,.22);border-left:4px solid var(--green);border-radius:6px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:box-shadow .3s,transform .3s}
+.svc-feature:hover{box-shadow:0 16px 40px rgba(0,0,0,.16);transform:translateY(-4px)}
+.svc-feature-img{overflow:hidden}
+.svc-feature-img img{width:100%;height:100%;min-height:230px;object-fit:cover;display:block;transition:transform .4s}
+.svc-feature:hover .svc-feature-img img{transform:scale(1.06)}
+.svc-feature-body{padding:30px 34px;display:flex;flex-direction:column;justify-content:center}
+.svc-feature-tag{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;background:var(--green-dk);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:100px;margin-bottom:12px}
+.svc-feature-body h3{font-family:'Merriweather',serif;font-size:22px;font-weight:700;color:var(--green-dk);margin-bottom:10px;line-height:1.3}
+.svc-feature-body p{font-size:14px;color:#3d4a3f;line-height:1.75;margin-bottom:16px}
 
 /* GUARANTEE */
 .guarantee-section{background:var(--green-pale);padding:90px 60px;border-top:3px solid var(--green);border-bottom:3px solid var(--green);position:relative;overflow:hidden}
@@ -468,6 +479,8 @@ a.stat:hover .stat-l{color:var(--green-dk)}
 .areas-tags{display:flex;flex-wrap:wrap;gap:8px}
 .area-tag{background:white;border:1px solid rgba(58,125,68,.22);padding:5px 13px;border-radius:100px;font-size:12px;color:var(--muted);transition:all .2s;cursor:default}
 .area-tag:hover{border-color:var(--green);color:var(--green)}
+a.area-tag{text-decoration:none;cursor:pointer;color:var(--green-dk);font-weight:500}
+a.area-tag:hover{background:var(--green);border-color:var(--green);color:white}
 
 /* CONTACT */
 .contact{background:linear-gradient(135deg,#f8fdf9 0%,#eef6f0 50%,#f8fdf9 100%);padding:0 0 100px;position:relative;overflow:hidden}
@@ -625,6 +638,12 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .wa-label{display:none}
 }
 @media(max-width:768px){
+  /* Featured service band stacks on mobile */
+  .svc-feature{grid-template-columns:1fr;margin-top:14px}
+  .svc-feature-img img{min-height:0;height:180px}
+  .svc-feature-body{padding:22px 20px}
+  .svc-feature-body h3{font-size:19px}
+  .svc-feature-body p{font-size:13.5px}
   .hero{display:flex;flex-direction:column;height:auto;min-height:unset;align-items:stretch;justify-content:flex-start}
   .hero video,.hero img{position:relative;width:100%;height:56vw;object-fit:cover;background:#000;z-index:0}
   .hero-overlay{display:none}
@@ -1373,6 +1392,15 @@ document.addEventListener('click', function(e){
       <div class="svc-card">
         <a href="home-remodel.html"><img referrerpolicy="no-referrer" src="images/home/svc-home-remodel.jpg" alt="Complete Home Remodel" style="display:block;"></a>
         <div class="svc-body"><h3>Complete Home Remodel</h3><p>Achieve your dream home with our complete home remodel and addition services, offering comprehensive solutions for every space.</p><a href="home-remodel.html" class="svc-lnk">Plan Your Home Remodel →</a></div>
+      </div>
+    </div>
+    <div class="svc-feature">
+      <a class="svc-feature-img" href="fire-rebuild.html"><img referrerpolicy="no-referrer" loading="lazy" width="1600" height="1200" src="images/home-remodel/home-remodel-1.jpg" alt="Fire rebuild and smoke damage restoration by New Cali Construction"></a>
+      <div class="svc-feature-body">
+        <span class="svc-feature-tag">Fire Rebuild</span>
+        <h3>Fire Rebuild &amp; Smoke Damage Restoration</h3>
+        <p>Ground-up rebuilds on total-loss lots, and renovation of homes left standing that took smoke, soot and heat damage. We read your insurance scope against what the city will actually require you to build, show you the gap in writing, then carry the project through permitting and construction to final inspection.</p>
+        <a href="fire-rebuild.html" class="svc-lnk">See Fire Rebuild &amp; Restoration →</a>
       </div>
     </div>
   </div>
@@ -2127,13 +2155,14 @@ document.addEventListener('click', function(e){
     <div class="areas-lbl">Proudly Serving</div>
     <div class="areas-tags">
       <span class="area-tag">Los Angeles</span><span class="area-tag">Culver City</span>
-      <span class="area-tag">Playa Vista</span><span class="area-tag">Mar Vista</span>
-      <span class="area-tag">West LA</span><span class="area-tag">Beverly Hills</span>
-      <span class="area-tag">Marina Del Rey</span><span class="area-tag">Inglewood</span>
-      <span class="area-tag">Malibu</span><span class="area-tag">Bel Air</span>
-      <span class="area-tag">Hawthorne</span><span class="area-tag">El Segundo</span>
-      <span class="area-tag">Westchester</span><span class="area-tag">Pacific Palisades</span>
-      <span class="area-tag">Mid City</span>
+      <a class="area-tag" href="/areas/playa-vista/">Playa Vista</a><a class="area-tag" href="/areas/mar-vista/">Mar Vista</a>
+      <a class="area-tag" href="/areas/west-la/">West LA</a><a class="area-tag" href="/areas/beverly-hills/">Beverly Hills</a>
+      <a class="area-tag" href="/areas/marina-del-rey/">Marina Del Rey</a><a class="area-tag" href="/areas/inglewood/">Inglewood</a>
+      <a class="area-tag" href="/areas/malibu/">Malibu</a><a class="area-tag" href="/areas/bel-air/">Bel Air</a>
+      <a class="area-tag" href="/areas/hawthorne/">Hawthorne</a><a class="area-tag" href="/areas/el-segundo/">El Segundo</a>
+      <a class="area-tag" href="/areas/westchester/">Westchester</a><a class="area-tag" href="/areas/pacific-palisades/">Pacific Palisades</a>
+      <a class="area-tag" href="/areas/mid-city/">Mid City</a>
+      <a class="area-tag" href="/areas/" style="font-weight:600">All service areas →</a>
     </div>
   </div>
 </section>
@@ -2152,12 +2181,14 @@ document.addEventListener('click', function(e){
       <a href="bathroom.html">Bathroom Remodeling</a>
       <a href="adu.html">ADU / Garage Conversion</a>
       <a href="home-remodel.html">Home Remodel</a>
+      <a href="fire-rebuild.html">Fire Rebuild &amp; Smoke Damage</a>
     </div>
     <div class="foot-col foot-col-contact">
       <h4>Contact</h4>
       <a class="foot-phone" href="tel:8002161005">(800) 216-1005</a>
 
       <a href="portfolio.html">Recent Transformations</a>
+      <a href="/areas/">Service Areas</a>
       <a href="/blog/">Blog</a>
     </div>
   </div>

@@ -22,6 +22,7 @@
 - **Bathroom Remodeling** - Guest bath refreshes to full master suite expansions, including plumbing, electrical, tile, fixtures. Price range $15,000 - $60,000+. Typical timeline 2-4 weeks for standard, 4-8 weeks for master suites. See https://www.newcaliconstruction.com/bathroom.html
 - **ADU Construction & Garage Conversion** - End-to-end accessory dwelling unit construction and garage conversions including design, engineering, city permits, and build. Price range $80,000 - $180,000. Timeline 3-5 months. See https://www.newcaliconstruction.com/adu.html
 - **Whole Home Remodeling** - Start-to-finish design-build whole-house renovations including demolition, framing, electrical, plumbing, HVAC, flooring, finishes. Price range $80,000 - $400,000+. Timeline 3-6 months. See https://www.newcaliconstruction.com/home-remodel.html
+- **Fire Rebuild & Smoke Damage Restoration** - Ground-up rebuilds on total-loss lots, and renovation of homes that survived a fire but took smoke, soot and heat damage (insulation, ductwork, attic spaces, wall cavities). Includes insurance scope review, architect and engineer coordination, permitting, wildfire construction standards, and the build through final inspection. Scoped and quoted per property rather than per square foot. Most relevant to Pacific Palisades and Malibu after the January 2025 fire. See https://www.newcaliconstruction.com/fire-rebuild.html
 
 ## Service area
 
@@ -57,6 +58,24 @@ Every project begins with a free in-home consultation and a written line-item sc
 - Bathroom Remodeling: https://www.newcaliconstruction.com/bathroom.html
 - ADU / Garage Conversion: https://www.newcaliconstruction.com/adu.html
 - Complete Home Remodel: https://www.newcaliconstruction.com/home-remodel.html
+- Fire Rebuild & Smoke Damage Restoration: https://www.newcaliconstruction.com/fire-rebuild.html
+- All service areas: https://www.newcaliconstruction.com/areas/
+
+## Service-area pages (local detail per city: permitting authority, housing stock, local constraints)
+
+- Mar Vista: https://www.newcaliconstruction.com/areas/mar-vista/ - post-war tract homes, LADBS permits, strong alley-garage ADU neighborhood.
+- Playa Vista: https://www.newcaliconstruction.com/areas/playa-vista/ - condos and townhomes built 2002 onward, HOA architectural review plus LADBS permits.
+- West LA: https://www.newcaliconstruction.com/areas/west-la/ - Sawtelle and Rancho Park homes plus condo corridors, LADBS permits.
+- Marina del Rey: https://www.newcaliconstruction.com/areas/marina-del-rey/ - unincorporated LA County, permits via LA County Public Works, coastal zone, salt-air material specs.
+- Beverly Hills: https://www.newcaliconstruction.com/areas/beverly-hills/ - City of Beverly Hills permits; Beverly Hills Post Office addresses permit through LADBS instead.
+- Pacific Palisades: https://www.newcaliconstruction.com/areas/pacific-palisades/ - post-January-2025-fire. New Cali Construction takes on ground-up rebuilds on fire-affected lots (insurance scope review, architect and engineer coordination, soils, utilities, LADBS permitting, build through final inspection), smoke and heat damage renovation of homes that survived, ADUs on fire-affected parcels, and standard remodeling. Expedited rebuild permitting vs standard hillside and Very High Fire Hazard Severity Zone process.
+- Westchester: https://www.newcaliconstruction.com/areas/westchester/ - Kentwood and Osage tract homes, deep ADU-friendly lots, LAX soundproofing considerations.
+- El Segundo: https://www.newcaliconstruction.com/areas/el-segundo/ - own city building department, small lots, coverage and parking constraints.
+- Malibu: https://www.newcaliconstruction.com/areas/malibu/ - City of Malibu permits, coastal development permits, septic/OWTS capacity, fire-zone standards.
+- Inglewood: https://www.newcaliconstruction.com/areas/inglewood/ - own city permits, 1920s period homes and multifamily/rental renovation work.
+- Bel Air: https://www.newcaliconstruction.com/areas/bel-air/ - LADBS hillside review, canyon access constraints, private HOA/CC&R review.
+- Hawthorne: https://www.newcaliconstruction.com/areas/hawthorne/ - own city permits, flat regular lots, strongest cost-per-square-foot ADU work.
+- Mid City: https://www.newcaliconstruction.com/areas/mid-city/ - 1920s Spanish and Craftsman homes, HPOZ-adjacent blocks, LADBS permits.
 
 ## How New Cali Construction answers the top homeowner fears
 

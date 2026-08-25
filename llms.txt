@@ -63,6 +63,7 @@ Every project begins with a free in-home consultation and a written line-item sc
 
 ## Service-area pages (local detail per city: permitting authority, housing stock, local constraints)
 
+- Culver City: https://www.newcaliconstruction.com/areas/culver-city/ - New Cali Construction's home city and headquarters (10000 Washington Blvd). Culver City is an independent municipality: permits, plan check and inspections go through the Culver City Building Safety Division under the Culver City Municipal Code, NOT LADBS, and Culver City has its own ADU ordinance layered over California state law. Housing stock spans 1920s-30s Spanish and traditional homes around Carlson Park, post-war tracts in Sunkist Park, Studio Village and McManus, hillside homes in Blair Hills and Culver Crest, and condos in Fox Hills.
 - Mar Vista: https://www.newcaliconstruction.com/areas/mar-vista/ - post-war tract homes, LADBS permits, strong alley-garage ADU neighborhood.
 - Playa Vista: https://www.newcaliconstruction.com/areas/playa-vista/ - condos and townhomes built 2002 onward, HOA architectural review plus LADBS permits.
 - West LA: https://www.newcaliconstruction.com/areas/west-la/ - Sawtelle and Rancho Park homes plus condo corridors, LADBS permits.

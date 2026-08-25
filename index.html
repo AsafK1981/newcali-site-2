@@ -2519,8 +2519,15 @@ async function submitExit(e) {
   var btn = e.target.querySelector('button');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    await fetch('https://api.web3forms.com/submit', {method:'POST', body: new FormData(e.target)});
-  } catch(err) {}
+    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: new FormData(e.target)});
+    var json = await res.json();
+    if (!json.success) throw new Error('submit rejected');
+  } catch(err) {
+    btn.textContent = 'Yes, Send Me a Free Estimate →';
+    btn.disabled = false;
+    alert('Something went wrong and your request was not sent. Please try again or call us at (800) 216-1005.');
+    return;
+  }
   document.getElementById('exitPopup').innerHTML = '<div style="padding:48px;text-align:center;"><div style="font-size:44px;margin-bottom:12px">🎉</div><h3 style="font-family:Merriweather,serif;color:var(--green-dk);font-size:22px;margin-bottom:8px;">Thanks! We\'ll be in touch soon.</h3><p style="color:var(--muted);">Or call us now at <a href="tel:8002161005" style="color:var(--green);font-weight:600;">(800) 216-1005</a></p><button onclick="closeExit()" style="margin-top:20px;background:var(--green);color:white;border:none;padding:10px 24px;border-radius:4px;cursor:pointer;font-family:Inter,sans-serif;font-weight:600;">Close</button></div>';
 }
 </script>

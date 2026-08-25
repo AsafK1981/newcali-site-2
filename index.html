@@ -680,8 +680,19 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .hero video,.hero img{position:relative;width:100%;height:56vw;object-fit:cover;background:#000;z-index:0}
   .hero-overlay{display:none}
   .hero-content{position:relative;background:#fff;padding:20px 24px;text-align:center;width:100%;z-index:1;display:flex;flex-direction:column;gap:16px}
-  .trust{display:none}
-  .cslb-bar{display:none}
+  /* Trust + licence bar stay on mobile: these are the strongest credibility
+     signals on the page and most traffic is mobile. Compacted, not hidden. */
+  .trust{display:grid;grid-template-columns:1fr 1fr;padding:0}
+  /* display:block so the label wraps as normal text. As a flex row each inner
+     node wraps on its own and "Lic # 1008892" breaks across three lines. */
+  .trust-item{display:block;font-size:11px;padding:9px 10px;text-align:center;line-height:1.55;
+    border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+  .trust-item strong{display:inline}
+  .trust-item svg{vertical-align:-2px;margin-right:3px}
+  .trust-item:nth-child(2n){border-right:none}
+  .trust-item:nth-last-child(-n+2){border-bottom:none}
+  .cslb-bar{padding:8px 0}
+  .cslb-bar a{font-size:11.5px;gap:7px}
   .hero-stars{order:1;color:#f0b400;margin:0}
   .hero h1{order:2;font-size:clamp(22px,6vw,30px);text-shadow:none;color:#1a1a1a;margin:0}
   .hero-sub{order:3;font-size:14px;text-shadow:none;color:#555;line-height:1.6;margin:0}
@@ -728,8 +739,12 @@ footer{background:var(--green-dk);color:rgba(255,255,255,.72);padding:52px 60px 
   .photo-grid-bottom{display:none}
   /* 7. Hide contact image */
   .contact-img{display:none}
-  /* 8. Hide areas section entirely */
-  .areas{display:none}
+  /* 8. Service areas stay on mobile: this tag list is the only internal link
+     path from the homepage to the city pages. Compacted for small screens. */
+  .areas{display:block;padding:18px 14px}
+  .areas-lbl{font-size:10px;margin-bottom:8px}
+  .areas-tags{gap:6px}
+  .area-tag{font-size:11px;padding:5px 10px}
   /* 9. Hide eyebrow labels */
   .eyebrow{display:none}
   /* 10. WhatsApp on mobile - keep readable and tappable */
@@ -2195,7 +2210,8 @@ document.addEventListener('click', function(e){
   <div class="areas-in">
     <div class="areas-lbl">Proudly Serving</div>
     <div class="areas-tags">
-      <span class="area-tag">Los Angeles</span><span class="area-tag">Culver City</span>
+      <span class="area-tag">Los Angeles</span><a class="area-tag" href="/areas/culver-city/">Culver City</a>
+      <a class="area-tag" href="/areas/santa-monica/">Santa Monica</a><a class="area-tag" href="/areas/venice/">Venice</a>
       <a class="area-tag" href="/areas/playa-vista/">Playa Vista</a><a class="area-tag" href="/areas/mar-vista/">Mar Vista</a>
       <a class="area-tag" href="/areas/west-la/">West LA</a><a class="area-tag" href="/areas/beverly-hills/">Beverly Hills</a>
       <a class="area-tag" href="/areas/marina-del-rey/">Marina Del Rey</a><a class="area-tag" href="/areas/inglewood/">Inglewood</a>
@@ -2203,6 +2219,7 @@ document.addEventListener('click', function(e){
       <a class="area-tag" href="/areas/hawthorne/">Hawthorne</a><a class="area-tag" href="/areas/el-segundo/">El Segundo</a>
       <a class="area-tag" href="/areas/westchester/">Westchester</a><a class="area-tag" href="/areas/pacific-palisades/">Pacific Palisades</a>
       <a class="area-tag" href="/areas/mid-city/">Mid City</a>
+      <a class="area-tag" href="/permit-guide/">Who Issues Your Permit</a>
       <a class="area-tag" href="/areas/" style="font-weight:600">All service areas →</a>
     </div>
   </div>

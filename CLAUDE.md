@@ -1,6 +1,13 @@
 Always make only the specific change requested. Never modify any other part of the code.
 
-All changes must only affect mobile screens. Only edit CSS inside @media (max-width: 768px) blocks. Never touch desktop styles.
+Changes apply to **both desktop and mobile**. Every effect, section and trust
+signal should be present on both; the mobile layout may compact or restack
+something, but it should not be the only place an effect exists, and it should
+not hide content that matters.
+
+(This replaces an older instruction that restricted all edits to
+`@media (max-width: 768px)`. That was scoped to one past mobile-polish task and
+Asaf confirmed on 2026-08-25 that it is stale.)
 
 ## After publishing anything, ping IndexNow
 

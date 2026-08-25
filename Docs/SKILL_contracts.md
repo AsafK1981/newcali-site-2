@@ -1,4 +1,4 @@
-# NEW CALI CONSTRUCTION — CONTRACT & PROPOSAL SKILL
+# NEW CALI CONSTRUCTION - CONTRACT & PROPOSAL SKILL
 
 ## PURPOSE
 Generate professional construction contracts and proposals for New Cali Construction Inc. that match the exact format and structure of existing contracts.
@@ -18,9 +18,9 @@ Generate professional construction contracts and proposals for New Cali Construc
 
 ---
 
-## CONTRACT STRUCTURE (pages 1–5 = variable, pages 6–12 = fixed boilerplate)
+## CONTRACT STRUCTURE (pages 1-5 = variable, pages 6-12 = fixed boilerplate)
 
-### PAGE 1 — HEADER + CLIENT/PROJECT + SCOPE START
+### PAGE 1 - HEADER + CLIENT/PROJECT + SCOPE START
 ```
 [LOGO top center] [Lic. #1008892 top right] [Date top right]
 
@@ -30,8 +30,8 @@ Address: [address]
 Phone: [phone]
 Email: [email]
 
-              [PROJECT TITLE — centered, bold, underlined]
-        [Scope of work subtitle — italic, underlined, centered]
+              [PROJECT TITLE - centered, bold, underlined]
+        [Scope of work subtitle - italic, underlined, centered]
 
 What's Included:
 ✅ [item]
@@ -42,7 +42,7 @@ What's Included:
 [Bottom right: Initials boxes x3]
 ```
 
-### PAGE 2 — SCOPE CONTINUED
+### PAGE 2 - SCOPE CONTINUED
 ```
 ✅ [remaining included items]
 
@@ -52,7 +52,7 @@ What's Not Included:
 ...
 ```
 
-### PAGE 3 — PRICING & PAYMENT SCHEDULE
+### PAGE 3 - PRICING & PAYMENT SCHEDULE
 ```
 Contractor to supply (= Including):
 • All labor and rough materials, such as [list materials]
@@ -72,7 +72,7 @@ Total price................................................................ $[AM
 
 **DOWN PAYMENT RULE:** Down payment must NOT exceed $1,000 OR 10% of contract price, whichever is LESS. (California law BPC §7159.5)
 
-### PAGE 4 — TIMELINE & TERMS
+### PAGE 4 - TIMELINE & TERMS
 ```
 • Work will start on [START DATE] and should be substantially completed within [X working days].
 • All work performed by contractor is covered by a standard one-year warranty from the date of completion...
@@ -82,13 +82,13 @@ Total price................................................................ $[AM
 Additional Terms and Conditions:
 
 Concealed or Unknown Conditions
-[standard boilerplate — see below]
+[standard boilerplate - see below]
 
 Right to Stop Work
-[standard boilerplate — see below]
+[standard boilerplate - see below]
 ```
 
-### PAGE 5 — SIGNATURES
+### PAGE 5 - SIGNATURES
 ```
 ________________  ________________  _________________
 Client's Name        Signature              Date
@@ -102,14 +102,14 @@ ________________  ________________  _________________
 Construction company   Signature         Date
 ```
 
-### PAGES 6–12 — FIXED LEGAL BOILERPLATE
+### PAGES 6-12 - FIXED LEGAL BOILERPLATE
 These pages are ALWAYS appended as-is. They include:
 - California Home Improvement Contract legal provisions (2026)
 - Subcontractor disclosure (SB 517)
 - Down payment limitation
 - Schedule of progress payments
 - Extra work and change orders
-- Right to cancel (Civil Code §§1689.5–1689.8)
+- Right to cancel (Civil Code §§1689.5-1689.8)
 - Notice of Cancellation form
 - Commercial General Liability Insurance
 - Workers' Compensation
@@ -118,7 +118,7 @@ These pages are ALWAYS appended as-is. They include:
 - Arbitration of Disputes
 - 2026 New Requirements Checklist
 
-**DO NOT regenerate these — they are fixed and already formatted.**
+**DO NOT regenerate these - they are fixed and already formatted.**
 
 ---
 
@@ -144,18 +144,18 @@ These pages are ALWAYS appended as-is. They include:
 ## INPUT REQUIRED TO GENERATE A CONTRACT
 When asked to create a contract, always ask for (or extract from the user's message):
 
-1. **Client name(s)** — if two clients, both get signature lines
+1. **Client name(s)** - if two clients, both get signature lines
 2. **Client address**
 3. **Client phone**
 4. **Client email**
 5. **Project location** (if different from client address)
 6. **Project title** (e.g., "Balcony Repair", "Kitchen Remodel", "Bathroom Renovation")
 7. **Scope subtitle** (e.g., "related to one damaged balcony of unit #1")
-8. **What's Included** — list of line items (✅)
-9. **What's Not Included** — list of exclusions (❌)
+8. **What's Included** - list of line items (✅)
+9. **What's Not Included** - list of exclusions (❌)
 10. **Materials contractor supplies**
 11. **Total price**
-12. **Payment stages** — milestone names and dollar amounts
+12. **Payment stages** - milestone names and dollar amounts
 13. **Start date**
 14. **Estimated duration** (in working days)
 15. **Date of contract**
@@ -181,5 +181,5 @@ Generate as a Word document (.docx) using the docx skill, OR provide clean struc
 
 When generating text only, clearly mark:
 - `[PAGE 1]`, `[PAGE 2]`, etc.
-- `[LEGAL PAGES 6–12: append existing boilerplate]`
+- `[LEGAL PAGES 6-12: append existing boilerplate]`
 - All variable fields in `[BRACKETS]`

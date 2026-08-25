@@ -6,18 +6,18 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service Areas | New Cali Construction — Westside Los Angeles</title>
-<meta name="description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
-<link rel="canonical" href="https://www.newcaliconstruction.com/areas/">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{META_DESC}}">
+<link rel="canonical" href="{{URL}}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Service Areas | New Cali Construction — Westside Los Angeles">
-<meta property="og:description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
-<meta property="og:url" content="https://www.newcaliconstruction.com/areas/">
-<meta property="og:image" content="https://www.newcaliconstruction.com/images/home-remodel/home-remodel-1.jpg">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{OG_DESC}}">
+<meta property="og:url" content="{{URL}}">
+<meta property="og:image" content="https://www.newcaliconstruction.com/images/kitchen/kitchen-2.jpg">
 <meta property="og:site_name" content="New Cali Construction">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Service Areas | New Cali Construction — Westside Los Angeles">
-<meta name="twitter:description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{TW_DESC}}">
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/area.css">
 <!-- Google tag (gtag.js) -->
@@ -62,6 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
       "position": 2,
       "name": "Service Areas",
       "item": "https://www.newcaliconstruction.com/areas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{CITY}}",
+      "item": "{{URL}}"
     }
   ]
 }
@@ -69,91 +75,84 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Service Areas",
-  "url": "https://www.newcaliconstruction.com/areas/",
-  "description": "New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.",
-  "hasPart": [
-    {
-      "@type": "WebPage",
-      "name": "General Contractor in Culver City",
-      "url": "https://www.newcaliconstruction.com/areas/culver-city/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Santa Monica",
-      "url": "https://www.newcaliconstruction.com/areas/santa-monica/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Venice",
-      "url": "https://www.newcaliconstruction.com/areas/venice/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Mar Vista",
-      "url": "https://www.newcaliconstruction.com/areas/mar-vista/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Playa Vista",
-      "url": "https://www.newcaliconstruction.com/areas/playa-vista/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in West LA",
-      "url": "https://www.newcaliconstruction.com/areas/west-la/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Marina del Rey",
-      "url": "https://www.newcaliconstruction.com/areas/marina-del-rey/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Beverly Hills",
-      "url": "https://www.newcaliconstruction.com/areas/beverly-hills/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Pacific Palisades",
-      "url": "https://www.newcaliconstruction.com/areas/pacific-palisades/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Westchester",
-      "url": "https://www.newcaliconstruction.com/areas/westchester/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in El Segundo",
-      "url": "https://www.newcaliconstruction.com/areas/el-segundo/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Malibu",
-      "url": "https://www.newcaliconstruction.com/areas/malibu/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Inglewood",
-      "url": "https://www.newcaliconstruction.com/areas/inglewood/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Bel Air",
-      "url": "https://www.newcaliconstruction.com/areas/bel-air/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Hawthorne",
-      "url": "https://www.newcaliconstruction.com/areas/hawthorne/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Mid City",
-      "url": "https://www.newcaliconstruction.com/areas/mid-city/"
-    }
+  "@type": [
+    "LocalBusiness",
+    "HomeAndConstructionBusiness",
+    "GeneralContractor"
+  ],
+  "name": "New Cali Construction Inc.",
+  "@id": "https://www.newcaliconstruction.com/",
+  "url": "https://www.newcaliconstruction.com/",
+  "telephone": "+18002161005",
+  "email": "Info@NewCaliConstruction.com",
+  "priceRange": "$$-$$$",
+  "foundingDate": "2014",
+  "description": "{{SCHEMA_DESC}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10000 Washington Blvd. Unit 600",
+    "addressLocality": "Culver City",
+    "addressRegion": "CA",
+    "postalCode": "90232",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0211,
+    "longitude": -118.3965
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "{{CITY}}",
+    "sameAs": "{{WIKI}}"
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "California Contractors State License Board License",
+    "identifier": "1008892"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "51",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.yelp.com/biz/new-cali-construction-{{SLUG}}",
+    "https://www.houzz.com/professionals/kitchen-and-bath-remodelers/new-cali-construction-pfvwus-pf~1008178105",
+    "https://www.buildzoom.com/contractor/new-cali-construction-inc",
+    "https://www.facebook.com/profile.php?id=61550646516784",
+    "https://www.instagram.com/newcaliconstruction/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{SVC_NAME}}",
+  "serviceType": "Home remodeling and general contracting",
+  "description": "{{SVC_DESC}}",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "New Cali Construction Inc.",
+    "telephone": "+18002161005",
+    "email": "Info@NewCaliConstruction.com",
+    "url": "https://www.newcaliconstruction.com/"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "{{CITY}}"
+  },
+  "url": "{{URL}}"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{{FAQ_SCHEMA}}
   ]
 }
 </script>
@@ -212,117 +211,45 @@ document.addEventListener('click', function(e){
 });
 </script>
 
-<section class="area-hero" style="background-image:url('/images/home-remodel/home-remodel-1.jpg')">
+<section class="area-hero" style="background-image:url('/images/kitchen/kitchen-2.jpg')">
   <div class="area-hero-inner">
     <nav class="area-crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a> › <span>Service Areas</span>
+      <a href="/">Home</a> &rsaquo; <a href="/areas/">Service Areas</a> &rsaquo; <span>{{CITY}}</span>
     </nav>
-    <h1>Where We Build</h1>
-    <p>We are based in Culver City and work across the Westside and South Bay. Every neighborhood below has its own permitting authority, its own housing stock and its own surprises — so each one has its own page.</p>
+    <h1>{{H1}}</h1>
+    <p>{{HERO_SUB}}</p>
     <div class="area-hero-btns">
-      <a href="#areas" class="btn-green">Find your area →</a>
+      <a href="#contact" class="btn-green">Get a Free Estimate &rarr;</a>
       <a href="tel:8002161005" class="btn-wht">(800) 216-1005</a>
     </div>
   </div>
 </section>
 
 <div class="trust">
-  <div class="trust-item">✓ <strong>Licensed, Bonded &amp; Insured</strong> · Lic #1008892</div>
-  <div class="trust-item">★ <strong>50+ Five-Star Reviews</strong></div>
-  <div class="trust-item">🏠 <strong>500+ Projects</strong> Since 2014</div>
-  <div class="trust-item">📄 <strong>Written Scope. Locked Price.</strong></div>
+  <div class="trust-item">&#10003; <strong>Licensed, Bonded &amp; Insured</strong> &middot; Lic #1008892</div>
+  <div class="trust-item">&#9733; <strong>50+ Five-Star Reviews</strong></div>
+  <div class="trust-item">&#127968; <strong>500+ Projects</strong> Since 2014</div>
+  <div class="trust-item">&#128196; <strong>Written Scope. Locked Price.</strong></div>
 </div>
 
-<section class="area-sec" id="areas">
+<section class="area-sec">
   <div class="area-wrap">
-    <div class="area-hdr-c">
-      <p class="eyebrow">Service Areas</p>
-      <h2 class="area-h2">Local pages, <em>not a list of city names</em></h2>
-      <p class="area-lead">A remodel in Malibu and a remodel in Hawthorne have almost nothing in common once you get past the tile. These pages cover what changes: who issues the permit, what the houses are built like, and what we plan for before day one.</p>
+    <div class="area-intro">
+      <div>
+        <p class="eyebrow">{{EYEBROW_CITY}}</p>
+        <h2 class="area-h2">What remodeling in {{CITY}} <em>actually involves</em></h2>
+        <p class="area-lead">{{INTRO_P1}}</p>
+        <p class="area-lead">{{INTRO_P2}}</p>
+        <a href="#contact" class="btn-green" style="margin-top:10px">Get a Free Estimate &rarr;</a>
+      </div>
+      <div class="area-intro-img">
+        <img src="/images/bathroom/bathroom-6.jpg" width="1200" height="800" alt="{{CITY}} remodeling work by New Cali Construction" loading="lazy">
+        <div class="area-hoods">
+          <h4>Where we work in {{CITY}}</h4>
+          <p>{{HOODS}}</p>
+        </div>
+      </div>
     </div>
-    <div class="hub-grid">
-      <a class="hub-card" href="/areas/culver-city/">
-        <h3>Culver City</h3>
-        <p>Our home city and our office address. Culver City permits through its own building department, not LADBS, and runs its own ADU ordinance. We are ten minutes from that counter.</p>
-        <span>View Culver City &rarr;</span>
-      </a>
-      <a class="hub-card" href="/areas/santa-monica/">
-        <h3>Santa Monica</h3>
-        <p>Its own Building and Safety Division, its own ADU rules and one of the tougher plan checks on the Westside. We price the Santa Monica version, not the City of LA version.</p>
-        <span>View Santa Monica &rarr;</span>
-      </a>
-      <a class="hub-card" href="/areas/venice/">
-        <h3>Venice</h3>
-        <p>Nearly every Venice house sits in the coastal zone, so a building permit needs coastal clearance first. We map that track before you pay an architect.</p>
-        <span>View Venice &rarr;</span>
-      </a>
-      <a class="hub-card" href="/areas/mar-vista/">
-        <h3>Mar Vista</h3>
-        <p>Opening up post-war floor plans, adding second bathrooms, and turning alley garages into permitted ADUs — a mile and a half from our Culver City shop.</p>
-        <span>View Mar Vista →</span>
-      </a>
-      <a class="hub-card" href="/areas/playa-vista/">
-        <h3>Playa Vista</h3>
-        <p>Condo and townhome remodels run the way Playa Vista actually requires them — HOA submittal first, elevator and loading dock booked, neighbors kept out of it.</p>
-        <span>View Playa Vista →</span>
-      </a>
-      <a class="hub-card" href="/areas/west-la/">
-        <h3>West LA</h3>
-        <p>Sawtelle bungalows, Rancho Park traditionals and mid-rise condos — three very different builds, three very different remodels.</p>
-        <span>View West LA →</span>
-      </a>
-      <a class="hub-card" href="/areas/marina-del-rey/">
-        <h3>Marina del Rey</h3>
-        <p>Waterfront condos and townhomes — county permits, association approvals and materials chosen for salt air, not for a showroom.</p>
-        <span>View Marina del Rey →</span>
-      </a>
-      <a class="hub-card" href="/areas/beverly-hills/">
-        <h3>Beverly Hills</h3>
-        <p>A city with its own building department, its own site rules and its own expectations of finish — all three planned for before we start.</p>
-        <span>View Beverly Hills →</span>
-      </a>
-      <a class="hub-card" href="/areas/pacific-palisades/">
-        <h3>Pacific Palisades</h3>
-        <p>Ground-up rebuilds, smoke and heat damage renovation, and remodeling on the blocks the fire never reached. One licensed design-build contractor for all three.</p>
-        <span>View Pacific Palisades →</span>
-      </a>
-      <a class="hub-card" href="/areas/westchester/">
-        <h3>Westchester</h3>
-        <p>Post-war Kentwood and Osage tract homes — the best ADU lots on the Westside, and a soundproofing package you should not tear out by accident.</p>
-        <span>View Westchester →</span>
-      </a>
-      <a class="hub-card" href="/areas/el-segundo/">
-        <h3>El Segundo</h3>
-        <p>Small lots, older homes and a city building department that knows every street — El Segundo projects are won on planning, not muscle.</p>
-        <span>View El Segundo →</span>
-      </a>
-      <a class="hub-card" href="/areas/malibu/">
-        <h3>Malibu</h3>
-        <p>Coastal permits, septic-served lots and fire-zone materials — Malibu punishes contractors who treat it like the rest of LA.</p>
-        <span>View Malibu →</span>
-      </a>
-      <a class="hub-card" href="/areas/inglewood/">
-        <h3>Inglewood</h3>
-        <p>1920s Spanish, post-war bungalows and income property — remodels priced for what the house is actually for.</p>
-        <span>View Inglewood →</span>
-      </a>
-      <a class="hub-card" href="/areas/bel-air/">
-        <h3>Bel Air</h3>
-        <p>Hillside estates on canyon roads — where access, engineering and review add more to a project than the finishes do.</p>
-        <span>View Bel Air →</span>
-      </a>
-      <a class="hub-card" href="/areas/hawthorne/">
-        <h3>Hawthorne</h3>
-        <p>Post-war South Bay homes on straightforward lots — the best value-per-dollar ADU and addition work we do.</p>
-        <span>View Hawthorne →</span>
-      </a>
-      <a class="hub-card" href="/areas/mid-city/">
-        <h3>Mid City</h3>
-        <p>1920s Spanish and Craftsman homes with details worth saving — and older systems that need replacing behind them.</p>
-        <span>View Mid City →</span>
-      </a>
-    </div>
-    <p class="area-price-foot" style="margin-top:36px">Based in <strong>Culver City</strong> — see the <a href="/" style="color:var(--green);font-weight:600">main site</a> for our Culver City and greater Los Angeles work.</p>
   </div>
 </section>
 
@@ -330,49 +257,145 @@ document.addEventListener('click', function(e){
   <div class="area-wrap">
     <div class="area-hdr-c">
       <p class="eyebrow">Our Services</p>
-      <h2 class="area-h2">What we do <em>everywhere we work</em></h2>
+      <h2 class="area-h2">What we build in <em>{{CITY}}</em></h2>
     </div>
     <div class="area-svc-grid">
       <div class="area-svc-card">
         <img src="/images/kitchen/kitchen-2.jpg" width="1200" height="800" alt="Kitchen Remodeling by New Cali Construction" loading="lazy">
         <div class="area-svc-body">
-          <h3>Kitchen Remodeling</h3>
-          <p>Licensed, permitted work with a written line-item scope, a locked price and weekly photo updates from demolition to final inspection.</p>
-          <a class="area-svc-lnk" href="/kitchen.html">See kitchen remodeling →</a>
+          <h3>Kitchen Remodeling in {{CITY}}</h3>
+          <p>{{SVC1}}</p>
+          <a class="area-svc-lnk" href="/kitchen.html">See kitchen remodeling &rarr;</a>
         </div>
       </div>
       <div class="area-svc-card">
         <img src="/images/bathroom/bathroom-2.jpg" width="1200" height="800" alt="Bathroom Remodeling by New Cali Construction" loading="lazy">
         <div class="area-svc-body">
-          <h3>Bathroom Remodeling</h3>
-          <p>Licensed, permitted work with a written line-item scope, a locked price and weekly photo updates from demolition to final inspection.</p>
-          <a class="area-svc-lnk" href="/bathroom.html">See bathroom remodeling →</a>
+          <h3>Bathroom Remodeling in {{CITY}}</h3>
+          <p>{{SVC2}}</p>
+          <a class="area-svc-lnk" href="/bathroom.html">See bathroom remodeling &rarr;</a>
         </div>
       </div>
       <div class="area-svc-card">
-        <img src="/images/adu/adu-1.jpg" width="1200" height="800" alt="ADU & Garage Conversion by New Cali Construction" loading="lazy">
+        <img src="/images/adu/adu-1.jpg" width="1200" height="800" alt="ADU and Garage Conversion by New Cali Construction" loading="lazy">
         <div class="area-svc-body">
-          <h3>ADU & Garage Conversion</h3>
-          <p>Licensed, permitted work with a written line-item scope, a locked price and weekly photo updates from demolition to final inspection.</p>
-          <a class="area-svc-lnk" href="/adu.html">See adu & garage conversion →</a>
+          <h3>ADU &amp; Garage Conversion in {{CITY}}</h3>
+          <p>{{SVC3}}</p>
+          <a class="area-svc-lnk" href="/adu.html">See adu &amp; garage conversion &rarr;</a>
         </div>
       </div>
       <div class="area-svc-card">
         <img src="/images/home-remodel/home-remodel-2.jpg" width="1200" height="800" alt="Whole-Home Remodel by New Cali Construction" loading="lazy">
         <div class="area-svc-body">
-          <h3>Whole-Home Remodel</h3>
-          <p>Licensed, permitted work with a written line-item scope, a locked price and weekly photo updates from demolition to final inspection.</p>
-          <a class="area-svc-lnk" href="/home-remodel.html">See whole-home remodel →</a>
+          <h3>Whole-Home Remodel in {{CITY}}</h3>
+          <p>{{SVC4}}</p>
+          <a class="area-svc-lnk" href="/home-remodel.html">See whole-home remodel &rarr;</a>
         </div>
       </div>
       <div class="area-svc-card area-svc-card-feature">
-        <img src="/images/home-remodel/home-remodel-1.jpg" width="1200" height="800" alt="Fire Rebuild & Smoke Damage by New Cali Construction" loading="lazy">
+        <img src="/images/home-remodel/home-remodel-1.jpg" width="1200" height="800" alt="Condo and HOA Remodeling by New Cali Construction" loading="lazy">
         <div class="area-svc-body">
-          <h3>Fire Rebuild & Smoke Damage</h3>
-          <p>Ground-up rebuilds on total-loss lots, and renovation of homes left standing that took smoke, soot and heat damage. We read the insurance scope against what the city will actually require you to build, and put the gap in writing before you commit.</p>
-          <a class="area-svc-lnk" href="/fire-rebuild.html">See fire rebuild & smoke damage →</a>
+          <h3>{{SVC5_TITLE}}</h3>
+          <p>{{SVC5}}</p>
+          <a class="area-svc-lnk" href="/home-remodel.html">See how we work &rarr;</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-sec area-sec-pale">
+  <div class="area-wrap">
+    <div class="area-permit">
+      <div>
+        <p class="eyebrow">Permits &amp; Local Rules</p>
+        <h2 class="area-h2">Who approves your project <em>in {{CITY}}</em></h2>
+        <p class="area-lead">{{PERMIT_LEAD}}</p>
+      </div>
+      <ul class="area-permit-list">
+{{PERMIT_BULLETS}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="area-sec">
+  <div class="area-wrap">
+    <div class="area-hdr-c">
+      <p class="eyebrow">Local Experience</p>
+      <h2 class="area-h2">Three things we plan for on <em>every {{CITY}} job</em></h2>
+    </div>
+    <div class="area-notes">
+      <div class="area-note">
+        <span class="area-note-n">01</span>
+        <h3>{{N1_H}}</h3>
+        <p>{{N1_P}}</p>
+      </div>
+      <div class="area-note">
+        <span class="area-note-n">02</span>
+        <h3>{{N2_H}}</h3>
+        <p>{{N2_P}}</p>
+      </div>
+      <div class="area-note">
+        <span class="area-note-n">03</span>
+        <h3>{{N3_H}}</h3>
+        <p>{{N3_P}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-sec area-sec-alt">
+  <div class="area-wrap">
+    <div class="area-hdr-c">
+      <p class="eyebrow">Transparent Pricing</p>
+      <h2 class="area-h2">Typical investment <em>ranges</em></h2>
+      <p class="area-lead">Every {{CITY}} project gets its own written, line-item quote. These ranges are for planning.</p>
+    </div>
+    <div class="area-price">
+      <div class="area-price-card">
+        <p class="area-price-tier">Refresh</p>
+        <p class="area-price-range">$15K - $40K</p>
+        <p class="area-price-note">Single-room refresh: bathroom, kitchen facelift, or flooring throughout. Typically 2-4 weeks.</p>
+      </div>
+      <div class="area-price-card">
+        <p class="area-price-tier">Renovate</p>
+        <p class="area-price-range">$40K - $120K</p>
+        <p class="area-price-note">Full kitchen, primary suite, or multi-room remodel with layout changes. Typically 4-10 weeks.</p>
+      </div>
+      <div class="area-price-card">
+        <p class="area-price-tier">Transform</p>
+        <p class="area-price-range">$120K - $500K+</p>
+        <p class="area-price-note">Whole-home remodel or ADU build, design through final inspection. Typically 3-6 months.</p>
+      </div>
+    </div>
+    <p class="area-price-foot"><strong>Free estimates always.</strong> Every quote is line-item and locked in writing before work begins.</p>
+  </div>
+</section>
+
+<section class="area-sec">
+  <div class="area-wrap">
+    <div class="area-hdr-c">
+      <p class="eyebrow">Recent Work</p>
+      <h2 class="area-h2">Craftsmanship you can <em>look at</em></h2>
+      <p class="area-lead">A sample of completed New Cali Construction projects in {{CITY}} and across the Westside. <a href="/portfolio.html" style="color:var(--green);font-weight:600">See the full portfolio &rarr;</a></p>
+    </div>
+    <div class="area-gal">
+      <img src="/images/kitchen/kitchen-1.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
+      <img src="/images/bathroom/bathroom-2.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
+      <img src="/images/home-remodel/home-remodel-5.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="area-sec area-sec-alt">
+  <div class="area-wrap">
+    <div class="area-hdr-c">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="area-h2">{{CITY}} <em>FAQs</em></h2>
+    </div>
+    <div class="area-faq-list">
+{{FAQ_VISIBLE}}
     </div>
   </div>
 </section>
@@ -380,11 +403,18 @@ document.addEventListener('click', function(e){
 <section class="area-sec">
   <div class="area-wrap">
     <div class="area-cta">
-      <h2>Not sure if we cover your street?</h2>
-      <p>Call us. If we are not the right contractor for your area, we will say so.</p>
+      <h2>{{CTA_H}}</h2>
+      <p>Free in-home consultation. Written line-item scope. Locked price before we start.</p>
       <div class="area-cta-btns">
         <a href="#contact" class="btn-wht">Get a Free Estimate</a>
         <a href="tel:8002161005" class="area-cta-phone">(800) 216-1005</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <p class="eyebrow" style="margin-bottom:16px">We also work nearby</p>
+      <div class="area-nearby">
+{{NEARBY}}
+        <a href="/areas/">All service areas</a>
       </div>
     </div>
   </div>
@@ -394,14 +424,14 @@ document.addEventListener('click', function(e){
   <div class="area-wrap">
     <div class="area-hdr-c">
       <p class="eyebrow">Get in Touch</p>
-      <h2 class="area-h2">Get a Free Westside <em>Estimate</em></h2>
+      <h2 class="area-h2">Get a Free {{CITY}} <em>Estimate</em></h2>
       <p class="area-lead">Free in-home consultation, a written line-item scope, and a locked price. No pressure, ever.</p>
     </div>
     <div class="area-form-box" id="cform">
       <form id="contactForm" onsubmit="submitForm(event)">
         <input type="hidden" name="access_key" value="3f2d97e0-cedd-4b40-9bfc-72cab8332e94">
-        <input type="hidden" name="subject" value="New Lead (Westside) - New Cali Construction Website">
-        <input type="hidden" name="service_area" value="Westside">
+        <input type="hidden" name="subject" value="New Lead ({{CITY}}) - New Cali Construction Website">
+        <input type="hidden" name="service_area" value="{{CITY}}">
         <div class="form-row">
           <div class="fg"><label>First Name</label><input type="text" name="first_name" id="fn" placeholder="John" required></div>
           <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div>
@@ -420,18 +450,18 @@ document.addEventListener('click', function(e){
             <option>Other</option>
           </select>
         </div>
-        <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your Westside project..."></textarea></div>
+        <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your {{CITY}} project..."></textarea></div>
         <button type="submit" class="form-btn">Send Message</button>
       </form>
     </div>
     <div class="area-form-box" id="formOk" style="display:none;text-align:center;">
-      <div style="font-size:44px;margin-bottom:12px">🎉</div>
+      <div style="font-size:44px;margin-bottom:12px">&#127881;</div>
       <h4 style="font-family:Merriweather,serif;font-size:20px;color:var(--green-dk);margin-bottom:6px;">Thanks for reaching out!</h4>
       <p style="color:var(--muted);font-size:14px;margin-bottom:18px;">We received your message and will get back to you within a few hours - weekdays and weekends.</p>
       <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Want a faster response?</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="tel:8002161005" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--green);color:white;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;">📞 (800) 216-1005</a>
-        <a href="https://wa.me/17149289011" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#25D366;color:white;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;">💬 WhatsApp Us</a>
+        <a href="tel:8002161005" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--green);color:white;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;">&#128222; (800) 216-1005</a>
+        <a href="https://wa.me/17149289011" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#25D366;color:white;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;">&#128172; WhatsApp Us</a>
       </div>
     </div>
   </div>
@@ -448,7 +478,7 @@ async function submitForm(e) {
       document.getElementById('cform').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
       if (typeof gtag === 'function') {
-        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_areas-hub'});
+        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_{{SLUG}}'});
       }
       if (typeof emailjs !== 'undefined') {
         emailjs.send('service_eql2h4h', 'template_blfuq5c', {
@@ -466,7 +496,7 @@ async function submitForm(e) {
   <div class="foot-top">
     <div class="foot-brand">
       <h3>New Cali Construction</h3>
-      <small>Lic # 1008892 · Bonded &amp; Insured · © 2026</small>
+      <small>Lic # 1008892 &middot; Bonded &amp; Insured &middot; &copy; 2026</small>
       <p>Premium kitchen, bathroom &amp; ADU remodeling across the Westside. No hidden fees. No endless delays. Just beautiful results.</p>
     </div>
     <div class="foot-col">
@@ -480,26 +510,23 @@ async function submitForm(e) {
     <div class="foot-col">
       <h4>Service Areas</h4>
       <a href="/areas/">All Service Areas</a>
-      <a href="/areas/culver-city/">Culver City</a>
-      <a href="/areas/santa-monica/">Santa Monica</a>
-      <a href="/areas/venice/">Venice</a>
+{{FOOTER_AREAS}}
       <a href="/areas/mar-vista/">Mar Vista</a>
       <a href="/areas/playa-vista/">Playa Vista</a>
       <a href="/areas/west-la/">West LA</a>
       <a href="/areas/marina-del-rey/">Marina del Rey</a>
-      <a href="/areas/beverly-hills/">Beverly Hills</a>
     </div>
   </div>
   <div class="foot-bot">
-    <span>© 2026 New Cali Construction Inc. All Rights Reserved.</span>
-    <span>Garage Conversions · Kitchen Remodeling · Room Additions · Bathroom Renovation</span>
+    <span>&copy; 2026 New Cali Construction Inc. All Rights Reserved.</span>
+    <span>Garage Conversions &middot; Kitchen Remodeling &middot; Room Additions &middot; Bathroom Renovation</span>
     <a href="/privacy-policy.html" style="color:rgba(255,255,255,.42);text-decoration:none">Privacy Policy</a>
   </div>
 </footer>
 <div class="wa-wrap">
   <div class="wa-note">
     <span class="wa-label">For a quick response</span>
-    <span style="font-size:20px;">👉</span>
+    <span style="font-size:20px;">&#128072;</span>
   </div>
   <a href="https://wa.me/17149289011" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>

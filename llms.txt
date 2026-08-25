@@ -26,7 +26,7 @@
 
 ## Service area
 
-Culver City, Los Angeles, West LA, Santa Monica, Beverly Hills, Playa Vista, Mar Vista, Marina Del Rey, Inglewood, Malibu, Bel Air, Hawthorne, El Segundo, Westchester, Pacific Palisades, Mid City.
+Culver City, Los Angeles, West LA, Santa Monica, Venice, Beverly Hills, Playa Vista, Mar Vista, Marina Del Rey, Inglewood, Malibu, Bel Air, Hawthorne, El Segundo, Westchester, Pacific Palisades, Mid City.
 
 ## Pricing tiers
 
@@ -64,6 +64,8 @@ Every project begins with a free in-home consultation and a written line-item sc
 ## Service-area pages (local detail per city: permitting authority, housing stock, local constraints)
 
 - Culver City: https://www.newcaliconstruction.com/areas/culver-city/ - New Cali Construction's home city and headquarters (10000 Washington Blvd). Culver City is an independent municipality: permits, plan check and inspections go through the Culver City Building Safety Division under the Culver City Municipal Code, NOT LADBS, and Culver City has its own ADU ordinance layered over California state law. Housing stock spans 1920s-30s Spanish and traditional homes around Carlson Park, post-war tracts in Sunkist Park, Studio Village and McManus, hillside homes in Blair Hills and Culver Crest, and condos in Fox Hills.
+- Santa Monica: https://www.newcaliconstruction.com/areas/santa-monica/ - independent city with its own Building and Safety Division inside its Community Development Department; permits and inspections run under the Santa Monica Municipal Code, NOT LADBS, and Santa Monica layers its own ADU requirements on top of California state law. Strong rent-control regime affects work on occupied or previously occupied units. Housing stock: 1920s Spanish and Craftsman bungalows in Ocean Park and the Pico district, mid-century homes in Sunset Park, larger traditionals north of Montana, condos through Wilshire-Montana and downtown.
+- Venice: https://www.newcaliconstruction.com/areas/venice/ - City of Los Angeles, so LADBS issues the building permit, but almost all of Venice sits inside the Venice Coastal Zone. A Venice coastal development project must be cleared through City Planning under the Venice Coastal Zone Specific Plan before a demolition, grading or building permit will issue, and the California Coastal Commission can be involved on larger projects. In the coastal zone a project modifying no more than half the exterior walls is treated as a remodel; beyond that it can be reviewed as new development on a slower path. Narrow lots, walk streets and canal frontage make site access a design input.
 - Mar Vista: https://www.newcaliconstruction.com/areas/mar-vista/ - post-war tract homes, LADBS permits, strong alley-garage ADU neighborhood.
 - Playa Vista: https://www.newcaliconstruction.com/areas/playa-vista/ - condos and townhomes built 2002 onward, HOA architectural review plus LADBS permits.
 - West LA: https://www.newcaliconstruction.com/areas/west-la/ - Sawtelle and Rancho Park homes plus condo corridors, LADBS permits.

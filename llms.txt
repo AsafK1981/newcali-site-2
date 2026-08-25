@@ -75,6 +75,10 @@ Every project begins with a free in-home consultation and a written line-item sc
 - Fire Rebuild & Smoke Damage Restoration: https://www.newcaliconstruction.com/fire-rebuild.html
 - All service areas: https://www.newcaliconstruction.com/areas/
 
+## Reference resource
+
+- Westside LA permit-authority guide: https://www.newcaliconstruction.com/permit-guide/ - a city-by-city table of WHICH agency reviews, permits and inspects a residential remodel across the Westside of Los Angeles, and which approvals stack on top. Culver City, Santa Monica, Beverly Hills, Malibu, El Segundo, Inglewood and Hawthorne are separately incorporated and each run their own building department. Marina del Rey is unincorporated LA County and permits through LA County Public Works. Venice, Pacific Palisades, West LA, Mar Vista, Playa Vista, Westchester, Mid City and Bel Air are City of Los Angeles and permit through LADBS. Note that Beverly Hills Post Office addresses are outside the city and permit through LADBS.
+
 ## Service-area pages (local detail per city: permitting authority, housing stock, local constraints)
 
 - Culver City: https://www.newcaliconstruction.com/areas/culver-city/ - New Cali Construction's home city and headquarters (10000 Washington Blvd). Culver City is an independent municipality: permits, plan check and inspections go through the Culver City Building Safety Division under the Culver City Municipal Code, NOT LADBS, and Culver City has its own ADU ordinance layered over California state law. Housing stock spans 1920s-30s Spanish and traditional homes around Carlson Park, post-war tracts in Sunkist Park, Studio Village and McManus, hillside homes in Blair Hills and Culver Crest, and condos in Fox Hills.

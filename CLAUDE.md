@@ -30,3 +30,16 @@ were rejected.
   record is authoritative: licence 1008892, class B, issued 12/11/2015. The site
   previously claimed 2014 in 27 files, which contradicted both CSLB and
   BuildZoom. Everything now says 2015.
+
+## Two tools that check this site
+
+    python tools/audit.py      # SEO, schema, links, a11y, hygiene, against the live site
+    python tools/perf.py       # page weight, split into first paint vs lazy
+
+Both take `--local <port>` to run against a local `python -m http.server` before
+deploying. Run them after any structural change. Baseline as of 2026-08-27:
+zero critical, zero high, five thin-content pages, and 1.07 MB worst first load.
+
+A blank-looking image in a full-page screenshot is usually the capture finishing
+before a lazy image decodes, not a bug. Confirm with
+`browse scroll <sel>` then `browse wait --networkidle` before assuming a regression.

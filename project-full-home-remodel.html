@@ -502,6 +502,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<style>
+  .proj-detail{max-width:820px;margin:0 auto 56px;text-align:left}
+  .proj-detail h2{font-family:'Merriweather',serif;font-size:23px;font-weight:700;color:var(--text);margin:38px 0 14px}
+  .proj-detail h2:first-child{margin-top:0}
+  .proj-detail p{font-size:15.5px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:14px}
+  .proj-detail ul{list-style:none;padding:0;margin:0 0 14px}
+  .proj-detail li{font-size:15.5px;color:var(--muted);line-height:1.7;font-weight:300;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid rgba(58,125,68,.12)}
+  .proj-detail li:last-child{border-bottom:none}
+  .proj-detail li::before{content:'';position:absolute;left:6px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .proj-detail strong{color:var(--text);font-weight:600}
+  .proj-delivered{display:inline-block;background:var(--green-pale);border:1px solid rgba(58,125,68,.25);border-radius:6px;padding:11px 20px;font-size:15px;color:var(--text);font-weight:600;margin-top:8px}
+  @media(max-width:768px){
+    .proj-detail{padding:0 4px}
+    .proj-detail h2{font-size:20px;margin:30px 0 12px}
+    .proj-detail p,.proj-detail li{font-size:14.5px}
+  }
+</style>
 </head>
 <body>
 <nav>
@@ -590,6 +608,39 @@ document.addEventListener('click', function(e){
 
 "We hired New Cali Construction for our home renovation and were very happy with the end product. Asaf made the process seamless from start to finish. The team was respectful, responsive, and completed the project within the estimated timeframe. We would absolutely work with them again!" - Tim Y. | Culver City, CA</p>
   </div>
+
+<div class="proj-detail">
+  <h2>Scope of work</h2>
+  <ul>
+    <li>Complete demolition, down to the studs</li>
+    <li>New framing</li>
+    <li>Electrical upgraded throughout</li>
+    <li>Plumbing upgraded throughout</li>
+    <li>Floor plan reimagined</li>
+    <li>Every permit and inspection handled start to finish</li>
+  </ul>
+
+  <h2>What down to the studs really buys you</h2>
+  <p>Taking an older house back to the studs is the honest way to renovate it, because it
+  stops you discovering the expensive problems one at a time. Everything behind the walls is
+  visible at once: the wiring, the supply lines, the framing, the condition of the foundation.</p>
+  <p>It also means the code upgrades are known before the rebuild starts, rather than
+  appearing as change orders in month three. That is the trade. More disruption up front, far
+  fewer surprises after.</p>
+
+  <h2>Who issued the permit</h2>
+  <p>Permits and inspections ran through the <strong>Culver City Building Safety Division</strong>,
+  not LADBS, pulled under licence 1008892 in our name.
+  <a href="/permit-guide/" style="color:var(--green);font-weight:600">See who issues your
+  permit &rarr;</a></p>
+
+  <h2>How the job was run</h2>
+  <p>A written, line-item scope signed before demolition, and a locked price. Weekly photo
+  updates so the owners could follow progress without standing on site. Permits pulled under
+  California licence <strong>1008892</strong>, in our name, never the homeowner's.</p>
+
+  <p class="proj-delivered">Delivered in 5 months</p>
+</div>
   <div class="proj-gallery">
 <img width="1600" height="1090" loading="lazy" src="images/home-remodel/home-remodel-1.jpg" alt="Full Scale Culver City Home Transformation - Exterior" onclick="openLightbox(this.src)">
 <img width="1600" height="1088" loading="lazy" src="images/home-remodel/home-remodel-2.jpg" alt="Full Scale Culver City Home Transformation - Interior" onclick="openLightbox(this.src)">

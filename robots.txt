@@ -47,3 +47,8 @@ Allow: /
 
 # Structured discovery hints
 Sitemap: https://www.newcaliconstruction.com/sitemap.xml
+
+# Plain-language summary of the business, its services, pricing tiers and
+# service areas, written for answer engines:
+# https://www.newcaliconstruction.com/llms.txt
+

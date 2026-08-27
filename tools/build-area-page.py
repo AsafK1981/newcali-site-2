@@ -76,8 +76,8 @@ CITIES = {}
 # ---------------------------------------------------------------- Santa Monica
 CITIES['santa-monica'] = dict(
     CITY='Santa Monica',
-    TITLE='Remodeling Contractor in Santa Monica, CA | New Cali Construction',
-    META_DESC='Santa Monica remodeling contractor. Kitchens, bathrooms, ADUs and whole-home renovations permitted through the Santa Monica Building and Safety Division, not LADBS. 50+ five-star reviews. Lic #1008892.',
+    TITLE='Remodeling Contractor in Santa Monica, CA | New Cali',
+    META_DESC='Santa Monica remodeling contractor. Kitchens, baths, ADUs and whole-home renovations permitted through Santa Monica Building & Safety, not LADBS. Lic #1008892.',
     OG_DESC='Santa Monica remodeling contractor. Kitchens, bathrooms, ADUs and whole-home renovations permitted through Santa Monica Building and Safety. Lic #1008892.',
     TW_DESC='Santa Monica remodeling contractor. Permitted through Santa Monica Building and Safety. Lic #1008892.',
     SCHEMA_DESC='New Cali Construction is a licensed design-build general contractor based in neighbouring Culver City, remodeling kitchens and bathrooms, building ADUs and garage conversions, and delivering whole-home renovations for Santa Monica homeowners, permitted through the Santa Monica Building and Safety Division.',
@@ -130,7 +130,7 @@ CITIES['santa-monica'] = dict(
 CITIES['venice'] = dict(
     CITY='Venice',
     TITLE='Remodeling Contractor in Venice, CA | New Cali Construction',
-    META_DESC='Venice remodeling contractor. Kitchens, bathrooms, ADUs and whole-home renovations inside the Venice Coastal Zone, where a building permit needs coastal clearance first. 50+ five-star reviews. Lic #1008892.',
+    META_DESC='Venice remodeling contractor. Kitchens, baths, ADUs and whole-home work inside the coastal zone, where a permit needs coastal clearance first. Lic #1008892.',
     OG_DESC='Venice remodeling contractor. Kitchens, bathrooms, ADUs and whole-home renovations inside the Venice Coastal Zone. Lic #1008892.',
     TW_DESC='Venice remodeling contractor working inside the Venice Coastal Zone. Lic #1008892.',
     SCHEMA_DESC='New Cali Construction is a licensed design-build general contractor based in neighbouring Culver City, remodeling kitchens and bathrooms, building ADUs and garage conversions, and delivering whole-home renovations for Venice homeowners, including projects inside the Venice Coastal Zone that require coastal clearance before a building permit is issued.',
@@ -198,6 +198,17 @@ def render(slug):
     keys = sorted([k for k in d if k != 'CITY'], key=len, reverse=True) + ['CITY']
     for k in keys:
         html = html.replace('{{%s}}' % k, d[k])
+
+    # Metadata length is a correctness property of the page, not a style choice.
+    # A previous pass fixed these in the HTML but not here, and the next
+    # regeneration silently put the over-long versions back.
+    import html as _h
+    t = _h.unescape(re.search(r'<title>(.*?)</title>', html, re.S).group(1))
+    d = _h.unescape(re.search(r'<meta name="description" content="(.*?)"', html, re.S).group(1))
+    if len(t) > 60:
+        raise SystemExit('%s: title is %d chars, max 60: %s' % (slug, len(t), t))
+    if len(d) > 165:
+        raise SystemExit('%s: meta description is %d chars, max 165' % (slug, len(d)))
 
     left = re.findall(r'\{\{[A-Z0-9_]+\}\}', html)
     if left:

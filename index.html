@@ -26,7 +26,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "New Cali Construction Inc.",
   "image": "https://newcaliconstruction.com/images/home/logo.jpg",
   "@id": "https://www.newcaliconstruction.com/",
@@ -50,55 +53,134 @@
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
     "opens": "08:00",
     "closes": "18:00"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "50",
-    "bestRating": "5"
-  },
   "areaServed": [
-    "Culver City", "Los Angeles", "Playa Vista", "Mar Vista", "West LA",
-    "Beverly Hills", "Marina Del Rey", "Inglewood", "Malibu", "Bel Air",
-    "Hawthorne", "El Segundo", "Westchester", "Pacific Palisades", "Mid City"
+    "Culver City",
+    "Los Angeles",
+    "Playa Vista",
+    "Mar Vista",
+    "West LA",
+    "Beverly Hills",
+    "Marina Del Rey",
+    "Inglewood",
+    "Malibu",
+    "Bel Air",
+    "Hawthorne",
+    "El Segundo",
+    "Westchester",
+    "Pacific Palisades",
+    "Mid City"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Remodeling Services",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Remodeling"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Remodeling"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ADU Garage Conversion"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Complete Home Remodel"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fire Rebuild & Smoke Damage Restoration"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kitchen Remodeling"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bathroom Remodeling"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "ADU Garage Conversion"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Complete Home Remodel"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fire Rebuild & Smoke Damage Restoration"
+        }
+      }
     ]
   },
   "review": [
     {
       "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Tim Y."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Tim Y."
+      },
       "datePublished": "2024-08-15",
       "reviewBody": "We hired New Cali Construction for our home renovation and were very happy with the end product. Asaf made the process seamless from start to finish. The team was respectful, responsive, and completed the project within the estimated timeframe. We would absolutely work with them again!",
-      "publisher": {"@type": "Organization", "name": "Yelp"}
+      "publisher": {
+        "@type": "Organization",
+        "name": "Yelp"
+      }
     },
     {
       "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Kev E."},
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Kev E."
+      },
       "datePublished": "2024-09-22",
       "reviewBody": "New Cali Construction did a fantastic job on our Culver City remodel. Clear communication, on-time delivery, and quality craftsmanship throughout.",
-      "publisher": {"@type": "Organization", "name": "Yelp"}
+      "publisher": {
+        "@type": "Organization",
+        "name": "Yelp"
+      }
     }
   ],
   "sameAs": [
     "https://www.yelp.com/biz/new-cali-construction-culver-city",
     "https://www.facebook.com/profile.php?id=61550646516784",
     "https://www.instagram.com/newcaliconstruction/"
-  ]
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "California Contractors State License Board License",
+    "identifier": "1008892",
+    "name": "CSLB License 1008892, Class B General Building",
+    "recognizedBy": {
+      "@type": "GovernmentOrganization",
+      "name": "California Contractors State License Board",
+      "url": "https://www.cslb.ca.gov/"
+    },
+    "validIn": {
+      "@type": "State",
+      "name": "California"
+    },
+    "dateCreated": "2015-11-12"
+  }
 }
 </script>
 
@@ -128,7 +210,23 @@
   "worksFor": {
     "@type": "GeneralContractor",
     "name": "New Cali Construction Inc.",
-    "url": "https://www.newcaliconstruction.com/"
+    "url": "https://www.newcaliconstruction.com/",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "California Contractors State License Board License",
+      "identifier": "1008892",
+      "name": "CSLB License 1008892, Class B General Building",
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "California Contractors State License Board",
+        "url": "https://www.cslb.ca.gov/"
+      },
+      "validIn": {
+        "@type": "State",
+        "name": "California"
+      },
+      "dateCreated": "2015-11-12"
+    }
   },
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
@@ -153,10 +251,21 @@
       "telephone": "+18002161005",
       "contactType": "customer service",
       "areaServed": "US-CA",
-      "availableLanguage": ["English", "Spanish", "Hebrew"],
+      "availableLanguage": [
+        "English",
+        "Spanish",
+        "Hebrew"
+      ],
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
         "opens": "08:00",
         "closes": "18:00"
       }
@@ -166,9 +275,29 @@
       "email": "Info@NewCaliConstruction.com",
       "contactType": "customer service",
       "areaServed": "US-CA",
-      "availableLanguage": ["English", "Spanish", "Hebrew"]
+      "availableLanguage": [
+        "English",
+        "Spanish",
+        "Hebrew"
+      ]
     }
-  ]
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "California Contractors State License Board License",
+    "identifier": "1008892",
+    "name": "CSLB License 1008892, Class B General Building",
+    "recognizedBy": {
+      "@type": "GovernmentOrganization",
+      "name": "California Contractors State License Board",
+      "url": "https://www.cslb.ca.gov/"
+    },
+    "validIn": {
+      "@type": "State",
+      "name": "California"
+    },
+    "dateCreated": "2015-11-12"
+  }
 }
 </script>
 
@@ -1950,28 +2079,59 @@ document.addEventListener('click', function(e){
     "name": "New Cali Construction Inc.",
     "telephone": "+18002161005",
     "email": "Info@NewCaliConstruction.com",
-    "areaServed": "Culver City, Los Angeles, CA"
+    "areaServed": "Culver City, Los Angeles, CA",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "California Contractors State License Board License",
+      "identifier": "1008892",
+      "name": "CSLB License 1008892, Class B General Building",
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "California Contractors State License Board",
+        "url": "https://www.cslb.ca.gov/"
+      },
+      "validIn": {
+        "@type": "State",
+        "name": "California"
+      },
+      "dateCreated": "2015-11-12"
+    }
   },
   "offers": [
     {
       "@type": "Offer",
       "name": "Refresh Projects",
       "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "15000", "maxPrice": "40000", "priceCurrency": "USD"},
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "15000",
+        "maxPrice": "40000",
+        "priceCurrency": "USD"
+      },
       "description": "Bathroom refreshes, kitchen cabinet and countertop upgrades, flooring replacement, paint and finish work. Typical timeline 2-4 weeks."
     },
     {
       "@type": "Offer",
       "name": "Renovate Projects",
       "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "40000", "maxPrice": "120000", "priceCurrency": "USD"},
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "40000",
+        "maxPrice": "120000",
+        "priceCurrency": "USD"
+      },
       "description": "Full kitchen remodels, master bath and suite renovations, room additions and conversions, structural and layout changes. Typical timeline 4-10 weeks."
     },
     {
       "@type": "Offer",
       "name": "Transform Projects",
       "priceCurrency": "USD",
-      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "120000", "maxPrice": "500000", "priceCurrency": "USD"},
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "120000",
+        "maxPrice": "500000",
+        "priceCurrency": "USD"
+      },
       "description": "Full home remodels, ADU and garage conversions, multi-room renovations, complete design-build projects. Typical timeline 3-6 months."
     }
   ]

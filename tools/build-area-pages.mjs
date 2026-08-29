@@ -886,7 +886,23 @@ function cityPage(city) {
     },
     geo: { '@type': 'GeoCoordinates', latitude: 34.0211, longitude: -118.3965 },
     areaServed: { '@type': 'Place', name: `${city.name}, CA` },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '50', bestRating: '5' },
+    // No aggregateRating. The value that used to sit here (4.9 from 50 reviews)
+    // matched no review corpus we can point at, and self-serving ratings with no
+    // Review objects behind them are exactly what Google's "review count without
+    // object" error rejects. The verifiable CSLB credential goes out instead.
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'California Contractors State License Board License',
+      identifier: '1008892',
+      name: 'CSLB License 1008892, Class B General Building',
+      recognizedBy: {
+        '@type': 'GovernmentOrganization',
+        name: 'California Contractors State License Board',
+        url: 'https://www.cslb.ca.gov/'
+      },
+      validIn: { '@type': 'State', name: 'California' },
+      dateCreated: '2015-11-12'
+    },
     sameAs: [
       'https://www.yelp.com/biz/new-cali-construction-culver-city',
       'https://www.facebook.com/profile.php?id=61550646516784',

@@ -217,6 +217,14 @@ def render(slug):
         if ch in html:
             raise SystemExit('%s: long dash found at U+%04X, banned' % (slug, ord(ch)))
 
+    # A star rating we cannot source is both a Search Console error ("review
+    # count without object") and a claim about the business we cannot stand
+    # behind. Google flagged exactly this on 2026-08-29. Ship the CSLB
+    # credential instead; put a rating back only when real Review objects,
+    # with authors and dates, sit next to it on the same page.
+    if 'aggregateRating' in html:
+        raise SystemExit('%s: aggregateRating in output, banned without real Review objects' % slug)
+
     out_dir = os.path.join(ROOT, 'areas', slug)
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir)

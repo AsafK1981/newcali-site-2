@@ -109,6 +109,12 @@ def audit_page(url):
             types += t if isinstance(t, list) else [t]
         except Exception as e:
             add('HIGH', p, 'invalid JSON-LD: %s' % str(e)[:60])
+        # An aggregateRating with a reviewCount but no Review objects on the page
+        # is the "review count without object" error Search Console reported on
+        # 2026-08-29, and the number behind it was never sourced. Flag the shape,
+        # not just the presence: a rating backed by real reviews is legitimate.
+        if 'aggregateRating' in b and '"@type": "Review"' not in b.replace('"@type":"Review"', '"@type": "Review"'):
+            add('CRITICAL', p, 'aggregateRating with no Review objects (Search Console rejects it)')
 
     # --- images ---
     imgs = re.findall(r'<img\b[^>]*>', html)

@@ -109,12 +109,29 @@ def audit_page(url):
             types += t if isinstance(t, list) else [t]
         except Exception as e:
             add('HIGH', p, 'invalid JSON-LD: %s' % str(e)[:60])
-        # An aggregateRating with a reviewCount but no Review objects on the page
-        # is the "review count without object" error Search Console reported on
-        # 2026-08-29, and the number behind it was never sourced. Flag the shape,
-        # not just the presence: a rating backed by real reviews is legitimate.
-        if 'aggregateRating' in b and '"@type": "Review"' not in b.replace('"@type":"Review"', '"@type": "Review"'):
-            add('CRITICAL', p, 'aggregateRating with no Review objects (Search Console rejects it)')
+        # Review markup fails in both directions, and we have shipped each one.
+        #
+        # Too few: "Multiple reviews without aggregateRating object" - Google
+        # requires an aggregate once an item carries more than one Review. This
+        # is what Search Console reported on 2026-08-29, after a pass dropped
+        # aggregateRating on 08-27 and left the two Review objects behind.
+        #
+        # Too many: an aggregateRating on a LocalBusiness or Organization is a
+        # rating the business publishes about itself. Google: "If the entity
+        # that's being reviewed controls the reviews about itself, their pages
+        # that use LocalBusiness or any other type of Organization structured
+        # data are ineligible for star review feature", and separately "Don't
+        # aggregate reviews or ratings from other websites" - which is what
+        # aggregating our Yelp reviews here would be.
+        #
+        # So on these types the only clean state is no review markup at all.
+        nrev = len(re.findall(r'"@type"\s*:\s*"Review"', b))
+        selfish = re.search(r'"@type"\s*:\s*(\[[^]]*)?"(LocalBusiness|Organization|\w*Business)"', b)
+        if nrev > 1 and 'aggregateRating' not in b:
+            add('CRITICAL', p, '%d Review objects with no aggregateRating (Google rejects the item)' % nrev)
+        if 'aggregateRating' in b and selfish:
+            add('CRITICAL', p, 'self-published aggregateRating on %s (ineligible, and third-party '
+                               'ratings may not be aggregated)' % selfish.group(2))
 
     # --- images ---
     imgs = re.findall(r'<img\b[^>]*>', html)

@@ -217,13 +217,20 @@ def render(slug):
         if ch in html:
             raise SystemExit('%s: long dash found at U+%04X, banned' % (slug, ord(ch)))
 
-    # A star rating we cannot source is both a Search Console error ("review
-    # count without object") and a claim about the business we cannot stand
-    # behind. Google flagged exactly this on 2026-08-29. Ship the CSLB
-    # credential instead; put a rating back only when real Review objects,
-    # with authors and dates, sit next to it on the same page.
+    # An area page is a LocalBusiness, so a rating here is the business rating
+    # itself. Google: pages where "the entity that's being reviewed controls the
+    # reviews about itself" are "ineligible for star review feature", and "Don't
+    # aggregate reviews or ratings from other websites" rules out borrowing the
+    # Yelp numbers. The generator used to emit 4.9 from 50 reviews, which matched
+    # no review corpus at all. Ship the CSLB credential instead.
+    #
+    # The mirror-image rule is why index.html carries no review markup either:
+    # more than one Review on an item without an aggregateRating is the error
+    # Search Console raised on 2026-08-29.
     if 'aggregateRating' in html:
-        raise SystemExit('%s: aggregateRating in output, banned without real Review objects' % slug)
+        raise SystemExit('%s: aggregateRating on a LocalBusiness, banned as self-serving' % slug)
+    if len(re.findall(r'"@type"\s*:\s*"Review"', html)) > 1:
+        raise SystemExit('%s: multiple Review objects with no aggregateRating, Google rejects it' % slug)
 
     out_dir = os.path.join(ROOT, 'areas', slug)
     if not os.path.isdir(out_dir):

@@ -736,17 +736,33 @@ document.addEventListener('click', function(e){
   <span class="lightbox-close" onclick="closeLightbox()">×</span>
   <img id="lightbox-img" src="" alt="">
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('XaRbQXuY4FSpEz0aE');</script>
 <script>
+/* Customer autoresponder. This is also the only trace the lost-lead watchdog
+   can match when the Web3Forms notification gets quarantined upstream, so every
+   form on the site must send it. Failures are logged, never swallowed. */
+function sendAutoresponder(data) {
+  if (typeof emailjs === 'undefined') { console.error('Autoresponder skipped: EmailJS not loaded'); return; }
+  emailjs.send('service_eql2h4h', 'template_blfuq5c', {
+    first_name: data.get('first_name') || data.get('name') || 'there',
+    email: data.get('email'),
+    project: data.get('project') || ''
+  }).catch(function(err){ console.error('Autoresponder failed:', err); });
+}
+
 async function submitForm(e) {
   e.preventDefault();
   var btn = e.target.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(e.target) });
+    var data = new FormData(e.target);
+    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: data });
     var json = await res.json();
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
+      sendAutoresponder(data);
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
 }

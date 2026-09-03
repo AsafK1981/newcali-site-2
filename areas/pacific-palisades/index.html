@@ -6,17 +6,17 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pacific Palisades Rebuild &amp; Remodeling | New Cali</title>
+<title>Pacific Palisades Rebuild &amp; Remodeling Contractor | New Cali Construction</title>
 <meta name="description" content="Pacific Palisades contractor after the January 2025 fire - ground-up rebuilds, smoke and heat damage renovation, ADUs and remodeling. Design-build, Lic #1008892.">
 <link rel="canonical" href="https://www.newcaliconstruction.com/areas/pacific-palisades/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pacific Palisades Rebuild &amp; Remodeling | New Cali">
+<meta property="og:title" content="Pacific Palisades Rebuild &amp; Remodeling Contractor | New Cali Construction">
 <meta property="og:description" content="Pacific Palisades contractor after the January 2025 fire - ground-up rebuilds, smoke and heat damage renovation, ADUs and remodeling. Design-build, Lic #1008892.">
 <meta property="og:url" content="https://www.newcaliconstruction.com/areas/pacific-palisades/">
 <meta property="og:image" content="https://www.newcaliconstruction.com/images/home-remodel/home-remodel-1.jpg">
 <meta property="og:site_name" content="New Cali Construction">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pacific Palisades Rebuild &amp; Remodeling | New Cali">
+<meta name="twitter:title" content="Pacific Palisades Rebuild &amp; Remodeling Contractor | New Cali Construction">
 <meta name="twitter:description" content="Pacific Palisades contractor after the January 2025 fire - ground-up rebuilds, smoke and heat damage renovation, ADUs and remodeling. Design-build, Lic #1008892.">
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/area.css">
@@ -103,11 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     "@type": "Place",
     "name": "Pacific Palisades, CA"
   },
-  "sameAs": [
-    "https://www.yelp.com/biz/new-cali-construction-culver-city",
-    "https://www.facebook.com/profile.php?id=61550646516784",
-    "https://www.instagram.com/newcaliconstruction/"
-  ],
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
     "credentialCategory": "California Contractors State License Board License",
@@ -123,7 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "California"
     },
     "dateCreated": "2015-11-12"
-  }
+  },
+  "sameAs": [
+    "https://www.yelp.com/biz/new-cali-construction-culver-city",
+    "https://www.facebook.com/profile.php?id=61550646516784",
+    "https://www.instagram.com/newcaliconstruction/"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -138,23 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "name": "New Cali Construction Inc.",
     "telephone": "+18002161005",
     "email": "Info@NewCaliConstruction.com",
-    "url": "https://www.newcaliconstruction.com/",
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "California Contractors State License Board License",
-      "identifier": "1008892",
-      "name": "CSLB License 1008892, Class B General Building",
-      "recognizedBy": {
-        "@type": "GovernmentOrganization",
-        "name": "California Contractors State License Board",
-        "url": "https://www.cslb.ca.gov/"
-      },
-      "validIn": {
-        "@type": "State",
-        "name": "California"
-      },
-      "dateCreated": "2015-11-12"
-    }
+    "url": "https://www.newcaliconstruction.com/"
   },
   "areaServed": {
     "@type": "City",
@@ -586,12 +570,25 @@ document.addEventListener('click', function(e){
   </div>
 </div>
 <script>
+/* Customer autoresponder. This is also the only trace the lost-lead watchdog
+   can match when the Web3Forms notification gets quarantined upstream, so every
+   form on the site must send it. Failures are logged, never swallowed. */
+function sendAutoresponder(data) {
+  if (typeof emailjs === 'undefined') { console.error('Autoresponder skipped: EmailJS not loaded'); return; }
+  emailjs.send('service_eql2h4h', 'template_blfuq5c', {
+    first_name: data.get('first_name') || data.get('name') || 'there',
+    email: data.get('email'),
+    project: data.get('project') || ''
+  }).catch(function(err){ console.error('Autoresponder failed:', err); });
+}
+
 async function submitForm(e) {
   e.preventDefault();
   var btn = e.target.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(e.target) });
+    var data = new FormData(e.target);
+    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: data });
     var json = await res.json();
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
@@ -599,13 +596,7 @@ async function submitForm(e) {
       if (typeof gtag === 'function') {
         gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_pacific-palisades'});
       }
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_eql2h4h', 'template_blfuq5c', {
-          first_name: document.getElementById('fn').value || 'there',
-          email: document.getElementById('em').value,
-          project: document.getElementById('proj') ? document.getElementById('proj').value : ''
-        }).catch(function(){});
-      }
+      sendAutoresponder(data);
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
 }

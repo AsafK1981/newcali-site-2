@@ -2467,6 +2467,18 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 /* Form */
+/* Customer autoresponder. This is also the only trace the lost-lead watchdog
+   can match when the Web3Forms notification gets quarantined upstream, so every
+   form on the site must send it. Failures are logged, never swallowed. */
+function sendAutoresponder(data) {
+  if (typeof emailjs === 'undefined') { console.error('Autoresponder skipped: EmailJS not loaded'); return; }
+  emailjs.send('service_eql2h4h', 'template_blfuq5c', {
+    first_name: data.get('first_name') || data.get('name') || 'there',
+    email: data.get('email'),
+    project: data.get('project') || ''
+  }).catch(function(err){ console.error('Autoresponder failed:', err); });
+}
+
 async function submitForm(e) {
   e.preventDefault();
   var btn = e.target.querySelector('button[type="submit"]');
@@ -2485,13 +2497,7 @@ async function submitForm(e) {
       if (typeof gtag === 'function') {
         gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form'});
       }
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_eql2h4h', 'template_blfuq5c', {
-          first_name: document.getElementById('fn').value || 'there',
-          email: document.getElementById('em').value,
-          project: document.getElementById('proj') ? document.getElementById('proj').value : ''
-        }).catch(function(){});
-      }
+      sendAutoresponder(data);
     } else {
       btn.textContent = 'Send';
       btn.disabled = false;
@@ -2658,9 +2664,11 @@ async function submitExit(e) {
   var btn = e.target.querySelector('button');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: new FormData(e.target)});
+    var data = new FormData(e.target);
+    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
     var json = await res.json();
     if (!json.success) throw new Error('submit rejected');
+    sendAutoresponder(data);
   } catch(err) {
     btn.textContent = 'Yes, Send Me a Free Estimate →';
     btn.disabled = false;

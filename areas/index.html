@@ -7,17 +7,17 @@
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Service Areas | New Cali Construction - Westside Los Angeles</title>
-<meta name="description" content="Local pages for every Westside city we build in: who issues the permit, what the houses are built like, and what a remodel there actually involves.">
+<meta name="description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
 <link rel="canonical" href="https://www.newcaliconstruction.com/areas/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Service Areas | New Cali Construction - Westside Los Angeles">
-<meta property="og:description" content="Local pages for every Westside city we build in: who issues the permit, what the houses are built like, and what a remodel there actually involves.">
+<meta property="og:description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
 <meta property="og:url" content="https://www.newcaliconstruction.com/areas/">
 <meta property="og:image" content="https://www.newcaliconstruction.com/images/home-remodel/home-remodel-1.jpg">
 <meta property="og:site_name" content="New Cali Construction">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Service Areas | New Cali Construction - Westside Los Angeles">
-<meta name="twitter:description" content="Local pages for every Westside city we build in: who issues the permit, what the houses are built like, and what a remodel there actually involves.">
+<meta name="twitter:description" content="New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.">
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/area.css">
 <!-- Google tag (gtag.js) -->
@@ -74,21 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
   "url": "https://www.newcaliconstruction.com/areas/",
   "description": "New Cali Construction remodels homes across Culver City and the Westside of Los Angeles. Find the local page for your city: permits, housing stock, and what a remodel there involves.",
   "hasPart": [
-    {
-      "@type": "WebPage",
-      "name": "General Contractor in Culver City",
-      "url": "https://www.newcaliconstruction.com/areas/culver-city/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Santa Monica",
-      "url": "https://www.newcaliconstruction.com/areas/santa-monica/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Remodeling Contractor in Venice",
-      "url": "https://www.newcaliconstruction.com/areas/venice/"
-    },
     {
       "@type": "WebPage",
       "name": "Remodeling Contractor in Mar Vista",
@@ -241,21 +226,6 @@ document.addEventListener('click', function(e){
       <p class="area-lead">A remodel in Malibu and a remodel in Hawthorne have almost nothing in common once you get past the tile. These pages cover what changes: who issues the permit, what the houses are built like, and what we plan for before day one.</p>
     </div>
     <div class="hub-grid">
-      <a class="hub-card" href="/areas/culver-city/">
-        <h3>Culver City</h3>
-        <p>Our home city and our office address. Culver City permits through its own building department, not LADBS, and runs its own ADU ordinance. We are ten minutes from that counter.</p>
-        <span>View Culver City &rarr;</span>
-      </a>
-      <a class="hub-card" href="/areas/santa-monica/">
-        <h3>Santa Monica</h3>
-        <p>Its own Building and Safety Division, its own ADU rules and one of the tougher plan checks on the Westside. We price the Santa Monica version, not the City of LA version.</p>
-        <span>View Santa Monica &rarr;</span>
-      </a>
-      <a class="hub-card" href="/areas/venice/">
-        <h3>Venice</h3>
-        <p>Nearly every Venice house sits in the coastal zone, so a building permit needs coastal clearance first. We map that track before you pay an architect.</p>
-        <span>View Venice &rarr;</span>
-      </a>
       <a class="hub-card" href="/areas/mar-vista/">
         <h3>Mar Vista</h3>
         <p>Opening up post-war floor plans, adding second bathrooms, and turning alley garages into permitted ADUs - a mile and a half from our Culver City shop.</p>
@@ -437,12 +407,25 @@ document.addEventListener('click', function(e){
   </div>
 </div>
 <script>
+/* Customer autoresponder. This is also the only trace the lost-lead watchdog
+   can match when the Web3Forms notification gets quarantined upstream, so every
+   form on the site must send it. Failures are logged, never swallowed. */
+function sendAutoresponder(data) {
+  if (typeof emailjs === 'undefined') { console.error('Autoresponder skipped: EmailJS not loaded'); return; }
+  emailjs.send('service_eql2h4h', 'template_blfuq5c', {
+    first_name: data.get('first_name') || data.get('name') || 'there',
+    email: data.get('email'),
+    project: data.get('project') || ''
+  }).catch(function(err){ console.error('Autoresponder failed:', err); });
+}
+
 async function submitForm(e) {
   e.preventDefault();
   var btn = e.target.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(e.target) });
+    var data = new FormData(e.target);
+    var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: data });
     var json = await res.json();
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
@@ -450,13 +433,7 @@ async function submitForm(e) {
       if (typeof gtag === 'function') {
         gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_areas-hub'});
       }
-      if (typeof emailjs !== 'undefined') {
-        emailjs.send('service_eql2h4h', 'template_blfuq5c', {
-          first_name: document.getElementById('fn').value || 'there',
-          email: document.getElementById('em').value,
-          project: document.getElementById('proj') ? document.getElementById('proj').value : ''
-        }).catch(function(){});
-      }
+      sendAutoresponder(data);
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
 }
@@ -480,10 +457,6 @@ async function submitForm(e) {
     <div class="foot-col">
       <h4>Service Areas</h4>
       <a href="/areas/">All Service Areas</a>
-      <a href="/permit-guide/">Westside Permit Guide</a>
-      <a href="/areas/culver-city/">Culver City</a>
-      <a href="/areas/santa-monica/">Santa Monica</a>
-      <a href="/areas/venice/">Venice</a>
       <a href="/areas/mar-vista/">Mar Vista</a>
       <a href="/areas/playa-vista/">Playa Vista</a>
       <a href="/areas/west-la/">West LA</a>

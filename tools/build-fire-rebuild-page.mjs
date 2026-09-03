@@ -1,5 +1,5 @@
 /**
- * Builds /fire-rebuild.html — the Fire Rebuild & Smoke Damage Restoration service page.
+ * Builds /fire-rebuild.html - the Fire Rebuild & Smoke Damage Restoration service page.
  *
  *   node tools/build-fire-rebuild-page.mjs
  *
@@ -25,7 +25,7 @@ const OGIMG = `${SITE}/images/home-remodel/home-remodel-1.jpg`;
 const FAQS = [
   {
     q: 'Do you do full ground-up rebuilds after a fire?',
-    a: 'Yes. New Cali Construction is a licensed design-build general contractor (California License #1008892) and we take total-loss rebuilds end to end — reviewing your insurance scope of loss, coordinating the architect and engineer, soils and utilities, permitting, and the build through final inspection. One contract, one company accountable for the schedule, instead of you coordinating five separate trades from wherever you are living now.'
+    a: 'Yes. New Cali Construction is a licensed design-build general contractor (California License #1008892) and we take total-loss rebuilds end to end - reviewing your insurance scope of loss, coordinating the architect and engineer, soils and utilities, permitting, and the build through final inspection. One contract, one company accountable for the schedule, instead of you coordinating five separate trades from wherever you are living now.'
   },
   {
     q: 'My house survived but smells of smoke. Can that be fixed?',
@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: 'How much does a fire rebuild cost?',
-    a: 'We do not publish a per-square-foot figure, because it moves too much to be useful — slope, street access, fire-zone assemblies and how much of the lot’s utilities survived all change it materially. We walk the lot, read your insurance scope, and give you a written line-item price rather than a wide range designed to win the job and get revised later.'
+    a: 'We do not publish a per-square-foot figure, because it moves too much to be useful - slope, street access, fire-zone assemblies and how much of the lot’s utilities survived all change it materially. We walk the lot, read your insurance scope, and give you a written line-item price rather than a wide range designed to win the job and get revised later.'
   },
   {
     q: 'How long does a rebuild take?',
@@ -123,7 +123,7 @@ const body = `<section class="svc-hero" style="background-image:url('images/home
   <div class="svc-intro">
     <div class="svc-intro-text">
       <h2>Two Very Different Jobs<br><em>Under One Contract</em></h2>
-      <p>After a fire there are two kinds of property, and they need two different contractors' worth of thinking. There is the lot where the house is gone and everything has to be built again from the ground. And there is the house still standing that took smoke, soot and heat — damage that hides in insulation, ductwork, attic voids and wall cavities, and that comes straight back through any cosmetic work laid over the top of it.</p>
+      <p>After a fire there are two kinds of property, and they need two different contractors' worth of thinking. There is the lot where the house is gone and everything has to be built again from the ground. And there is the house still standing that took smoke, soot and heat - damage that hides in insulation, ductwork, attic voids and wall cavities, and that comes straight back through any cosmetic work laid over the top of it.</p>
       <p>We do both. What does not change between them is how we run the job: we read your insurance scope of loss against what the city will actually require you to build, we put the difference in writing before you commit to anything, and then one company carries the project through permitting, construction and final inspection. Written line-item scope. Locked price. Weekly photo updates, so you are never driving out to see whether anyone showed up.</p>
       <a href="#contact" class="btn-green" style="margin-top:8px;display:inline-flex;">Get a Free Assessment →</a>
     </div>
@@ -132,11 +132,11 @@ const body = `<section class="svc-hero" style="background-image:url('images/home
   <div class="svc-includes">
     <h3>What's Included</h3>
     <ul>
-      <li><strong>Insurance Scope Review:</strong> We read the carrier's scope of loss against current code requirements and show you the gap in writing — before it becomes a change order.</li>
+      <li><strong>Insurance Scope Review:</strong> We read the carrier's scope of loss against current code requirements and show you the gap in writing - before it becomes a change order.</li>
 <li><strong>Design, Engineering &amp; Permits:</strong> Architect and engineer coordination, soils and utilities, and the full permit submittal, including expedited rebuild pathways where your property qualifies for one.</li>
-<li><strong>Ground-Up Construction:</strong> Foundation, framing, systems, exterior assemblies and finishes — one contract and one company accountable for the schedule.</li>
+<li><strong>Ground-Up Construction:</strong> Foundation, framing, systems, exterior assemblies and finishes - one contract and one company accountable for the schedule.</li>
 <li><strong>Smoke, Soot &amp; Heat Damage Renovation:</strong> Removing and replacing what is actually contaminated rather than sealing over it, so the odour and staining do not return.</li>
-<li><strong>Wildfire Construction Standards:</strong> Ignition-resistant exteriors, ember-resistant vents and rated glazing where code requires them — priced in from day one, not discovered at inspection.</li>
+<li><strong>Wildfire Construction Standards:</strong> Ignition-resistant exteriors, ember-resistant vents and rated glazing where code requires them - priced in from day one, not discovered at inspection.</li>
     </ul>
   </div>
 
@@ -156,7 +156,7 @@ const body = `<section class="svc-hero" style="background-image:url('images/home
       <div class="svc-why-card"><h4>1. We Walk the Property</h4><p>No quotes off a photo and a phone call. We see the lot or the house, and we look at what the fire actually did.</p></div>
 <div class="svc-why-card"><h4>2. We Read Your Insurance Scope</h4><p>We compare what your carrier agreed to pay for against what plan check will require you to build, and we show you the difference in writing.</p></div>
 <div class="svc-why-card"><h4>3. You Get a Line-Item Price</h4><p>Not a range. A written, itemized scope with a locked price, so you know what you are signing before anyone breaks ground.</p></div>
-<div class="svc-why-card"><h4>4. Design, Engineering &amp; Permits</h4><p>Architect, engineer, soils, utilities and the permit submittal — handled by us, tracked by us, with honest updates on where it stands.</p></div>
+<div class="svc-why-card"><h4>4. Design, Engineering &amp; Permits</h4><p>Architect, engineer, soils, utilities and the permit submittal - handled by us, tracked by us, with honest updates on where it stands.</p></div>
 <div class="svc-why-card"><h4>5. We Build It</h4><p>Foundation through final inspection with our own crews and long-standing subs, and weekly photo updates the whole way.</p></div>
 <div class="svc-why-card"><h4>6. We Stand Behind It</h4><p>Every project carries a warranty and our commitment long after the last inspection is signed off.</p></div>
     </div>
@@ -179,7 +179,7 @@ ${FAQS.map(f => `      <div class="faq-item"><h3 class="faq-q">${f.q}</h3><p cla
       <div class="svc-pricing-hdr">
         <p class="svc-pricing-eyebrow">Transparent Pricing</p>
         <h2 class="svc-pricing-title">What a Rebuild <em>Costs</em></h2>
-        <p class="svc-pricing-sub">We are not going to put a per-square-foot number on this page. On a fire rebuild it would be close to meaningless — slope, street access, fire-zone assemblies and how much of the lot's utilities survived move the figure more than the square footage does.</p>
+        <p class="svc-pricing-sub">We are not going to put a per-square-foot number on this page. On a fire rebuild it would be close to meaningless - slope, street access, fire-zone assemblies and how much of the lot's utilities survived move the figure more than the square footage does.</p>
       </div>
       <div class="svc-why-grid" style="max-width:900px;margin:0 auto">
         <div class="svc-why-card"><h4>What we do instead</h4><p>Walk the property, read your insurance scope of loss, and come back with a written line-item price you can actually check line by line.</p></div>

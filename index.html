@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="/js/lead-attribution.js" defer></script>
 <meta charset="UTF-8">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
@@ -1628,6 +1629,7 @@ document.addEventListener('click', function(e){
             <div class="fg"><label>Last Name</label><input type="text" name="last_name" id="ln" placeholder="Smith"></div>
           </div>
           <div class="fg"><label>Email</label><input type="email" name="email" id="em" placeholder="john@email.com" required></div>
+          <div class="fg"><label for="phone">Phone (optional)</label><input type="tel" name="phone" id="phone" autocomplete="tel" maxlength="40" placeholder="(310) 555-0123"></div>
           <div class="fg"><label>Project ZIP Code</label><input type="text" name="zip" inputmode="numeric" placeholder="90232"></div>
           <div class="fg">
             <label>What project are you interested in?</label>
@@ -2486,6 +2488,7 @@ async function submitForm(e) {
   btn.disabled = true;
   try {
     var data = new FormData(e.target);
+    try { if (window.newCaliLead) window.newCaliLead.attach(data); } catch (err) { /* Keep lead delivery available. */ }
     var res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: data
@@ -2494,9 +2497,11 @@ async function submitForm(e) {
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
-      if (typeof gtag === 'function') {
-        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form'});
-      }
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form'});
+        }
+      } catch (err) { /* Analytics must not interrupt the confirmation. */ }
       sendAutoresponder(data);
     } else {
       btn.textContent = 'Send';
@@ -2665,9 +2670,15 @@ async function submitExit(e) {
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
     var data = new FormData(e.target);
+    try { if (window.newCaliLead) window.newCaliLead.attach(data); } catch (err) { /* Keep lead delivery available. */ }
     var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
     var json = await res.json();
     if (!json.success) throw new Error('submit rejected');
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'exit_form'});
+      }
+    } catch (err) { /* Analytics must not interrupt the confirmation. */ }
     sendAutoresponder(data);
   } catch(err) {
     btn.textContent = 'Yes, Send Me a Free Estimate →';

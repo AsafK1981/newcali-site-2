@@ -580,6 +580,7 @@ const esc = s => String(s).replace(/&(?!#?\w+;)/g, '&amp;');
 const ld = o => JSON.stringify(o, null, 2);
 
 const HEAD_COMMON = `<meta charset="UTF-8">
+<script src="/js/lead-attribution.js" defer></script>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <meta name="robots" content="index, follow">
@@ -831,14 +832,17 @@ async function submitForm(e) {
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
     var data = new FormData(e.target);
+    try { if (window.newCaliLead) window.newCaliLead.attach(data); } catch (err) { /* Keep lead delivery available. */ }
     var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: data });
     var json = await res.json();
     if (json.success) {
       document.getElementById('cform').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
-      if (typeof gtag === 'function') {
-        gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_${city.slug}'});
-      }
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit_success', {'event_category':'conversion','event_label':'contact_form_${city.slug}'});
+        }
+      } catch (err) { /* Analytics must not interrupt the confirmation. */ }
       sendAutoresponder(data);
     } else { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }
   } catch(err) { btn.textContent='Send Message'; btn.disabled=false; alert('Please try again or call (800) 216-1005.'); }

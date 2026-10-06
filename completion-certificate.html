@@ -335,6 +335,8 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
   'use strict';
 
   var ACCESS_KEY = '3f2d97e0-cedd-4b40-9bfc-72cab8332e94';
+  // Google Apps Script web app: emails the signed PDF to the office and files a copy in Drive.
+  var MAILER = 'https://script.google.com/macros/s/AKfycbxzayQc2Fi5-hHhP-fvZc23AByTauq8E2DXMW5sDiPxiqKWj0YFF1xFXd8pACC5mZ--/exec';
   var TEMPLATE = 'images/shared/completion-certificate-template.png';
   var REVIEW = {
     yelp: 'https://www.yelp.com/writeareview/biz/n7t9F18RiWhvcLDOvgxkCA?return_url=%2Fbiz%2Fn7t9F18RiWhvcLDOvgxkCA&review_origin=biz-details-war-button',
@@ -557,7 +559,7 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
     var label = btn.textContent;
     btn.disabled = true; btn.textContent = 'Preparing PDF...';
     try {
-      var pdf = await buildPdf(await renderCertificate(current.fields, current.strokes));
+      var pdf = current.pdf || (current.pdf = await buildPdf(await renderCertificate(current.fields, current.strokes)));
       var a = document.createElement('a');
       a.href = URL.createObjectURL(pdf); a.download = fileName(current.fields);
       document.body.appendChild(a); a.click(); a.remove();
@@ -704,6 +706,62 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
   }
   function officeEmail() { return ['info', 'newcaliconstruction.com'].join('@'); }
 
+  function toBase64(bytes) {
+    var s = '', step = 0x8000;
+    for (var i = 0; i < bytes.length; i += step) s += String.fromCharCode.apply(null, bytes.subarray(i, i + step));
+    return btoa(s);
+  }
+  function signatureLabel(fields) { return fields.m === 't' ? 'Typed: ' + fields.g : 'Drawn on screen'; }
+
+  // Main route: the office gets an email with the signed PDF attached.
+  async function sendWithPdf(fields, link) {
+    if (!MAILER) return false;
+    try {
+      current.pdf = current.pdf || await buildPdf(await renderCertificate(current.fields, current.strokes));
+      var payload = {
+        client: fields.n, address: fields.a, city: fields.c, signedBy: fields.f,
+        signature: signatureLabel(fields), signedOn: fields.s, referral: fields.r, photos: fields.p,
+        link: link, botcheck: $('botcheck').checked,
+        pdf: toBase64(new Uint8Array(await current.pdf.arrayBuffer()))
+      };
+      var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 45000);
+      // text/plain keeps this a simple request, which is what an Apps Script web app accepts cross-site.
+      var res = await fetch(MAILER, {
+        method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload), signal: ctl.signal
+      });
+      clearTimeout(timer);
+      var json = await res.json();
+      return !!(json && json.ok);
+    } catch (err) {
+      return false;
+    }
+  }
+
+  // Backup route, used only if the main one fails: a plain email with the details and a link.
+  async function sendLinkOnly(fields, link) {
+    var data = new FormData();
+    data.append('access_key', ACCESS_KEY);
+    data.append('subject', 'Completion Certificate SIGNED - ' + fields.n);
+    data.append('from_name', 'New Cali Completion Certificate');
+    data.append('Note', 'The PDF could not be attached this time. Copy the link at the bottom into your browser to download it.');
+    data.append('Client name', fields.n);
+    data.append('Job address', fields.a);
+    data.append('City, State, Zip', fields.c);
+    data.append('Signed by', fields.f);
+    data.append('Signature', signatureLabel(fields));
+    data.append('Signed on', fields.s);
+    data.append('Add to referral list', fields.r || 'No answer');
+    data.append('Feature project photos', fields.p || 'No answer');
+    data.append('Signed certificate (open to download the PDF)', link);
+    if ($('botcheck').checked) data.append('botcheck', 'on');
+    var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 25000);
+    var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, signal: ctl.signal });
+    clearTimeout(timer);
+    var json = await res.json().catch(function () { return {}; });
+    if (!res.ok || !json.success) throw new Error('send');
+  }
+
   $('certForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     $('sendErr').hidden = true;
@@ -720,25 +778,8 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
     current = { fields: fields, strokes: sig };
     try {
       var link = location.origin + location.pathname + '#c=' + await pack(fields, sig);
-      var data = new FormData();
-      data.append('access_key', ACCESS_KEY);
-      data.append('subject', 'Completion Certificate SIGNED - ' + fields.n);
-      data.append('from_name', 'New Cali Completion Certificate');
-      data.append('Client name', fields.n);
-      data.append('Job address', fields.a);
-      data.append('City, State, Zip', fields.c);
-      data.append('Signed by', fields.f);
-      data.append('Signature', mode === 't' ? 'Typed: ' + fields.g : 'Drawn on screen');
-      data.append('Signed on', fields.s);
-      data.append('Add to referral list', fields.r || 'No answer');
-      data.append('Feature project photos', fields.p || 'No answer');
-      data.append('Signed certificate (open to download the PDF)', link);
-      if ($('botcheck').checked) data.append('botcheck', 'on');
-      var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 25000);
-      var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, signal: ctl.signal });
-      clearTimeout(timer);
-      var json = await res.json().catch(function () { return {}; });
-      if (!res.ok || !json.success) throw new Error('send');
+      var sent = await sendWithPdf(fields, link);
+      if (!sent) await sendLinkOnly(fields, link);
       show('viewDone');
       $('viewDone').focus({ preventScroll: true });
     } catch (err) {

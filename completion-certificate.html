@@ -724,17 +724,31 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
         link: link, botcheck: $('botcheck').checked,
         pdf: toBase64(new Uint8Array(await current.pdf.arrayBuffer()))
       };
-      var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 45000);
-      // text/plain keeps this a simple request, which is what an Apps Script web app accepts cross-site.
-      var res = await fetch(MAILER, {
-        method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload), signal: ctl.signal
-      });
-      clearTimeout(timer);
-      var json = await res.json();
-      return !!(json && json.ok);
+      var body = JSON.stringify(payload);
+      var result = await postToMailer(body);
+      if (result === 'retry') result = await postToMailer(body);
+      return result === 'sent';
     } catch (err) {
       return false;
+    }
+  }
+  async function postToMailer(body) {
+    var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 30000);
+    try {
+      // text/plain keeps this a simple request, which is what an Apps Script web app accepts cross-site.
+      var res = await fetch(MAILER, {
+        method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body, signal: ctl.signal
+      });
+      var json = await res.json();
+      // Only the script's POST handler answers with "saved". Google occasionally answers a POST
+      // with an error page or with the GET handler instead, and then nothing was emailed.
+      if (json && json.ok === true && 'saved' in json) return 'sent';
+      if (json && json.ok === false) return 'refused';
+      return 'retry';
+    } catch (err) {
+      return 'retry';
+    } finally {
+      clearTimeout(timer);
     }
   }
 

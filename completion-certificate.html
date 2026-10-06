@@ -718,18 +718,41 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
     if (!MAILER) return false;
     try {
       current.pdf = current.pdf || await buildPdf(await renderCertificate(current.fields, current.strokes));
+      // One id per signed certificate: the mailer uses it to never email the same one twice.
+      var sendId = newId();
       var payload = {
         client: fields.n, address: fields.a, city: fields.c, signedBy: fields.f,
         signature: signatureLabel(fields), signedOn: fields.s, referral: fields.r, photos: fields.p,
-        link: link, botcheck: $('botcheck').checked,
+        link: link, botcheck: $('botcheck').checked, id: sendId,
         pdf: toBase64(new Uint8Array(await current.pdf.arrayBuffer()))
       };
       var body = JSON.stringify(payload);
       var result = await postToMailer(body);
-      if (result === 'retry') result = await postToMailer(body);
+      if (result === 'retry') {
+        // No clear answer. Ask the mailer whether it went out before sending again.
+        if (await mailerHas(sendId)) return true;
+        result = await postToMailer(body);
+        if (result === 'retry' && await mailerHas(sendId)) return true;
+      }
       return result === 'sent';
     } catch (err) {
       return false;
+    }
+  }
+  function newId() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'c' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12) + Math.random().toString(36).slice(2, 12);
+  }
+  async function mailerHas(id) {
+    var ctl = new AbortController(), timer = setTimeout(function () { ctl.abort(); }, 15000);
+    try {
+      var res = await fetch(MAILER + '?id=' + encodeURIComponent(id), { signal: ctl.signal });
+      var json = await res.json();
+      return !!(json && json.ok === true && json.done === true);
+    } catch (err) {
+      return false;
+    } finally {
+      clearTimeout(timer);
     }
   }
   async function postToMailer(body) {

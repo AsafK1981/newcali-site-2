@@ -69,6 +69,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .card .act{margin-top:auto;padding-top:14px;display:flex;gap:8px;justify-content:center}
 .pill{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 10px;border-radius:4px;border:1px solid var(--green-dk);background:var(--white);color:var(--green-dk);font:inherit;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
 .pill:hover{background:#dff0e3}
+.rev{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:68px;padding:10px 8px;border-radius:6px;border:1px solid var(--green-dk);background:var(--white);text-decoration:none;transition:background .15s,box-shadow .15s}
+.rev:hover{background:#f3faf4;box-shadow:0 3px 10px rgba(44,95,51,.16)}
+.rev:focus-visible{outline:3px solid rgba(78,154,90,.55);outline-offset:2px}
+.rev .stars{font-size:15px;line-height:1;letter-spacing:2px;color:#e6a100;padding-left:2px}
+.rev .lbl{font-size:12.5px;line-height:1.25;color:#555}
+.rev .lbl b{display:block;font-size:17px;font-weight:600;color:var(--green-dk)}
+.rev.big{min-height:92px;padding:14px 10px}
+.rev.big .stars{font-size:19px;letter-spacing:3px}
+.rev.big .lbl{font-size:13.5px}
+.rev.big .lbl b{font-size:21px}
 .yn{position:relative;flex:1;display:flex}
 .yn input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
 .yn input:checked+.pill{background:var(--green-dk);color:var(--white)}
@@ -204,10 +214,10 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
         <div class="cards">
           <div class="card">
             <h3>Leave a Review</h3>
-            <p>Loved the work? Leave us a review on Yelp and Google within the next 7 days and get a <strong>$100 Amazon gift card.</strong></p>
+            <p>Loved the work? Leave us a review on Yelp and Google. Your feedback means a lot to us.</p>
             <div class="act">
-              <a class="pill" data-review="yelp" target="_blank" rel="noopener">Yelp</a>
-              <a class="pill" data-review="google" target="_blank" rel="noopener">Google</a>
+              <a class="rev" data-review="yelp" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lbl">Review us on <b>Yelp</b></span></a>
+              <a class="rev" data-review="google" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lbl">Review us on <b>Google</b></span></a>
             </div>
           </div>
           <div class="card" role="group" aria-labelledby="qRef">
@@ -276,10 +286,10 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
     </div>
     <div class="review">
       <h2>Loved the work?</h2>
-      <p>Leave us a review on Yelp and Google within the next 7 days and get a <strong>$100 Amazon gift card.</strong></p>
+      <p>Leave us a review on Yelp and Google. It takes a minute and means a lot to us.</p>
       <div class="two" style="margin-top:16px">
-        <a class="btn" data-review="yelp" target="_blank" rel="noopener">Review on Yelp</a>
-        <a class="btn" data-review="google" target="_blank" rel="noopener">Review on Google</a>
+        <a class="rev big" data-review="yelp" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lbl">Review us on <b>Yelp</b></span></a>
+        <a class="rev big" data-review="google" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lbl">Review us on <b>Google</b></span></a>
       </div>
     </div>
   </section>

@@ -91,6 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);heig
 .btn:hover{background:#234d29}
 .btn:focus-visible{outline:3px solid rgba(78,154,90,.55);outline-offset:2px}
 .btn[disabled]{opacity:.6;cursor:progress}
+.btn.is-off{opacity:.45;pointer-events:none;cursor:default}
 .btn.ghost{background:var(--white);color:var(--green-dk);border:1px solid var(--green-dk)}
 .btn.ghost:hover{background:var(--green-pale)}
 .submit-row{margin-top:30px}
@@ -862,33 +863,44 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
   /* ---------- office: link builder ---------- */
   function builder() {
     show('viewNew');
-    var codes = {}, timer = 0, current = '', link = '';
+    var codes = {}, failed = {}, inflight = {}, timer = 0, current = '', link = '';
+    var ACTIONS = ['nCopy', 'nCopyLink', 'nMail', 'nWa', 'nSms'];
 
     function details() {
       return { n: $('nClient').value.trim(), a: $('nAddress').value.trim(), c: $('nCity').value.trim() };
     }
+    // While the short link is being made the send buttons are off, so the long link is never sent by accident.
+    function setBusy(busy) {
+      ACTIONS.forEach(function (id) {
+        var el = $(id);
+        if (el.tagName === 'BUTTON') el.disabled = busy;
+        el.classList.toggle('is-off', busy);
+        if (busy) el.setAttribute('aria-disabled', 'true'); else el.removeAttribute('aria-disabled');
+      });
+    }
     function update() {
-      var p = details(), key = JSON.stringify(p);
+      var p = details(), key = JSON.stringify(p), wait = false;
       current = key;
+      clearTimeout(timer);
       if (codes[key]) {
         link = location.origin + '/sign#' + codes[key];
         $('nStatus').textContent = 'Short link ready.';
+      } else if (p.n && p.a && p.c && MAILER && !failed[key]) {
+        wait = true; link = '';
+        $('nStatus').textContent = 'Creating a short link, a few seconds...';
+        timer = setTimeout(function () { shorten(key, p); }, 1000);
       } else {
-        // Until the short link is ready (or if it cannot be made), the details travel in the link itself.
+        // No short link (details incomplete, or it could not be made): the details travel in the link itself.
         link = location.origin + location.pathname;
         if (p.n || p.a || p.c) link += '#p=' + toB64(new TextEncoder().encode(JSON.stringify(p)));
-        clearTimeout(timer);
-        if (p.n && p.a && p.c && MAILER) {
-          $('nStatus').textContent = 'Creating a short link...';
-          timer = setTimeout(function () { shorten(key, p); }, 1200);
-        } else {
-          $('nStatus').textContent = (p.n || p.a || p.c) ? 'Fill in the name, address and city to get a short link.' : '';
-        }
+        $('nStatus').textContent = failed[key] ? 'Could not make a short link right now. This long link works the same.' :
+          (p.n || p.a || p.c) ? 'Fill in the name, address and city to get a short link.' : '';
       }
+      setBusy(wait);
       var first = p.n.split(/[\s,&]+/)[0];
       var msg = 'Hi' + (first ? ' ' + first : '') + ', thank you for choosing New Cali Construction! ' +
         'Please take 30 seconds to review and sign your completion certificate: ' + link;
-      $('nLink').value = msg;
+      $('nLink').value = wait ? 'Creating a short link...' : msg;
       var phone = $('nPhone').value.replace(/\D/g, '');
       if (phone.length === 10) phone = '1' + phone;
       $('nWa').href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
@@ -914,11 +926,12 @@ footer small{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-top
       }
     }
     async function shorten(key, p) {
+      if (inflight[key] || codes[key]) return;
+      inflight[key] = true;
       var code = await requestCode(p) || await requestCode(p);
-      if (code) codes[key] = code;
-      if (current !== key) return;          // the details changed while we were waiting
-      if (code) update();
-      else $('nStatus').textContent = 'Could not make a short link right now. The long link above works the same.';
+      delete inflight[key];
+      if (code) codes[key] = code; else failed[key] = true;
+      if (current === key) update();        // skip if the details changed while we were waiting
     }
     async function copy(text, button, label) {
       try { await navigator.clipboard.writeText(text); }

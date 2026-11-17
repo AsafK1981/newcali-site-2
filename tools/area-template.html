@@ -102,11 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "latitude": 34.0211,
     "longitude": -118.3965
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "{{CITY}}",
-    "sameAs": "{{WIKI}}"
-  },
+  "areaServed": {{AREA_SERVED_LD}},
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
     "credentialCategory": "California Contractors State License Board License",
@@ -121,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "dateCreated": "2015-11-12"
   },
   "sameAs": [
-    "https://www.yelp.com/biz/new-cali-construction-{{SLUG}}",
+    "https://www.yelp.com/biz/new-cali-construction-culver-city",
     "https://www.houzz.com/professionals/general-contractors/new-cali-construction-pfvwus-pf~1008178105",
     "https://www.buildzoom.com/contractor/new-cali-construction-inc",
     "https://www.facebook.com/profile.php?id=61550646516784",
@@ -143,10 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "email": "Info@NewCaliConstruction.com",
     "url": "https://www.newcaliconstruction.com/"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "{{CITY}}"
-  },
+  "areaServed": {{SVC_AREA_SERVED_LD}},
   "url": "{{URL}}"
 }
 </script>
@@ -246,7 +239,7 @@ document.addEventListener('click', function(e){
         <a href="#contact" class="btn-green" style="margin-top:10px">Get a Free Estimate &rarr;</a>
       </div>
       <div class="area-intro-img">
-        <img src="/images/bathroom/bathroom-6.jpg" width="1200" height="800" alt="{{CITY}} remodeling work by New Cali Construction" loading="lazy">
+        <img src="/images/bathroom/bathroom-6.jpg" width="1200" height="800" alt="{{INTRO_IMG_ALT}}" loading="lazy">
         <div class="area-hoods">
           <h4>Where we work in {{CITY}}</h4>
           <p>{{HOODS}}</p>
@@ -381,12 +374,12 @@ document.addEventListener('click', function(e){
     <div class="area-hdr-c">
       <p class="eyebrow">Recent Work</p>
       <h2 class="area-h2">Craftsmanship you can <em>look at</em></h2>
-      <p class="area-lead">A sample of completed New Cali Construction projects in {{CITY}} and across the Westside. <a href="/portfolio.html" style="color:var(--green);font-weight:600">See the full portfolio &rarr;</a></p>
+      <p class="area-lead">A sample of completed New Cali Construction projects {{GAL_SCOPE}}. <a href="/portfolio.html" style="color:var(--green);font-weight:600">See the full portfolio &rarr;</a></p>
     </div>
     <div class="area-gal">
-      <img src="/images/kitchen/kitchen-1.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
-      <img src="/images/bathroom/bathroom-2.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
-      <img src="/images/home-remodel/home-remodel-5.jpg" width="1200" height="800" alt="Completed {{CITY}} remodel by New Cali Construction" loading="lazy">
+      <img src="/images/kitchen/kitchen-1.jpg" width="1200" height="800" alt="{{GAL_ALT}}" loading="lazy">
+      <img src="/images/bathroom/bathroom-2.jpg" width="1200" height="800" alt="{{GAL_ALT}}" loading="lazy">
+      <img src="/images/home-remodel/home-remodel-5.jpg" width="1200" height="800" alt="{{GAL_ALT}}" loading="lazy">
     </div>
   </div>
 </section>
